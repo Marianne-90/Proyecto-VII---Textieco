@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Textieco') }}</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="textieco" />
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon">
@@ -593,8 +593,8 @@
                                 Arrivals</a></li>
                         <li class="sub-menu__item"><a href="shop3.html" class="menu-link menu-link_us-s">Accessories</a>
                         </li>
-                        <li class="sub-menu__item"><a href="shop4.html" class="menu-link menu-link_us-s">Men</a></li>
-                        <li class="sub-menu__item"><a href="shop5.html" class="menu-link menu-link_us-s">Women</a></li>
+                        <li class="sub-menu__item"><a href="shop4.html" class="menu-link menu-link_us-s">Lorem Ipsum</a></li>
+                        <li class="sub-menu__item"><a href="shop5.html" class="menu-link menu-link_us-s">Lorem Ipsum</a></li>
                         <li class="sub-menu__item"><a href="shop1.html" class="menu-link menu-link_us-s">Shop All</a>
                         </li>
                     </ul>
@@ -619,10 +619,10 @@
                 <div class="footer-column footer-menu mb-4 mb-lg-0">
                     <h6 class="sub-menu__title text-uppercase">Categories</h6>
                     <ul class="sub-menu__list list-unstyled">
-                        <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Shirts</a></li>
-                        <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Jeans</a></li>
-                        <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Shoes</a></li>
-                        <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Bags</a></li>
+                        <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Lorem Ipsum</a></li>
+                        <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Lorem Ipsum</a></li>
+                        <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Lorem Ipsum</a></li>
+                        <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Lorem Ipsum</a></li>
                         <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Shop All</a></li>
                     </ul>
                 </div>

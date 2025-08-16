@@ -21,14 +21,14 @@
               <div class="character_markup type2">
                 <p
                   class="text-uppercase font-sofia mark-grey-color animate animate_fade animate_btt animate_delay-10 mb-0">
-                  Dresses</p>
+                  Lorem Ipsum</p>
               </div>
             </div>
             <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
               <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
                 New Arrivals</h6>
-              <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
-              <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
+              <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Lorem Ipsum</h2>
+              <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Lorem Ipsum</h2>
               <a href="#"
                 class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
                 Now</a>
@@ -43,15 +43,15 @@
                 alt="Woman Fashion 1"
                 class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
               <div class="character_markup">
-                <p class="text-uppercase font-sofia fw-bold animate animate_fade animate_rtl animate_delay-10">Summer
+                <p class="text-uppercase font-sofia fw-bold animate animate_fade animate_rtl animate_delay-10">Lorem
                 </p>
               </div>
             </div>
             <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
               <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
                 New Arrivals</h6>
-              <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
-              <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
+              <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Lorem Ipsum</h2>
+              <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Ipsum</h2>
               <a href="#"
                 class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
                 Now</a>
@@ -69,8 +69,8 @@
             <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
               <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
                 New Arrivals</h6>
-              <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
-              <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
+              <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Lorem Ipsum</h2>
+              <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Lorem Ipsum</h2>
               <a href="#"
                 class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
                 Now</a>
@@ -170,7 +170,7 @@
                     </div>
 
                     <div class="pc__info position-relative">
-                      <h6 class="pc__title"><a href="details.html">Cropped Faux Leather Jacket</a></h6>
+                      <h6 class="pc__title"><a href="details.html">Lorem Ipsum</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price text-secondary">$29</span>
                       </div>
@@ -207,7 +207,7 @@
                     </div>
 
                     <div class="pc__info position-relative">
-                      <h6 class="pc__title"><a href="details.html">Calvin Shorts</a></h6>
+                      <h6 class="pc__title"><a href="details.html">Lorem Ipsum</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price text-secondary">$62</span>
                       </div>
@@ -244,7 +244,7 @@
                     </div>
 
                     <div class="pc__info position-relative">
-                      <h6 class="pc__title"><a href="details.html">Kirby T-Shirt</a></h6>
+                      <h6 class="pc__title"><a href="details.html">Lorem Ipsum</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price text-secondary">$62</span>
                       </div>
@@ -281,7 +281,7 @@
                     </div>
 
                     <div class="pc__info position-relative">
-                      <h6 class="pc__title"><a href="details.html">Cableknit Shawl</a></h6>
+                      <h6 class="pc__title"><a href="details.html">Lorem Ipsum</a></h6>
                       <div class="product-card__price d-flex align-items-center">
                         <span class="money price-old">$129</span>
                         <span class="money price text-secondary">$99</span>
@@ -319,7 +319,7 @@
                     </div>
 
                     <div class="pc__info position-relative">
-                      <h6 class="pc__title"><a href="details.html">Cropped Faux Leather Jacket</a></h6>
+                      <h6 class="pc__title"><a href="details.html">Lorem Ipsum</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price text-secondary">$29</span>
                       </div>
@@ -356,7 +356,7 @@
                     </div>
 
                     <div class="pc__info position-relative">
-                      <h6 class="pc__title"><a href="details.html">Calvin Shorts</a></h6>
+                      <h6 class="pc__title"><a href="details.html">Lorem Ipsum</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price text-secondary">$62</span>
                       </div>
@@ -393,7 +393,7 @@
                     </div>
 
                     <div class="pc__info position-relative">
-                      <h6 class="pc__title"><a href="details.html">Kirby T-Shirt</a></h6>
+                      <h6 class="pc__title"><a href="details.html">Lorem Ipsum</a></h6>
                       <div class="product-card__price d-flex">
                         <span class="money price text-secondary">$62</span>
                       </div>
@@ -430,7 +430,7 @@
                     </div>
 
                     <div class="pc__info position-relative">
-                      <h6 class="pc__title"><a href="details.html">Cableknit Shawl</a></h6>
+                      <h6 class="pc__title"><a href="details.html">Lorem Ipsum</a></h6>
                       <div class="product-card__price d-flex align-items-center">
                         <span class="money price-old">$129</span>
                         <span class="money price text-secondary">$99</span>
@@ -476,7 +476,7 @@
                 Starting at $19
               </div>
               <div class="category-banner__item-content">
-                <h3 class="mb-0">Blazers</h3>
+                <h3 class="mb-0">Lorem Ipsum</h3>
                 <a href="#" class="btn-link default-underline text-uppercase fw-medium">Shop Now</a>
               </div>
             </div>
@@ -489,7 +489,7 @@
                 Starting at $19
               </div>
               <div class="category-banner__item-content">
-                <h3 class="mb-0">Sportswear</h3>
+                <h3 class="mb-0">Lorem Ipsum</h3>
                 <a href="#" class="btn-link default-underline text-uppercase fw-medium">Shop Now</a>
               </div>
             </div>
@@ -513,7 +513,7 @@
               </div>
 
               <div class="pc__info position-relative">
-                <h6 class="pc__title"><a href="details.html">Cropped Faux Leather Jacket</a></h6>
+                <h6 class="pc__title"><a href="details.html">Lorem Ipsum</a></h6>
                 <div class="product-card__price d-flex align-items-center">
                   <span class="money price text-secondary">$29</span>
                 </div>
@@ -549,7 +549,7 @@
               </div>
 
               <div class="pc__info position-relative">
-                <h6 class="pc__title"><a href="details.html">Calvin Shorts</a></h6>
+                <h6 class="pc__title"><a href="details.html">Lorem Ipsum</a></h6>
                 <div class="product-card__price d-flex align-items-center">
                   <span class="money price text-secondary">$62</span>
                 </div>
@@ -586,7 +586,7 @@
               </div>
 
               <div class="pc__info position-relative">
-                <h6 class="pc__title"><a href="details.html">Kirby T-Shirt</a></h6>
+                <h6 class="pc__title"><a href="details.html">Lorem Ipsum</a></h6>
                 <div class="product-card__price d-flex align-items-center">
                   <span class="money price text-secondary">$17</span>
                 </div>
@@ -623,7 +623,7 @@
               </div>
 
               <div class="pc__info position-relative">
-                <h6 class="pc__title">Cableknit Shawl</h6>
+                <h6 class="pc__title">Lorem Ipsum</h6>
                 <div class="product-card__price d-flex align-items-center">
                   <span class="money price-old">$129</span>
                   <span class="money price text-secondary">$99</span>
@@ -660,7 +660,7 @@
               </div>
 
               <div class="pc__info position-relative">
-                <h6 class="pc__title"><a href="details.html">Cropped Faux Leather Jacket</a></h6>
+                <h6 class="pc__title"><a href="details.html">Lorem Ipsum</a></h6>
                 <div class="product-card__price d-flex align-items-center">
                   <span class="money price text-secondary">$29</span>
                 </div>
@@ -696,7 +696,7 @@
               </div>
 
               <div class="pc__info position-relative">
-                <h6 class="pc__title"><a href="details.html">Calvin Shorts</a></h6>
+                <h6 class="pc__title"><a href="details.html">Lorem Ipsum</a></h6>
                 <div class="product-card__price d-flex align-items-center">
                   <span class="money price text-secondary">$62</span>
                 </div>
@@ -732,7 +732,7 @@
               </div>
 
               <div class="pc__info position-relative">
-                <h6 class="pc__title"><a href="details.html">Kirby T-Shirt</a></h6>
+                <h6 class="pc__title"><a href="details.html">Lorem Ipsum</a></h6>
                 <div class="product-card__price d-flex align-items-center">
                   <span class="money price text-secondary">$17</span>
                 </div>
@@ -768,7 +768,7 @@
               </div>
 
               <div class="pc__info position-relative">
-                <h6 class="pc__title">Cableknit Shawl</h6>
+                <h6 class="pc__title">Lorem Ipsum</h6>
                 <div class="product-card__price d-flex align-items-center">
                   <span class="money price-old">$129</span>
                   <span class="money price text-secondary">$99</span>

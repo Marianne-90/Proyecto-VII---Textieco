@@ -38,7 +38,7 @@
 
                 <div class="section-menu-left">
                     <div class="box-logo">
-                        <a href="{{ route('admin.index') }}" id="site-logo-inner">
+                        <a href="{{ route('home.index') }}" id="site-logo-inner">
                             <img class="" id="logo_header_1" alt="" src="{{ asset('images/logo/logo.png')}}"
                                 data-light="{{ asset('images/logo/logo.png')}}"
                                 data-dark="{{ asset('images/logo/logo.png')}}">
@@ -401,7 +401,7 @@
                                                     <img src="images/avatar/user-1.png" alt="">
                                                 </span>
                                                 <span class="flex flex-column">
-                                                    <span class="body-title mb-2">Kristin Watson</span>
+                                                    <span class="body-title mb-2">User Name</span>
                                                     <span class="text-tiny">Admin</span>
                                                 </span>
                                             </span>
