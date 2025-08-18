@@ -288,7 +288,7 @@ class AdminController extends Controller
         $product->save();
         return redirect()->route('admin.products')->with('status', 'Product has been added successfully');
     }
-
+//Guardar imágenes progucto
     function GenerateProductThumbailsImage($image, $imageName): void
     {
         $destinationPathThumbnails = public_path('uploads/products/thumbnails');
