@@ -93,7 +93,9 @@
                                                         <i class="icon-edit-3"></i>
                                                     </div>
                                                 </a>
-                                                <form action="#" method="POST">
+                                                <form action="{{ route('admin.product.delete', ['id' => $product->id]) }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
                                                     <div class="item text-danger delete">
                                                         <i class="icon-trash-2"></i>
                                                     </div>
@@ -117,3 +119,28 @@
 
     </div>
 @endsection
+@push('scripts')
+    <script>
+        $(function () {
+            $('.delete').on("click", function (e) {
+                e.preventDefault();
+                var form = $(this).closest('form');
+                swal({
+                    title: "Are you sure?",
+                    text: "You want to delete this record?",
+                    type: "warning",
+                    buttons: ["NO", "YES"],
+                    confirmButtonColor: '#dc3545'
+                }).then(function (result) {
+                    if (result) {
+                        // console.log('➡️ Ruta a la que se enviará el formulario:', form.attr('action'));
+                        // console.log('➡️ Método HTML:', form.attr('method'));
+
+                        form.submit();
+                    }
+                });
+            });
+        });
+
+    </script>
+@endpush
