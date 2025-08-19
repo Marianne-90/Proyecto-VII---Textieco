@@ -83,12 +83,12 @@
                                         <td>{{ $product->quantity }}</td>
                                         <td>
                                             <div class="list-icon-function">
-                                                <a href="#" target="_blank">
+                                                <a href="" target="_blank">
                                                     <div class="item eye">
                                                         <i class="icon-eye"></i>
                                                     </div>
                                                 </a>
-                                                <a href="#">
+                                                <a href="{{ route('admin.product.edit', ['id' => $product->id]) }}">
                                                     <div class="item edit">
                                                         <i class="icon-edit-3"></i>
                                                     </div>
