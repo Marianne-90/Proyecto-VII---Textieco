@@ -99,22 +99,25 @@
                         <div id="accordion-filter-brand" class="accordion-collapse collapse show border-0"
                             aria-labelledby="accordion-heading-brand" data-bs-parent="#brand-filters">
                             <div class="search-field multi-select accordion-body px-0 pb-0">
-                                <select class="d-none" multiple name="total-numbers-list">
+                                {{-- <select class="d-none" multiple name="total-numbers-list">
                                     @foreach ($brands as $brand)
-                                        <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+                                    <option value="{{ $brand->id }}">{{ $brand->name }}</option>
                                     @endforeach
-                                </select>
-                                <div class="search-field__input-wrapper mb-3">
+                                </select> --}}
+                                {{-- <div class="search-field__input-wrapper mb-3">
                                     <input type="text" name="search_text"
                                         class="search-field__input form-control form-control-sm border-light border-2"
                                         placeholder="Search" />
-                                </div>
-                                <ul class="multi-select__list list-unstyled">
+                                </div> --}}
+                                <ul class="list list-inline mb-0 brand-list">
                                     @foreach ($brands as $brand)
-                                        <li
-                                            class="search-suggestion__item multi-select__item text-primary js-search-select js-multi-select">
-                                            <span class="me-auto">{{ $brand->name }}</span>
-                                            <span class="text-secondary">#</span>
+                                        <li class="list-item">
+                                            <span class="menu-link py-1">
+                                                <input type="checkbox" class="chk-brand" name="brands" value="{{ $brand->id }}"
+                                                    @if(in_array($brand->id, explode(',', $f_brands))) checked @endif>
+                                                {{ $brand->name }}
+                                            </span>
+                                            <span class="text-right float-end">{{ $brand->products->count() }}</span>
                                         </li>
                                     @endforeach
 
@@ -163,18 +166,18 @@
 
             <div class="shop-list flex-grow-1">
                 <div class="swiper-container js-swiper-slider slideshow slideshow_small slideshow_split" data-settings='{
-                "autoplay": {
-                  "delay": 5000
-                },
-                "slidesPerView": 1,
-                "effect": "fade",
-                "loop": true,
-                "pagination": {
-                  "el": ".slideshow-pagination",
-                  "type": "bullets",
-                  "clickable": true
-                }
-              }'>
+                    "autoplay": {
+                      "delay": 5000
+                    },
+                    "slidesPerView": 1,
+                    "effect": "fade",
+                    "loop": true,
+                    "pagination": {
+                      "el": ".slideshow-pagination",
+                      "type": "bullets",
+                      "clickable": true
+                    }
+                  }'>
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="slide-split h-100 d-block d-md-flex overflow-hidden">
@@ -184,7 +187,8 @@
                                         <h2
                                             class="text-uppercase section-title fw-normal mb-3 animate animate_fade animate_btt animate_delay-2">
                                             Lorem Ipsum <br /><strong>LOREM</strong></h2>
-                                        <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Intore veritatis et quasi architecto beatae vitae dicta sunt explicabo</h6>
+                                        <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Intore veritatis et
+                                            quasi architecto beatae vitae dicta sunt explicabo</h6>
                                     </div>
                                 </div>
                                 <div class="slide-split_media position-relative">
@@ -204,8 +208,9 @@
                                     <div class="slideshow-text container p-3 p-xl-5">
                                         <h2
                                             class="text-uppercase section-title fw-normal mb-3 animate animate_fade animate_btt animate_delay-2">
-                                           Lorem Impsum <br /><strong>LOREM</strong></h2>
-                                        <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Antore veritatis et quasi architecto beatae vitae dicta sunt explicabo</h6>
+                                            Lorem Impsum <br /><strong>LOREM</strong></h2>
+                                        <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Antore veritatis et
+                                            quasi architecto beatae vitae dicta sunt explicabo</h6>
                                     </div>
                                 </div>
                                 <div class="slide-split_media position-relative">
@@ -226,7 +231,8 @@
                                         <h2
                                             class="text-uppercase section-title fw-normal mb-3 animate animate_fade animate_btt animate_delay-2">
                                             Lorem Impsum<br /><strong>LOREM</strong></h2>
-                                        <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Antore veritatis et quasi architecto beatae vitae dicta sunt explicabo</h6>
+                                        <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Antore veritatis et
+                                            quasi architecto beatae vitae dicta sunt explicabo</h6>
                                     </div>
                                 </div>
                                 <div class="slide-split_media position-relative">
@@ -251,13 +257,14 @@
 
                 <div class="d-flex justify-content-between mb-4 pb-md-2">
                     <div class="breadcrumb mb-0 d-none d-md-block flex-grow-1">
-                        <a href="{{ route('home.index') }}" class="menu-link menu-link_us-s text-uppercase fw-medium">Home</a>
+                        <a href="{{ route('home.index') }}"
+                            class="menu-link menu-link_us-s text-uppercase fw-medium">Home</a>
                         <span class="breadcrumb-separator menu-link fw-medium ps-1 pe-1">/</span>
                         <a href="#" class="menu-link menu-link_us-s text-uppercase fw-medium">The Shop</a>
                     </div>
 
                     <div
-                        class="shop-acs d-flex align-items-center justify-content-between justify-content-md-end flex-grow-1" >
+                        class="shop-acs d-flex align-items-center justify-content-between justify-content-md-end flex-grow-1">
                         <select class="shop-acs__select form-select w-auto border-0 py-0 order-1 order-md-0"
                             aria-label="Page Size" name="pagesize" id="pagesize" style="margin-right:20px;">
                             <option value="12" {{ $size == 12 ? 'selected' : '' }}>Show</option>
@@ -265,14 +272,14 @@
                             <option value="48" {{ $size == 48 ? 'selected' : '' }}>48</option>
                             <option value="102" {{ $size == 102 ? 'selected' : '' }}>102</option>
                         </select>
-                    <select class="shop-acs__select form-select w-auto border-0 py-0 order-1 order-md-0" aria-label="Sort Items"
-                        name="orderby" id="orderby">
-                        <option value="-1" {{ $order == -1 ? 'selected' : '' }}>Default</option>
-                        <option value="1" {{ $order == 1 ? 'selected' : '' }}>Date, new to old</option>
-                        <option value="2" {{ $order == 2 ? 'selected' : '' }}>Date, old to new</option>
-                        <option value="3" {{ $order == 3 ? 'selected' : '' }}>Price, low to high</option>
-                        <option value="4" {{ $order == 4 ? 'selected' : '' }}>Price, high to low</option>
-                    </select>
+                        <select class="shop-acs__select form-select w-auto border-0 py-0 order-1 order-md-0"
+                            aria-label="Sort Items" name="orderby" id="orderby">
+                            <option value="-1" {{ $order == -1 ? 'selected' : '' }}>Default</option>
+                            <option value="1" {{ $order == 1 ? 'selected' : '' }}>Date, new to old</option>
+                            <option value="2" {{ $order == 2 ? 'selected' : '' }}>Date, old to new</option>
+                            <option value="3" {{ $order == 3 ? 'selected' : '' }}>Price, low to high</option>
+                            <option value="4" {{ $order == 4 ? 'selected' : '' }}>Price, high to low</option>
+                        </select>
 
                         <div class="shop-asc__seprator mx-3 bg-light d-none d-md-block order-md-0"></div>
 
@@ -301,125 +308,147 @@
 
                 <div class="products-grid row row-cols-2 row-cols-md-3" id="products-grid">
                     @foreach($products as $product)
-                    <div class="product-card-wrapper">
-                        <div class="product-card mb-3 mb-md-4 mb-xxl-5">
-                            <div class="pc__img-wrapper">
-                                <div class="swiper-container background-img js-swiper-slider"
-                                    data-settings='{"resizeObserver": true}'>
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <a href="{{ route('shop.product.details',['product_slug' => $product->slug]) }}"><img loading="lazy"
-                                                    src="{{ asset('uploads/products') }}/{{$product->image  }}" width="330" height="400"
-                                                    alt="{{ $product->name }}" class="pc__img"></a>
+                        <div class="product-card-wrapper">
+                            <div class="product-card mb-3 mb-md-4 mb-xxl-5">
+                                <div class="pc__img-wrapper">
+                                    <div class="swiper-container background-img js-swiper-slider"
+                                        data-settings='{"resizeObserver": true}'>
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a
+                                                    href="{{ route('shop.product.details', ['product_slug' => $product->slug]) }}"><img
+                                                        loading="lazy"
+                                                        src="{{ asset('uploads/products') }}/{{$product->image  }}" width="330"
+                                                        height="400" alt="{{ $product->name }}" class="pc__img"></a>
+                                            </div>
+                                            <div class="swiper-slide">
+
+                                                @foreach (explode(',', $product->images) as $gim)
+                                                    <a
+                                                        href="{{ route('shop.product.details', ['product_slug' => $product->slug]) }}"><img
+                                                            loading="lazy" src="{{ asset('uploads/products') }}/{{$gim}}"
+                                                            width="330" height="400" alt="{{ $product->name }}" class="pc__img"></a>
+                                                @endforeach
+                                            </div>
                                         </div>
-                                        <div class="swiper-slide">
+                                        <span class="pc__img-prev"><svg width="7" height="11" viewBox="0 0 7 11"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <use href="#icon_prev_sm" />
+                                            </svg></span>
+                                        <span class="pc__img-next"><svg width="7" height="11" viewBox="0 0 7 11"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <use href="#icon_next_sm" />
+                                            </svg></span>
+                                    </div>
+                                    @if(Cart::instance('cart')->content()->where('id', $product->id)->count() > 0)
+                                        <a href="{{ route('cart.index') }}"
+                                            class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-mediumbtn btn-warning mb-3">View
+                                            Cart</a>
+                                    @else
+                                        <form name="addtocart-form" method="post" action="{{ route('cart.add') }}">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{ $product->id }}">
+                                            <input type="hidden" name="quantity" value="1">
+                                            <input type="hidden" name="name" value="{{ $product->name }}">
+                                            <input type="hidden" name="price"
+                                                value="{{ $product->sale_price < $product->regular_price ? $product->sale_price : $product->regular_price }}">
+                                            <button type="submit"
+                                                class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium"
+                                                data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
+                                        </form>
+                                    @endif
+                                </div>
 
-                                            @foreach (explode(',', $product->images) as $gim)
-                                                <a href="{{ route('shop.product.details',['product_slug' => $product->slug]) }}"><img loading="lazy"
-                                                        src="{{ asset('uploads/products') }}/{{$gim}}" width="330" height="400"
-                                                        alt="{{ $product->name }}" class="pc__img"></a>
-                                            @endforeach
+                                <div class="pc__info position-relative">
+                                    <p class="pc__category">{{ $product->category->name }}</p>
+                                    <h6 class="pc__title"><a
+                                            href="{{ route('shop.product.details', ['product_slug' => $product->slug]) }}">{{ $product->name }}</a>
+                                    </h6>
+                                    <div class="product-card__price d-flex">
+                                        <span class="money price">
+                                            @if ($product->sale_price < $product->regular_price)
+                                                <s>{{ $product->regular_price }}</s> ${{ $product->sale_price }}
+                                            @else
+                                                ${{ $product->regular_price }}
+                                            @endif
+                                        </span>
+                                    </div>
+                                    <div class="product-card__review d-flex align-items-center">
+                                        <div class="reviews-group d-flex">
+                                            <svg class="review-star" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg">
+                                                <use href="#icon_star" />
+                                            </svg>
+                                            <svg class="review-star" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg">
+                                                <use href="#icon_star" />
+                                            </svg>
+                                            <svg class="review-star" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg">
+                                                <use href="#icon_star" />
+                                            </svg>
+                                            <svg class="review-star" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg">
+                                                <use href="#icon_star" />
+                                            </svg>
+                                            <svg class="review-star" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg">
+                                                <use href="#icon_star" />
+                                            </svg>
                                         </div>
+                                        <span class="reviews-note text-lowercase text-secondary ms-1">8k+ reviews</span>
                                     </div>
-                                    <span class="pc__img-prev"><svg width="7" height="11" viewBox="0 0 7 11"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <use href="#icon_prev_sm" />
-                                        </svg></span>
-                                    <span class="pc__img-next"><svg width="7" height="11" viewBox="0 0 7 11"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <use href="#icon_next_sm" />
-                                        </svg></span>
-                                </div>
-                                @if(Cart::instance('cart')->content()->where('id', $product->id)->count() > 0)
-                                 <a href="{{ route('cart.index') }}" class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-mediumbtn btn-warning mb-3">View Cart</a>
-                                @else
-                                <form name="addtocart-form" method="post" action="{{ route('cart.add') }}">
-                                @csrf
-                                <input type="hidden" name="id" value="{{ $product->id }}">
-                                <input type="hidden" name="quantity" value="1">
-                                <input type="hidden" name="name" value="{{ $product->name }}">
-                                <input type="hidden" name="price"
-                                value="{{ $product->sale_price < $product->regular_price ? $product->sale_price : $product->regular_price }}">
-                                <button
-                                    type="submit"
-                                    class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium"
-                                    data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                                </form>
-                                @endif
-                            </div>
 
-                            <div class="pc__info position-relative">
-                                <p class="pc__category">{{ $product->category->name }}</p>
-                                <h6 class="pc__title"><a href="{{ route('shop.product.details',['product_slug' => $product->slug]) }}">{{ $product->name }}</a></h6>
-                                <div class="product-card__price d-flex">
-                                    <span class="money price">
-                                        @if ($product->sale_price < $product->regular_price)
-                                        <s>{{ $product->regular_price }}</s> ${{ $product->sale_price }}
-                                        @else
-                                        ${{ $product->regular_price }}
-                                        @endif
-                                    </span>
+                                    <button
+                                        class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist"
+                                        title="Add To Wishlist">
+                                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <use href="#icon_heart" />
+                                        </svg>
+                                    </button>
                                 </div>
-                                <div class="product-card__review d-flex align-items-center">
-                                    <div class="reviews-group d-flex">
-                                        <svg class="review-star" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg">
-                                            <use href="#icon_star" />
-                                        </svg>
-                                        <svg class="review-star" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg">
-                                            <use href="#icon_star" />
-                                        </svg>
-                                        <svg class="review-star" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg">
-                                            <use href="#icon_star" />
-                                        </svg>
-                                        <svg class="review-star" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg">
-                                            <use href="#icon_star" />
-                                        </svg>
-                                        <svg class="review-star" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg">
-                                            <use href="#icon_star" />
-                                        </svg>
-                                    </div>
-                                    <span class="reviews-note text-lowercase text-secondary ms-1">8k+ reviews</span>
-                                </div>
-
-                                <button
-                                    class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist"
-                                    title="Add To Wishlist">
-                                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <use href="#icon_heart" />
-                                    </svg>
-                                </button>
                             </div>
                         </div>
-                    </div>
 
                     @endforeach
                 </div>
-<div class="divider"></div>
-<div class="flex items-center justify-between flex-wrap gap10 wgp-pagination">
-    {{ $products->withQueryString()->links('pagination::bootstrap-5') }}
-</div>
+                <div class="divider"></div>
+                <div class="flex items-center justify-between flex-wrap gap10 wgp-pagination">
+                    {{ $products->withQueryString()->links('pagination::bootstrap-5') }}
+                </div>
             </div>
         </section>
     </main>
-    <form id="frmfilter"  method="GET" action="{{ route('shop.index') }}">
+    <form id="frmfilter" method="GET" action="{{ route('shop.index') }}">
         <input type="hidden" name="page" id="page" value="{{ $products->currentPage() }}">
         <input type="hidden" name="size" id="size" value="{{ $size }}">
         <input type="hidden" name="order" id="order" value="{{ $order }}">
+        <input type="hidden" name="brands" id="hdnBrands">
     </form>
 @endsection
 
 @push('scripts')
     <script>
-        $(function() {
-            $('#pagesize').on('change', function() {
+        $(function () {
+            $('#pagesize').on('change', function () {
                 $('#size').val($("#pagesize option:selected").val());
                 $('#frmfilter').submit();
             });
 
-            $('#orderby').on('change', function() {
+            $('#orderby').on('change', function () {
                 $('#order').val($("#orderby option:selected").val());
                 $('#frmfilter').submit();
+            });
+
+            $("input[name='brands']").on('change', function () {
+                let brands = "";
+                $("input[name='brands']:checked").each(function () {
+                    if (brands == "") {
+                        brands += $(this).val();
+                    } else {
+                        brands += "," + $(this).val();
+                    }
+                });
+                $('#hdnBrands').val(brands);
+
+                $('#frmfilter').submit();
+
             });
         });
     </script>
