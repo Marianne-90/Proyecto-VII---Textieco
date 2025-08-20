@@ -14,6 +14,10 @@
             color: #e4e4e4 border-radius:0;
             margin-right: 0.75rem;
         }
+
+        .filled-heart {
+            color: orange;
+        }
     </style>
 
     <main class="pt-90">
@@ -157,8 +161,8 @@
                         <div id="accordion-filter-price" class="accordion-collapse collapse show border-0"
                             aria-labelledby="accordion-heading-price" data-bs-parent="#price-filters">
                             <input class="price-range-slider" type="text" name="price_range" value="" data-slider-min="1"
-                                data-slider-max="1000" data-slider-step="5" data-slider-value="[{{ $min_price }},{{ $max_price }}]"
-                                data-currency="$" />
+                                data-slider-max="1000" data-slider-step="5"
+                                data-slider-value="[{{ $min_price }},{{ $max_price }}]" data-currency="$" />
                             <div class="price-range__info d-flex align-items-center mt-2">
                                 <div class="me-auto">
                                     <span class="text-secondary">Min Price: </span>
@@ -176,18 +180,18 @@
 
             <div class="shop-list flex-grow-1">
                 <div class="swiper-container js-swiper-slider slideshow slideshow_small slideshow_split" data-settings='{
-                                    "autoplay": {
-                                      "delay": 5000
-                                    },
-                                    "slidesPerView": 1,
-                                    "effect": "fade",
-                                    "loop": true,
-                                    "pagination": {
-                                      "el": ".slideshow-pagination",
-                                      "type": "bullets",
-                                      "clickable": true
-                                    }
-                                  }'>
+                                            "autoplay": {
+                                              "delay": 5000
+                                            },
+                                            "slidesPerView": 1,
+                                            "effect": "fade",
+                                            "loop": true,
+                                            "pagination": {
+                                              "el": ".slideshow-pagination",
+                                              "type": "bullets",
+                                              "clickable": true
+                                            }
+                                          }'>
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="slide-split h-100 d-block d-md-flex overflow-hidden">
@@ -403,15 +407,33 @@
                                         </div>
                                         <span class="reviews-note text-lowercase text-secondary ms-1">8k+ reviews</span>
                                     </div>
-
-                                    <button
-                                        class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist"
-                                        title="Add To Wishlist">
-                                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <use href="#icon_heart" />
-                                        </svg>
-                                    </button>
+                                    @if(Cart::instance('wishlist')->content()->where('id', $product->id)->count() > 0)
+                                        <button
+                                            class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist filled-heart"
+                                            title="Add To Wishlist" type="submit">
+                                            <svg width="16" height="16" viewBox="0 0 20 20" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <use href="#icon_heart" />
+                                            </svg>
+                                        </button>
+                                    @else
+                                        <form action="{{ route('wishlist.add') }}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{ $product->id }}">
+                                            <input type="hidden" name="name" value="{{ $product->name }}">
+                                            <input type="hidden" name="quantity" value="1">
+                                            <input type="hidden" name="price"
+                                                value="{{ $product->sale_price < $product->regular_price ? $product->sale_price : $product->regular_price }}">
+                                            <button
+                                                class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist"
+                                                title="Add To Wishlist" type="submit">
+                                                <svg width="16" height="16" viewBox="0 0 20 20" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <use href="#icon_heart" />
+                                                </svg>
+                                            </button>
+                                        </form>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -437,50 +459,50 @@
 @endsection
 {{-- Sprint 3 --}}
 @push('scripts')
-  <script>
-  $(function () {
-    const $form = $('#frmfilter');
+    <script>
+        $(function () {
+            const $form = $('#frmfilter');
 
-    // Vincula un <select> a un hidden y envía el formulario al cambiar
-    function bindSelect(selectSelector, hiddenSelector) {
-      $(selectSelector).on('change', function () {
-        $(hiddenSelector).val($(this).find('option:selected').val());
-        $form.submit();
-      });
-    }
+            // Vincula un <select> a un hidden y envía el formulario al cambiar
+            function bindSelect(selectSelector, hiddenSelector) {
+                $(selectSelector).on('change', function () {
+                    $(hiddenSelector).val($(this).find('option:selected').val());
+                    $form.submit();
+                });
+            }
 
-    // Devuelve los valores chequeados de un grupo de checkboxes como CSV
-    function getCheckedCSV(name) {
-      return $(`input[name='${name}']:checked`)
-        .map(function () { return this.value; })
-        .get()
-        .join(',');
-    }
+            // Devuelve los valores chequeados de un grupo de checkboxes como CSV
+            function getCheckedCSV(name) {
+                return $(`input[name='${name}']:checked`)
+                    .map(function () { return this.value; })
+                    .get()
+                    .join(',');
+            }
 
-    // Actualiza hidden de filtros y envía el formulario
-    function onFacetChange() {
-      $('#hdnBrands').val(getCheckedCSV('brands'));
-      $('#hdnCategories').val(getCheckedCSV('categories'));
-      $form.submit();
-    }
+            // Actualiza hidden de filtros y envía el formulario
+            function onFacetChange() {
+                $('#hdnBrands').val(getCheckedCSV('brands'));
+                $('#hdnCategories').val(getCheckedCSV('categories'));
+                $form.submit();
+            }
 
-    // Enlaces
-    bindSelect('#pagesize', '#size');
-    bindSelect('#orderby', '#order');
+            // Enlaces
+            bindSelect('#pagesize', '#size');
+            bindSelect('#orderby', '#order');
 
-    $("input[name='brands'], input[name='categories']").on('change', onFacetChange);
+            $("input[name='brands'], input[name='categories']").on('change', onFacetChange);
 
-    //nuevo
-    $("[name='price_range']").on('change', function () {
+            //nuevo
+            $("[name='price_range']").on('change', function () {
 
-      const range = $(this).val().split(',');
-      $('#hdnMin').val(range[0]);
-      $('#hdnMax').val(range[1]);
-      setTimeout(() => {
-        $form.submit();
-      }, 2000);
-    });
-  });
-</script>
+                const range = $(this).val().split(',');
+                $('#hdnMin').val(range[0]);
+                $('#hdnMax').val(range[1]);
+                setTimeout(() => {
+                    $form.submit();
+                }, 2000);
+            });
+        });
+    </script>
 
 @endpush
