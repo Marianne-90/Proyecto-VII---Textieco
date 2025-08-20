@@ -16,6 +16,7 @@ class ShopController extends Controller
         $o_order = "";
         $order = $request->query('order', -1);
         $f_brands = $request->query('brands');
+        $f_categories = $request->query('categories');
 
         switch ($order) {
             case 1:
@@ -40,12 +41,16 @@ class ShopController extends Controller
                 break;
         }
 
-        $products = Product::where(function ($query) use ($f_brands) {
+        $products = Product::
+        where(function ($query) use ($f_brands) {
             $query->whereIn('brand_id', explode(',', $f_brands))->orWhereRaw("'" . $f_brands . "'=''");
-        })->orderBy($o_column, $o_order)->paginate($size);
-        $categories = Category::orderBy('id', 'DESC')->get();
+        })->where(function ($query) use ($f_categories) {
+            $query->whereIn('category_id', explode(',', $f_categories))->orWhereRaw("'" . $f_categories . "'=''");
+        })
+        ->orderBy($o_column, $o_order)->paginate($size);
+        $categories = Category::orderBy('name', 'ASC')->get();
         $brands = Brand::orderBy('name', 'ASC')->get();
-        return view('shop', compact('products', 'categories', 'brands', 'size', 'order', 'f_brands'));
+        return view('shop', compact('products', 'categories', 'brands', 'size', 'order', 'f_brands', 'f_categories'));
     }
 
     public function product_details($product_slug)

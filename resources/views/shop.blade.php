@@ -1,6 +1,21 @@
 @extends('layouts.app');
 @section('content');
 
+    <style>
+        .brand-list li,
+        .category-list li {
+            line-height: 40px;
+        }
+
+        .brand-list li .chk-brand,
+        .category-list li .chk-category {
+            with: 1rem;
+            height: 1rem;
+            color: #e4e4e4 border-radius:0;
+            margin-right: 0.75rem;
+        }
+    </style>
+
     <main class="pt-90">
         <section class="shop-main container d-flex pt-4 pt-xl-5">
             <div class="shop-sidebar side-sticky bg-body" id="shopFilter">
@@ -29,11 +44,16 @@
                         </h5>
                         <div id="accordion-filter-1" class="accordion-collapse collapse show border-0"
                             aria-labelledby="accordion-heading-1" data-bs-parent="#categories-list">
-                            <div class="accordion-body px-0 pb-0 pt-3">
+                            <div class="accordion-body px-0 pb-0 pt-3 category-list">
                                 <ul class="list list-inline mb-0">
                                     @foreach ($categories as $category)
                                         <li class="list-item">
-                                            <a href="#" class="menu-link py-1">{{ $category->name }}</a>
+                                            <span class="menu-link py-1">
+                                                <input type="checkbox" class="chk-category" name="categories"
+                                                    value="{{ $category->id }}" @if(in_array($category->id, explode(',', $f_categories))) checked @endif>
+                                                {{ $category->name }}
+                                            </span>
+                                            <span class="text-right float-end">{{ $category->products->count() }}</span>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -43,7 +63,7 @@
                 </div>
 
 
-                <div class="accordion" id="color-filters">
+                {{-- <div class="accordion" id="color-filters">
                     <div class="accordion-item mb-4 pb-3">
                         <h5 class="accordion-header" id="accordion-heading-1">
                             <button class="accordion-button p-0 border-0 fs-5 text-uppercase" type="button"
@@ -77,7 +97,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
 
                 <div class="accordion" id="brand-filters">
@@ -99,16 +119,6 @@
                         <div id="accordion-filter-brand" class="accordion-collapse collapse show border-0"
                             aria-labelledby="accordion-heading-brand" data-bs-parent="#brand-filters">
                             <div class="search-field multi-select accordion-body px-0 pb-0">
-                                {{-- <select class="d-none" multiple name="total-numbers-list">
-                                    @foreach ($brands as $brand)
-                                    <option value="{{ $brand->id }}">{{ $brand->name }}</option>
-                                    @endforeach
-                                </select> --}}
-                                {{-- <div class="search-field__input-wrapper mb-3">
-                                    <input type="text" name="search_text"
-                                        class="search-field__input form-control form-control-sm border-light border-2"
-                                        placeholder="Search" />
-                                </div> --}}
                                 <ul class="list list-inline mb-0 brand-list">
                                     @foreach ($brands as $brand)
                                         <li class="list-item">
@@ -166,18 +176,18 @@
 
             <div class="shop-list flex-grow-1">
                 <div class="swiper-container js-swiper-slider slideshow slideshow_small slideshow_split" data-settings='{
-                    "autoplay": {
-                      "delay": 5000
-                    },
-                    "slidesPerView": 1,
-                    "effect": "fade",
-                    "loop": true,
-                    "pagination": {
-                      "el": ".slideshow-pagination",
-                      "type": "bullets",
-                      "clickable": true
-                    }
-                  }'>
+                                    "autoplay": {
+                                      "delay": 5000
+                                    },
+                                    "slidesPerView": 1,
+                                    "effect": "fade",
+                                    "loop": true,
+                                    "pagination": {
+                                      "el": ".slideshow-pagination",
+                                      "type": "bullets",
+                                      "clickable": true
+                                    }
+                                  }'>
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="slide-split h-100 d-block d-md-flex overflow-hidden">
@@ -420,6 +430,7 @@
         <input type="hidden" name="size" id="size" value="{{ $size }}">
         <input type="hidden" name="order" id="order" value="{{ $order }}">
         <input type="hidden" name="brands" id="hdnBrands">
+        <input type="hidden" name="categories" id="hdnCategories">
     </form>
 @endsection
 
@@ -445,7 +456,44 @@
                         brands += "," + $(this).val();
                     }
                 });
+
+                let categories = "";
+                $("input[name='categories']:checked").each(function () {
+                    if (categories == "") {
+                        categories += $(this).val();
+                    } else {
+                        categories += "," + $(this).val();
+                    }
+                });
+
                 $('#hdnBrands').val(brands);
+                $('#hdnCategories').val(categories);
+
+                $('#frmfilter').submit();
+
+            });
+
+            $("input[name='categories']").on('change', function () {
+                let categories = "";
+                $("input[name='categories']:checked").each(function () {
+                    if (categories == "") {
+                        categories += $(this).val();
+                    } else {
+                        categories += "," + $(this).val();
+                    }
+                });
+
+                let brands = "";
+                $("input[name='brands']:checked").each(function () {
+                    if (brands == "") {
+                        brands += $(this).val();
+                    } else {
+                        brands += "," + $(this).val();
+                    }
+                });
+
+                $('#hdnBrands').val(brands);
+                $('#hdnCategories').val(categories);
 
                 $('#frmfilter').submit();
 
