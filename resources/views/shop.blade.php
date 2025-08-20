@@ -433,7 +433,7 @@
         <input type="hidden" name="categories" id="hdnCategories">
     </form>
 @endsection
-
+{{-- Sprint 3 --}}
 @push('scripts')
     <script>
         $(function () {
