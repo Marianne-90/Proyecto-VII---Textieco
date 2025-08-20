@@ -17,4 +17,20 @@ class CartController extends Controller
         Cart::instance('cart')->add($request->id,$request->name, $request->quantity, $request->price)->associate('App\Models\Product');
         return redirect()->back();
     }
+
+    public function increase_cart_quantity($rowId)
+    {
+        $item = Cart::instance('cart')->get($rowId);
+        Cart::instance('cart')->update($rowId, $item->qty + 1);
+        return redirect()->back();
+    }
+
+        public function decrease_cart_quantity($rowId)
+    {
+        $item = Cart::instance('cart')->get($rowId);
+        Cart::instance('cart')->update($rowId, $item->qty - 1);
+        return redirect()->back();
+    }
+
+
 }
