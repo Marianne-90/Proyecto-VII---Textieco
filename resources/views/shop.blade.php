@@ -156,17 +156,17 @@
                         </h5>
                         <div id="accordion-filter-price" class="accordion-collapse collapse show border-0"
                             aria-labelledby="accordion-heading-price" data-bs-parent="#price-filters">
-                            <input class="price-range-slider" type="text" name="price_range" value="" data-slider-min="10"
-                                data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]"
+                            <input class="price-range-slider" type="text" name="price_range" value="" data-slider-min="1"
+                                data-slider-max="1000" data-slider-step="5" data-slider-value="[{{ $min_price }},{{ $max_price }}]"
                                 data-currency="$" />
                             <div class="price-range__info d-flex align-items-center mt-2">
                                 <div class="me-auto">
                                     <span class="text-secondary">Min Price: </span>
-                                    <span class="price-range__min">$250</span>
+                                    <span class="price-range__min">$1</span>
                                 </div>
                                 <div>
                                     <span class="text-secondary">Max Price: </span>
-                                    <span class="price-range__max">$450</span>
+                                    <span class="price-range__max">$1000</span>
                                 </div>
                             </div>
                         </div>
@@ -431,73 +431,56 @@
         <input type="hidden" name="order" id="order" value="{{ $order }}">
         <input type="hidden" name="brands" id="hdnBrands">
         <input type="hidden" name="categories" id="hdnCategories">
+        <input type="hidden" name="min" id="hdnMin" value="{{ $min_price }}">
+        <input type="hidden" name="max" id="hdnMax" value="{{ $max_price }}">
     </form>
 @endsection
 {{-- Sprint 3 --}}
 @push('scripts')
-    <script>
-        $(function () {
-            $('#pagesize').on('change', function () {
-                $('#size').val($("#pagesize option:selected").val());
-                $('#frmfilter').submit();
-            });
+  <script>
+  $(function () {
+    const $form = $('#frmfilter');
 
-            $('#orderby').on('change', function () {
-                $('#order').val($("#orderby option:selected").val());
-                $('#frmfilter').submit();
-            });
+    // Vincula un <select> a un hidden y envía el formulario al cambiar
+    function bindSelect(selectSelector, hiddenSelector) {
+      $(selectSelector).on('change', function () {
+        $(hiddenSelector).val($(this).find('option:selected').val());
+        $form.submit();
+      });
+    }
 
-            $("input[name='brands']").on('change', function () {
-                let brands = "";
-                $("input[name='brands']:checked").each(function () {
-                    if (brands == "") {
-                        brands += $(this).val();
-                    } else {
-                        brands += "," + $(this).val();
-                    }
-                });
+    // Devuelve los valores chequeados de un grupo de checkboxes como CSV
+    function getCheckedCSV(name) {
+      return $(`input[name='${name}']:checked`)
+        .map(function () { return this.value; })
+        .get()
+        .join(',');
+    }
 
-                let categories = "";
-                $("input[name='categories']:checked").each(function () {
-                    if (categories == "") {
-                        categories += $(this).val();
-                    } else {
-                        categories += "," + $(this).val();
-                    }
-                });
+    // Actualiza hidden de filtros y envía el formulario
+    function onFacetChange() {
+      $('#hdnBrands').val(getCheckedCSV('brands'));
+      $('#hdnCategories').val(getCheckedCSV('categories'));
+      $form.submit();
+    }
 
-                $('#hdnBrands').val(brands);
-                $('#hdnCategories').val(categories);
+    // Enlaces
+    bindSelect('#pagesize', '#size');
+    bindSelect('#orderby', '#order');
 
-                $('#frmfilter').submit();
+    $("input[name='brands'], input[name='categories']").on('change', onFacetChange);
 
-            });
+    //nuevo
+    $("[name='price_range']").on('change', function () {
 
-            $("input[name='categories']").on('change', function () {
-                let categories = "";
-                $("input[name='categories']:checked").each(function () {
-                    if (categories == "") {
-                        categories += $(this).val();
-                    } else {
-                        categories += "," + $(this).val();
-                    }
-                });
+      const range = $(this).val().split(',');
+      $('#hdnMin').val(range[0]);
+      $('#hdnMax').val(range[1]);
+      setTimeout(() => {
+        $form.submit();
+      }, 2000);
+    });
+  });
+</script>
 
-                let brands = "";
-                $("input[name='brands']:checked").each(function () {
-                    if (brands == "") {
-                        brands += $(this).val();
-                    } else {
-                        brands += "," + $(this).val();
-                    }
-                });
-
-                $('#hdnBrands').val(brands);
-                $('#hdnCategories').val(categories);
-
-                $('#frmfilter').submit();
-
-            });
-        });
-    </script>
 @endpush
