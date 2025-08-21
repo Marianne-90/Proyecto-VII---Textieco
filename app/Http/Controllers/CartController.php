@@ -98,4 +98,11 @@ class CartController extends Controller
         }
 
     }
+
+    public function remove_coupon_code()
+    {
+        Session::forget('coupon');
+        Session::forget('discounts');
+        return redirect()->back()->with('success', 'Coupon removed successfully!');
+    }
 }

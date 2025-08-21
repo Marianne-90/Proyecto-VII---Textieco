@@ -117,13 +117,24 @@
                             </tbody>
                         </table>
                         <div class="cart-table-footer">
-                            <form action="{{ route('cart.coupon.apply') }}" class="position-relative bg-body" method="POST">
-                                @csrf
-                                <input class="form-control" type="text" name="coupon_code" placeholder="Coupon Code"
-                                    value="@if (Session::has('coupon')){{ Session::get('coupon')['code'] }} Applied @endif">
-                                <input class="btn-link fw-medium position-absolute top-0 end-0 h-100 px-4" type="submit"
-                                    value="APPLY COUPON">
-                            </form>
+                            @if(!Session::has('coupon'))
+                                <form action="{{ route('cart.coupon.apply') }}" class="position-relative bg-body" method="POST">
+                                    @csrf
+                                    <input class="form-control" type="text" name="coupon_code" placeholder="Coupon Code" value="">
+                                    <input class="btn-link fw-medium position-absolute top-0 end-0 h-100 px-4" type="submit"
+                                        value="APPLY COUPON">
+                                </form>
+                            @else
+                                <form action="{{ route('cart.coupon.remove') }}" class="position-relative bg-body" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <input class="form-control" type="text" name="coupon_code" placeholder="Coupon Code"
+                                        value="@if (Session::has('coupon')){{ Session::get('coupon')['code'] }} Applied @endif">
+                                    <input class="btn-link fw-medium position-absolute top-0 end-0 h-100 px-4" type="submit"
+                                        value="REMOVE COUPON">
+                                </form>
+                            @endif
                             <form action="{{ route('cart.clear') }}" method="POST">
                                 @csrf
                                 @method('DELETE')
@@ -160,7 +171,7 @@
                                                 <th>Discount {{ Session::get('coupon')['code'] }}</th>
                                                 <td>{{ Session::get('discounts')['discount']  }}</td>
                                             </tr>
-                                             <tr>
+                                            <tr>
                                                 <th>Subtotal After Discount</th>
                                                 <td>{{ Session::get('discounts')['subtotal'] }}</td>
                                             </tr>
