@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <style>
+        /* Sprint 4 */
         .text-success {
             color: green !important;
         }
