@@ -15,8 +15,9 @@ return new class extends Migration
         Schema::create('coupons', function (Blueprint $table) {
             $table->id();
             $table->string('code')->unique();
-            $table->enum('type', ['percentage', 'fixed']);
+            $table->enum('type', ['percent', 'fixed']);
             $table->decimal('value');
+            $table->decimal('cart_value');
             $table->date('expiry_date')->default((DB::raw("(DATE(CURRENT_TIMESTAMP))")));
             $table->timestamps();
         });
