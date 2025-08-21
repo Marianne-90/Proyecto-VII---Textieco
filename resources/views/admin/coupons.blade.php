@@ -68,15 +68,14 @@
                                                         <i class="icon-edit-3"></i>
                                                     </div>
                                                 </a>
-                                                {{-- <form action="{{ route('admin.coupon.delete', ['id' => $coupon->id]) }}"
+                                                <form action="{{ route('admin.coupon.delete', ['id' => $coupon->id]) }}"
                                                     method="POST" style="display:inline;">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="item text-danger delete"
-                                                        onclick="return confirm('Are you sure you want to delete this coupon?');">
+                                                    <button type="submit" class="item text-danger delete">
                                                         <i class="icon-trash-2"></i>
                                                     </button>
-                                                </form> --}}
+                                                </form>
                                             </div>
                                         </td>
                                     </tr>
@@ -93,3 +92,29 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        $(function () {
+            $('.delete').on("click", function (e) {
+                e.preventDefault();
+                var form = $(this).closest('form');
+                swal({
+                    title: "Are you sure?",
+                    text: "You want to delete this coupon?",
+                    type: "warning",
+                    buttons: ["NO", "YES"],
+                    confirmButtonColor: '#dc3545'
+                }).then(function (result) {
+                    if (result) {
+                        // console.log('➡️ Ruta a la que se enviará el formulario:', form.attr('action'));
+                        // console.log('➡️ Método HTML:', form.attr('method'));
+
+                        form.submit();
+                    }
+                });
+            });
+        });
+
+    </script>
+@endpush
