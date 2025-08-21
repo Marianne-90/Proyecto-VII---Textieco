@@ -23,6 +23,8 @@ Route::put('/cart/decrease/{rowId}', [CartController::class, 'decrease_cart_quan
 Route::delete('/cart/{rowId}/remove', [CartController::class, 'remove_item'])->name('cart.item.remove');
 Route::delete('/cart/clear', [CartController::class, 'clear_cart'])->name('cart.clear');
 
+Route::post('/cart/apply-coupon', [CartController::class, 'apply_coupon_code'])->name('cart.coupon.apply');
+
 Route::post('/wishlist/add', [WishlistController::class, 'add_to_wishlist'])->name('wishlist.add');
 Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
 Route::delete('/wishlist/item/remove/{rowId}', [WishlistController::class, 'remove_item'])->name('wishlist.item.remove');
