@@ -62,13 +62,13 @@
                                         <td>${{ $coupon->cart_value }}</td>
                                         <td>{{ $coupon->expiry_date }}</td>
                                         <td>
-                                            {{-- <div class="list-icon-function">
+                                            <div class="list-icon-function">
                                                 <a href="{{ route('admin.coupon.edit', ['id' => $coupon->id]) }}">
                                                     <div class="item edit">
                                                         <i class="icon-edit-3"></i>
                                                     </div>
                                                 </a>
-                                                <form action="{{ route('admin.coupon.delete', ['id' => $coupon->id]) }}"
+                                                {{-- <form action="{{ route('admin.coupon.delete', ['id' => $coupon->id]) }}"
                                                     method="POST" style="display:inline;">
                                                     @csrf
                                                     @method('DELETE')
@@ -76,8 +76,8 @@
                                                         onclick="return confirm('Are you sure you want to delete this coupon?');">
                                                         <i class="icon-trash-2"></i>
                                                     </button>
-                                                </form>
-                                            </div> --}}
+                                                </form> --}}
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach
