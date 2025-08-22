@@ -165,15 +165,15 @@
                                         <tbody>
                                             <tr>
                                                 <th>Subtotal</th>
-                                                <td>{{ Cart::instance('cart')->subtotal() }}</td>
+                                                <td class="text-right">{{ Cart::instance('cart')->subtotal() }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Discount {{ Session::get('coupon')['code'] }}</th>
-                                                <td>{{ Session::get('discounts')['discount']  }}</td>
+                                                <td class="text-right">{{ Session::get('discounts')['discount']  }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Subtotal After Discount</th>
-                                                <td>{{ Session::get('discounts')['subtotal'] }}</td>
+                                                <td class="text-right">{{ Session::get('discounts')['subtotal'] }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Shipping</th>
@@ -181,7 +181,7 @@
                                             </tr>
                                             <tr>
                                                 <th>VAT</th>
-                                                <td>{{ Session::get('discounts')['tax'] }}</td>
+                                                <td class="text-right">{{ Session::get('discounts')['tax'] }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Total</th>
@@ -194,19 +194,19 @@
                                         <tbody>
                                             <tr>
                                                 <th>Subtotal</th>
-                                                <td>{{ Cart::instance('cart')->subtotal() }}</td>
+                                                <td class="text-right">{{ Cart::instance('cart')->subtotal() }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Shipping</th>
-                                                <td>Free</td>
+                                                <td class="text-right">Free</td>
                                             </tr>
                                             <tr>
                                                 <th>VAT</th>
-                                                <td>${{ Cart::instance('cart')->tax() }}</td>
+                                                <td class="text-right">${{ Cart::instance('cart')->tax() }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Total</th>
-                                                <td>${{ Cart::instance('cart')->total() }}</td>
+                                                <td class="text-right">${{ Cart::instance('cart')->total() }}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -214,7 +214,7 @@
                             </div>
                             <div class="mobile_fixed-btn_wrapper">
                                 <div class="button-wrapper container">
-                                    <a href="checkout.html" class="btn btn-primary btn-checkout">PROCEED TO CHECKOUT</a>
+                                    <a href="{{ route('cart.checkout') }}" class="btn btn-primary btn-checkout">PROCEED TO CHECKOUT</a>
                                 </div>
                             </div>
                         </div>
