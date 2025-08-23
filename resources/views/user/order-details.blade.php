@@ -2,9 +2,9 @@
 @section('content')
     <style>
         .table> :not(caption)>tr>th {
-                padding: 0.625rem 1.5rem .625rem !important;
-                background-color: #6a6e51 !important;
-            }
+            padding: 0.625rem 1.5rem .625rem !important;
+            background-color: #6a6e51 !important;
+        }
 
         .table>tr>td {
             padding: 0.625rem 1.5rem .625rem !important;
@@ -131,6 +131,11 @@
                             </div>
                         </div>
                         <div class="table-responsive">
+                            @if(Session::has('status'))
+                                <p class="alert alert-success">
+                                    {{ Session::get('status') }}
+                                </p>
+                            @endif
                             <table class="table table-bordered table-striped table-bordered">
                                 <thead>
                                     <tr>
@@ -154,7 +159,7 @@
                                         <td colspan="5">
                                             @if($order->status == 'delivered')
                                                 <span class="badge bg-success">Delivered</span>
-                                                <blade elseif|(%24order-%3Estatus%20%3D%3D%20%26%2339%3Bcanceled%26%2339%3B) />
+                                            @elseif($order->status == 'canceled')
                                                 <span class="badge bg-danger">Canceled</span>
                                             @else
                                                 <span class="badge bg-warning">Ordered</span>
@@ -282,18 +287,45 @@
                             </table>
                         </div>
 
+                        @if($order->status != 'delivered' && $order->status != 'canceled')
+                        <div class="wg-box mt-5 text-right">
+                            <form action="{{ route('user.order.cancel') }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <input type="hidden" name="order_id" value="{{ $order->id }}">
+                                <button class="btn btn-danger cancel-order" type="button">Cancel Order</button>
+                            </form>
+                        </div>
+                        @endif
                     </div>
                 </div>
-
-
-                <div class="divider"></div>
-                <div class="flex items-center justify-between flex-wrap gap10 wgp-pagination">
-                    {{ $orderItems->links('pagination::bootstrap-5') }}
-                </div>
-            </div>
-
             </div>
         </section>
     </main>
 
 @endsection
+@push('scripts')
+    <script>
+        $(function () {
+            $('.cancel-order').on("click", function (e) {
+                e.preventDefault();
+                var form = $(this).closest('form');
+                swal({
+                    title: "Are you sure?",
+                    text: "You want to cancel this order?",
+                    type: "warning",
+                    buttons: ["NO", "YES"],
+                    confirmButtonColor: '#dc3545'
+                }).then(function (result) {
+                    if (result) {
+                        // console.log('➡️ Ruta a la que se enviará el formulario:', form.attr('action'));
+                        // console.log('➡️ Método HTML:', form.attr('method'));
+
+                        form.submit();
+                    }
+                });
+            });
+        });
+
+    </script>
+@endpush
