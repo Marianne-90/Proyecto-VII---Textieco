@@ -232,7 +232,7 @@
                                         policy</a>.
                                 </div>
                             </div>
-                            <button class="btn btn-primary btn-checkout">PLACE ORDER</button>
+                            <button class="btn btn-primary btn-checkout" type="submit">PLACE ORDER</button>
                         </div>
                     </div>
                 </div>
