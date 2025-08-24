@@ -723,7 +723,6 @@
 
                 clearTimeout(timer);
                 let searchQuery = $(this).val();
-                console.log("searchQuery", searchQuery);
 
                 if (searchQuery.length > 2) {
                     timer = setTimeout(function () {
