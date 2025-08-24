@@ -153,6 +153,12 @@
                                         <div class="text">Coupns</div>
                                     </a>
                                 </li>
+                                <li class="menu-item">
+                                    <a href="{{ route('admin.contacts') }}" class="">
+                                        <div class="icon"><i class="icon-mail"></i></div>
+                                        <div class="text">Messages</div>
+                                    </a>
+                                </li>
 
                                 <li class="menu-item">
                                     <a href="users.html" class="">
@@ -174,7 +180,7 @@
                                         @csrf
                                         <a href="{{ route('logout') }}" class=""
                                             onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                            <div class="icon"><i class="icon-settings"></i></div>
+                                            <div class="icon"><i class="icon-log-out"></i></div>
                                             <div class="text">Logout</div>
                                         </a>
                                     </form>
@@ -354,17 +360,20 @@
                                                     <li>
                                                         <div class="message-item item-2">
                                                             <div class="image">
-                                                                @if ($data['title']== "New Order")
-                                                                <i class="icon-noti-3"></i>
+                                                                @if ($data['title'] == "New Order")
+                                                                    <i class="icon-noti-3"></i>
                                                                 @else
-                                                                <i class="icon-noti-2"></i>
+                                                                    <i class="icon-noti-2"></i>
                                                                 @endif
 
                                                             </div>
                                                             <div>
                                                                 <div class="body-title-2">
-                                                                    {{ $data['title'] ?? class_basename($n->type) }}</div>
-                                                                <div class="text-tiny">{{ $data['message'] ?? '' }}, {{ $n->created_at->diffForHumans() }}</div>
+                                                                    {{ $data['title'] ?? class_basename($n->type) }}
+                                                                </div>
+                                                                <div class="text-tiny">{{ $data['message'] ?? '' }},
+                                                                    {{ $n->created_at->diffForHumans() }}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </li>
@@ -424,24 +433,17 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" class="user-item">
+                                                <a href="{{ route('admin.contacts') }}" class="user-item">
                                                     <div class="icon">
                                                         <i class="icon-mail"></i>
                                                     </div>
                                                     <div class="body-title-2">Inbox</div>
-                                                    <div class="number">27</div>
+
                                                 </a>
                                             </li>
+
                                             <li>
-                                                <a href="#" class="user-item">
-                                                    <div class="icon">
-                                                        <i class="icon-file-text"></i>
-                                                    </div>
-                                                    <div class="body-title-2">Taskboard</div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="user-item">
+                                                <a href="{{ route('home.contact') }}" class="user-item">
                                                     <div class="icon">
                                                         <i class="icon-headphones"></i>
                                                     </div>
@@ -449,12 +451,16 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="login.html" class="user-item">
-                                                    <div class="icon">
-                                                        <i class="icon-log-out"></i>
-                                                    </div>
-                                                    <div class="body-title-2">Log out</div>
-                                                </a>
+                                                <form method="POST" action="{{ route('logout') }}" id="logout-form">
+                                                    @csrf
+                                                    <a href="{{ route('logout') }}" class="user-item"
+                                                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                                        <div class="icon">
+                                                            <i class="icon-log-out"></i>
+                                                        </div>
+                                                        <div class="body-title-2">Log out</div>
+                                                    </a>
+                                                </form>
                                             </li>
                                         </ul>
                                     </div>
