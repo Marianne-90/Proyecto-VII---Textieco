@@ -43,6 +43,8 @@ Route::post('/contact/store', [HomeController::class, 'contact_store'])->name('h
 
 Route::get('/about', [HomeController::class, 'about'])->name('home.about');
 
+Route::get('/search', [HomeController::class, 'search'])->name('home.search');
+
 Route::middleware(['auth'])->group(function(){
     Route::get('/account-dashboard', [UserController::class, 'index'])->name('user.index');
     Route::get('/account-orders', [UserController::class, 'orders'])->name('user.orders');
