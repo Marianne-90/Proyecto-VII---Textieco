@@ -65,4 +65,9 @@ class HomeController extends Controller
         return redirect()->back()->with('success', 'Your message has been sent successfully.');
     }
 
+    public function about()
+    {
+        return view('about');
+    }
+
 }
