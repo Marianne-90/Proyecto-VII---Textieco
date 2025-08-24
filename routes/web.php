@@ -101,3 +101,5 @@ Route::middleware(['auth', AuthAdmin::class])->group(function(){
     Route::delete('/admin/notifications', [AdminNotificationController::class, 'destroyAll'])->name('admin.notifications.destroyAll');
 
 });
+
+// Sprint 5
