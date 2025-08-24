@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminNotificationController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
@@ -91,4 +92,12 @@ Route::middleware(['auth', AuthAdmin::class])->group(function(){
     Route::get('/admin/slide/{id}/edit', [AdminController::class, 'slide_edit'])->name('admin.slide.edit');
     Route::put('/admin/slide/update', [AdminController::class, 'slide_update'])->name('admin.slide.update');
     Route::delete('/admin/slide/{id}/delete', [AdminController::class, 'slide_delete'])->name('admin.slide.delete');
+
+// Notificaciones
+    Route::get('/admin/notifications', [AdminNotificationController::class, 'index'])->name('admin.notifications.index');
+    Route::post('/admin/notifications/{notification}/read', [AdminNotificationController::class, 'markAsRead'])->name('admin.notifications.read');
+    Route::delete('/admin/notifications/{notification}', [AdminNotificationController::class, 'destroy'])->name('admin.notifications.destroy');
+    Route::post('/admin/notifications/read-all', [AdminNotificationController::class, 'markAllAsRead'])->name('admin.notifications.readAll');
+    Route::delete('/admin/notifications', [AdminNotificationController::class, 'destroyAll'])->name('admin.notifications.destroyAll');
+
 });

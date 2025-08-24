@@ -1,3 +1,10 @@
+@php
+    // Si usas un guard distinto (p. ej. 'admin'), cambia a: $admin = auth('admin')->user();
+    $admin = auth()->user();
+    $notifications = $admin->notifications()->latest()->paginate(15);
+    $unreadCount = $admin->unreadNotifications()->count();
+@endphp
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -324,68 +331,68 @@
 
                                 <div class="popup-wrap message type-header">
                                     <div class="dropdown">
+
                                         <button class="btn btn-secondary dropdown-toggle" type="button"
                                             id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                                             <span class="header-item">
-                                                <span class="text-tiny">1</span>
+                                                @if($unreadCount > 0)
+                                                    <span class="text-tiny">{{ $unreadCount }}</span>
+                                                @endif
                                                 <i class="icon-bell"></i>
                                             </span>
                                         </button>
-                                        <ul class="dropdown-menu dropdown-menu-end has-content"
-                                            aria-labelledby="dropdownMenuButton2">
-                                            <li>
-                                                <h6>Notifications</h6>
-                                            </li>
-                                            <li>
-                                                <div class="message-item item-1">
-                                                    <div class="image">
-                                                        <i class="icon-noti-1"></i>
-                                                    </div>
-                                                    <div>
-                                                        <div class="body-title-2">Discount available</div>
-                                                        <div class="text-tiny">Morbi sapien massa, ultricies at rhoncus
-                                                            at, ullamcorper nec diam</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="message-item item-2">
-                                                    <div class="image">
-                                                        <i class="icon-noti-2"></i>
-                                                    </div>
-                                                    <div>
-                                                        <div class="body-title-2">Account has been verified</div>
-                                                        <div class="text-tiny">Mauris libero ex, iaculis vitae rhoncus
-                                                            et</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="message-item item-3">
-                                                    <div class="image">
-                                                        <i class="icon-noti-3"></i>
-                                                    </div>
-                                                    <div>
-                                                        <div class="body-title-2">Order shipped successfully</div>
-                                                        <div class="text-tiny">Integer aliquam eros nec sollicitudin
-                                                            sollicitudin</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="message-item item-4">
-                                                    <div class="image">
-                                                        <i class="icon-noti-4"></i>
-                                                    </div>
-                                                    <div>
-                                                        <div class="body-title-2">Order pending: <span>ID 305830</span>
+                                        @if($unreadCount > 0)
+                                            <ul class="dropdown-menu dropdown-menu-end has-content"
+                                                aria-labelledby="dropdownMenuButton2">
+                                                <li>
+                                                    <h6>Notifications</h6>
+                                                </li>
+
+                                                @foreach ($notifications as $n)
+                                                    @php $data = $n->data ?? []; @endphp
+
+                                                    <li>
+                                                        <div class="message-item item-2">
+                                                            <div class="image">
+                                                                @if ($data['title']== "New Order")
+                                                                <i class="icon-noti-3"></i>
+                                                                @else
+                                                                <i class="icon-noti-2"></i>
+                                                                @endif
+
+                                                            </div>
+                                                            <div>
+                                                                <div class="body-title-2">
+                                                                    {{ $data['title'] ?? class_basename($n->type) }}</div>
+                                                                <div class="text-tiny">{{ $data['message'] ?? '' }}, {{ $n->created_at->diffForHumans() }}</div>
+                                                            </div>
                                                         </div>
-                                                        <div class="text-tiny">Ultricies at rhoncus at ullamcorper</div>
+                                                    </li>
+
+
+                                                @endforeach
+
+                                                <form method="POST" action="{{ route('admin.notifications.destroyAll') }}">
+                                                    @csrf @method('DELETE')
+                                                    <button class="tf-button w-full">Delete</button>
+                                                </form>
+
+                                            </ul>
+                                        @else
+                                            <ul class="dropdown-menu dropdown-menu-end has-content"
+                                                aria-labelledby="dropdownMenuButton2">
+                                                <li>
+                                                    <h6>Notifications</h6>
+                                                </li>
+                                                <li>
+                                                    <div class="message-item item-1">
+                                                        <div>
+                                                            <div class="body-title-2">Empty :)</div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </li>
-                                            <li><a href="#" class="tf-button w-full">View all</a></li>
-                                        </ul>
+                                                </li>
+                                            </ul>
+                                        @endif
                                     </div>
                                 </div>
 
