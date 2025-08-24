@@ -8,6 +8,7 @@ use App\Models\Coupon;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Product;
+use App\Models\Slide;
 use App\Models\Transaction;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -352,14 +353,14 @@ class AdminController extends Controller
         $product->category_id = $request->category_id;
         $product->brand_id = $request->brand_id;
 
-                $current_timestamp = Carbon::now()->timestamp;
+        $current_timestamp = Carbon::now()->timestamp;
 
         if ($request->hasFile('image')) {
 
-            if(File::exists(public_path('uploads/products') . '/' . $product->image)) {
+            if (File::exists(public_path('uploads/products') . '/' . $product->image)) {
                 File::delete(public_path('uploads/products') . '/' . $product->image);
             }
-            if(File::exists(public_path('uploads/products/thumbnails') . '/' . $product->image)) {
+            if (File::exists(public_path('uploads/products/thumbnails') . '/' . $product->image)) {
                 File::delete(public_path('uploads/products/thumbnails') . '/' . $product->image);
             }
 
@@ -376,10 +377,10 @@ class AdminController extends Controller
         if ($request->hasFile('images')) {
 
             foreach (explode(',', $product->images) as $ofile) {
-                if(File::exists(public_path('uploads/products') . '/' . $ofile)) {
+                if (File::exists(public_path('uploads/products') . '/' . $ofile)) {
                     File::delete(public_path('uploads/products') . '/' . $ofile);
                 }
-                if(File::exists(public_path('uploads/products/thumbnails') . '/' . $ofile)) {
+                if (File::exists(public_path('uploads/products/thumbnails') . '/' . $ofile)) {
                     File::delete(public_path('uploads/products/thumbnails') . '/' . $ofile);
                 }
             }
@@ -408,18 +409,18 @@ class AdminController extends Controller
     {
         $product = Product::find($id);
 
-        if(File::exists(public_path('uploads/products') . '/' . $product->image)) {
+        if (File::exists(public_path('uploads/products') . '/' . $product->image)) {
             File::delete(public_path('uploads/products') . '/' . $product->image);
         }
-        if(File::exists(public_path('uploads/products/thumbnails') . '/' . $product->image)) {
+        if (File::exists(public_path('uploads/products/thumbnails') . '/' . $product->image)) {
             File::delete(public_path('uploads/products/thumbnails') . '/' . $product->image);
         }
 
         foreach (explode(',', $product->images) as $ofile) {
-            if(File::exists(public_path('uploads/products') . '/' . $ofile)) {
+            if (File::exists(public_path('uploads/products') . '/' . $ofile)) {
                 File::delete(public_path('uploads/products') . '/' . $ofile);
             }
-            if(File::exists(public_path('uploads/products/thumbnails') . '/' . $ofile)) {
+            if (File::exists(public_path('uploads/products/thumbnails') . '/' . $ofile)) {
                 File::delete(public_path('uploads/products/thumbnails') . '/' . $ofile);
             }
         }
@@ -428,12 +429,14 @@ class AdminController extends Controller
         return redirect()->route('admin.products')->with('status', 'Product has been deleted successfully.');
     }
 
-    public function coupons(){
+    public function coupons()
+    {
         $coupons = Coupon::orderBy('expiry_date', 'DESC')->paginate(12);
         return view('admin.coupons', compact('coupons'));
     }
 
-    public function coupon_add(){
+    public function coupon_add()
+    {
         return view('admin.coupon-add');
     }
 
@@ -510,24 +513,134 @@ class AdminController extends Controller
         return view('admin.order-details', compact('order', 'orderItems', 'transaction'));
     }
 
-    public function update_order_status(Request $request){
+    public function update_order_status(Request $request)
+    {
         $order = Order::find($request->order_id);
         $order->status = $request->order_status;
 
-        if($request->order_status == 'delivered') {
-           $order->delivered_date = Carbon::now();
-        }
-
-        else if($request->order_status == 'canceled'){
+        if ($request->order_status == 'delivered') {
+            $order->delivered_date = Carbon::now();
+        } else if ($request->order_status == 'canceled') {
             $order->canceled_date = Carbon::now();
         }
 
-        if($request->order_status == 'delivered'){
-          $transaction = Transaction::where('order_id', $request->order_id)->first();
-          $transaction->status = 'approved';
-          $transaction->save();
+        if ($request->order_status == 'delivered') {
+            $transaction = Transaction::where('order_id', $request->order_id)->first();
+            $transaction->status = 'approved';
+            $transaction->save();
         }
         return back()->with('status', 'Status has been updated successfully');
+    }
+
+    public function slides()
+    {
+        $slides = Slide::orderBy('id', 'DESC')->paginate(10);
+        return view('admin.slides', compact('slides'));
+    }
+
+    public function slide_add()
+    {
+        return view('admin.slide-add');
+    }
+
+    public function slide_store(Request $request)
+    {
+        $request->validate(
+            [
+                'tagline' => 'required',
+                'title' => 'required',
+                'subtitle' => 'required',
+                'link' => 'required',
+                'status' => 'required',
+                'image' => 'required|mimes:png,jpg,jpeg|max:2048',
+            ]
+        );
+
+        $slide = new Slide();
+        $slide->tagline = $request->tagline;
+        $slide->title = $request->title;
+        $slide->subtitle = $request->subtitle;
+        $slide->link = $request->link;
+        $slide->status = $request->status;
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $file_extention = $request->file('image')->extension();
+            $file_name = Carbon::now()->timestamp . "." . $file_extention;
+            $this->GenerateSlideImage($image, $file_name);
+            $slide->image = $file_name;
+        }
+
+        $slide->save();
+        return redirect()->route('admin.slides')->with('status', 'Slide has been added successfully');
+    }
+
+    public function GenerateSlideImage($image, $imageName)
+    {
+        $destinationPath = public_path('uploads/slides');
+        $img = Image::read($image->path());
+        $img->cover(400, 690, "top");
+        $img->resize(400, 690, function ($constraint) {
+            $constraint->aspectRatio();
+        })->save($destinationPath . '/' . $imageName);
+
+    }
+
+    public function slide_edit($id)
+    {
+        $slide = Slide::find($id);
+        return view('admin.slide-edit', compact('slide'));
+    }
+
+    public function slide_update(Request $request)
+    {
+        $request->validate(
+            [
+                'tagline' => 'required',
+                'title' => 'required',
+                'subtitle' => 'required',
+                'link' => 'required',
+                'status' => 'required',
+                'image' => 'mimes:png,jpg,jpeg|max:2048',
+            ]
+        );
+
+        $slide = Slide::find($request->id);
+        $slide->tagline = $request->tagline;
+        $slide->title = $request->title;
+        $slide->subtitle = $request->subtitle;
+        $slide->link = $request->link;
+        $slide->status = $request->status;
+
+        if ($request->hasFile('image')) {
+
+            if (File::exists(public_path('uploads/slides') . '/' . $slide->image)) {
+                File::delete(public_path('uploads/slides') . '/' . $slide->image);
+            }
+
+
+
+            $image = $request->file('image');
+            $file_extention = $request->file('image')->extension();
+            $file_name = Carbon::now()->timestamp . "." . $file_extention;
+            $this->GenerateSlideImage($image, $file_name);
+            $slide->image = $file_name;
+        }
+
+        $slide->save();
+        return redirect()->route('admin.slides')->with('status', 'Slide has been updated successfully');
+    }
+
+    public function slide_delete($id)
+    {
+        $slide = Slide::find($id);
+
+        if (File::exists(public_path('uploads/slides') . '/' . $slide->image)) {
+            File::delete(public_path('uploads/slides') . '/' . $slide->image);
+        }
+
+        $slide->delete();
+        return redirect()->route('admin.slides')->with('status', 'Slide has been deleted successfully');
     }
 
 }
