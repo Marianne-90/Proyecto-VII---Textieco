@@ -11,7 +11,7 @@ COPY resources resources
 COPY public public
 
 # (Si usas Tailwind/PostCSS, también necesitas estos archivos si existen)
-# COPY postcss.config.js tailwind.config.js ./
+COPY postcss.config.js tailwind.config.js ./
 
 RUN npm run build
 
