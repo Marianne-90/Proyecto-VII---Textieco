@@ -220,7 +220,7 @@
                                 <tbody>
                                     <tr>
                                         <td class="text-center">1</td>
-                                        <td class="text-center">Divyansh Kumar</td>
+                                        <td class="text-center">Javier Morales</td>
                                         <td class="text-center">1234567891</td>
                                         <td class="text-center">$172.00</td>
                                         <td class="text-center">$36.12</td>
