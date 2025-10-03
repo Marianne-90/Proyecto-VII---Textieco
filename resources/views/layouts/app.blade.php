@@ -311,19 +311,19 @@
                 <div class="overflow-hidden">
                     <ul class="navigation__list list-unstyled position-relative">
                         <li class="navigation__item">
-                            <a href="{{ route('home.index') }}" class="navigation__link">Home</a>
+                            <a href="{{ route('home.index') }}" class="navigation__link">Inicio</a>
                         </li>
                         <li class="navigation__item">
-                            <a href="{{ route('shop.index') }}" class="navigation__link">Shop</a>
+                            <a href="{{ route('shop.index') }}" class="navigation__link">Comprar</a>
                         </li>
                         <li class="navigation__item">
-                            <a href="{{ route('cart.index') }}" class="navigation__link">Cart</a>
+                            <a href="{{ route('cart.index') }}" class="navigation__link">Carro</a>
                         </li>
                         <li class="navigation__item">
-                            <a href="about.html" class="navigation__link">About</a>
+                            <a href="about.html" class="navigation__link">nosotros</a>
                         </li>
                         <li class="navigation__item">
-                            <a href="contact.html" class="navigation__link">Contact</a>
+                            <a href="contact.html" class="navigation__link">contacto</a>
                         </li>
                     </ul>
                 </div>
@@ -335,7 +335,7 @@
                         xmlns="http://www.w3.org/2000/svg">
                         <use href="#icon_user" />
                     </svg>
-                    <span class="d-inline-block ms-2 text-uppercase align-middle fw-medium">My Account</span>
+                    <span class="d-inline-block ms-2 text-uppercase align-middle fw-medium">Mi cuenta</span>
                 </div>
 
 
@@ -400,19 +400,19 @@
                 <nav class="navigation">
                     <ul class="navigation__list list-unstyled d-flex">
                         <li class="navigation__item">
-                            <a href="{{ route('home.index') }}" class="navigation__link">Home</a>
+                            <a href="{{ route('home.index') }}" class="navigation__link">Inicio</a>
                         </li>
                         <li class="navigation__item">
-                            <a href="{{ route('shop.index') }}" class="navigation__link">Shop</a>
+                            <a href="{{ route('shop.index') }}" class="navigation__link">Comprar</a>
                         </li>
                         <li class="navigation__item">
-                            <a href="{{ route('cart.index') }}" class="navigation__link">Cart</a>
+                            <a href="{{ route('cart.index') }}" class="navigation__link">Carro</a>
                         </li>
                         <li class="navigation__item">
-                            <a href="about.html" class="navigation__link">About</a>
+                            <a href="about.html" class="navigation__link">nosotros</a>
                         </li>
                         <li class="navigation__item">
-                            <a href="contact.html" class="navigation__link">Contact</a>
+                            <a href="contact.html" class="navigation__link">contacto</a>
                         </li>
                     </ul>
                 </nav>
@@ -449,10 +449,10 @@
                                         <h6 class="sub-menu__title fs-base">Quicklinks</h6>
                                         <ul class="sub-menu__list list-unstyled">
                                             <li class="sub-menu__item"><a href="shop2.html"
-                                                    class="menu-link menu-link_us-s">New Arrivals</a>
+                                                    class="menu-link menu-link_us-s">Recién Llegados</a>
                                             </li>
                                             <li class="sub-menu__item"><a href="#"
-                                                    class="menu-link menu-link_us-s">Dresses</a></li>
+                                                    class="menu-link menu-link_us-s">Vestidos</a></li>
                                             <li class="sub-menu__item"><a href="shop3.html"
                                                     class="menu-link menu-link_us-s">Accessories</a>
                                             </li>
@@ -576,45 +576,44 @@
                 </div>
 
                 <div class="footer-column footer-menu mb-4 mb-lg-0">
-                    <h6 class="sub-menu__title text-uppercase">Company</h6>
+                    <h6 class="sub-menu__title text-uppercase">Compañía</h6>
                     <ul class="sub-menu__list list-unstyled">
-                        <li class="sub-menu__item"><a href="about-2.html" class="menu-link menu-link_us-s">About Us</a>
+                        <li class="sub-menu__item"><a href="about-2.html" class="menu-link menu-link_us-s">Sobre Nosotros</a>
                         </li>
-                        <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Careers</a></li>
-                        <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Affiliates</a></li>
+                        <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Carreras</a></li>
+                        <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Afiliados</a></li>
                         <li class="sub-menu__item"><a href="blog_list1.html" class="menu-link menu-link_us-s">Blog</a>
                         </li>
-                        <li class="sub-menu__item"><a href="contact-2.html" class="menu-link menu-link_us-s">Contact
-                                Us</a></li>
+                        <li class="sub-menu__item"><a href="contact-2.html" class="menu-link menu-link_us-s">Contáctenos</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column footer-menu mb-4 mb-lg-0">
-                    <h6 class="sub-menu__title text-uppercase">Shop</h6>
+                    <h6 class="sub-menu__title text-uppercase">Comprar</h6>
                     <ul class="sub-menu__list list-unstyled">
-                        <li class="sub-menu__item"><a href="shop2.html" class="menu-link menu-link_us-s">New
-                                Arrivals</a></li>
-                        <li class="sub-menu__item"><a href="shop3.html" class="menu-link menu-link_us-s">Accessories</a>
+                        <li class="sub-menu__item"><a href="shop2.html" class="menu-link menu-link_us-s">Nuevos
+                                Llegados</a></li>
+                        <li class="sub-menu__item"><a href="shop3.html" class="menu-link menu-link_us-s">Accesorios</a>
                         </li>
                         <li class="sub-menu__item"><a href="shop4.html" class="menu-link menu-link_us-s">Lorem Ipsum</a>
                         </li>
                         <li class="sub-menu__item"><a href="shop5.html" class="menu-link menu-link_us-s">Lorem Ipsum</a>
                         </li>
-                        <li class="sub-menu__item"><a href="shop1.html" class="menu-link menu-link_us-s">Shop All</a>
+                        <li class="sub-menu__item"><a href="shop1.html" class="menu-link menu-link_us-s">Ver Todo</a>
                         </li>
                     </ul>
                 </div>
 
                 <div class="footer-column footer-menu mb-4 mb-lg-0">
-                    <h6 class="sub-menu__title text-uppercase">Help</h6>
+                    <h6 class="sub-menu__title text-uppercase">Ayuda</h6>
                     <ul class="sub-menu__list list-unstyled">
-                        <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Customer Service</a>
+                        <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Servicio a Clientes</a>
                         </li>
-                        <li class="sub-menu__item"><a href="account_dashboard.html" class="menu-link menu-link_us-s">My
-                                Account</a>
+                        <li class="sub-menu__item"><a href="account_dashboard.html" class="menu-link menu-link_us-s">Mi
+                                Cuenta</a>
                         </li>
-                        <li class="sub-menu__item"><a href="store_location.html" class="menu-link menu-link_us-s">Find a
-                                Store</a>
+                        <li class="sub-menu__item"><a href="store_location.html" class="menu-link menu-link_us-s">Encontrar una
+                                Tienda</a>
                         </li>
                         <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Legal & Privacy</a></li>
                         <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Gift Card</a></li>
@@ -622,13 +621,13 @@
                 </div>
 
                 <div class="footer-column footer-menu mb-4 mb-lg-0">
-                    <h6 class="sub-menu__title text-uppercase">Categories</h6>
+                    <h6 class="sub-menu__title text-uppercase">Categorías</h6>
                     <ul class="sub-menu__list list-unstyled">
                         <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Lorem Ipsum</a></li>
                         <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Lorem Ipsum</a></li>
                         <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Lorem Ipsum</a></li>
                         <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Lorem Ipsum</a></li>
-                        <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Shop All</a></li>
+                        <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Ver Todo</a></li>
                     </ul>
                 </div>
             </div>
@@ -638,9 +637,9 @@
             <div class="container d-md-flex align-items-center">
                 <span class="footer-copyright me-auto">©2025 Textieco</span>
                 <div class="footer-settings d-md-flex align-items-center">
-                    <a href="privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms-conditions.html">Terms
+                    <a href="privacy-policy.html">Política de Privacidad</a> &nbsp;|&nbsp; <a href="terms-conditions.html">Términos
                         &amp;
-                        Conditions</a>
+                        Condiciones</a>
                 </div>
             </div>
         </div>
@@ -655,7 +654,7 @@
                         xmlns="http://www.w3.org/2000/svg">
                         <use href="#icon_home" />
                     </svg>
-                    <span>Home</span>
+                    <span>Inicio</span>
                 </a>
             </div>
 
@@ -665,7 +664,7 @@
                         xmlns="http://www.w3.org/2000/svg">
                         <use href="#icon_hanger" />
                     </svg>
-                    <span>Shop</span>
+                    <span>Comprar</span>
                 </a>
             </div>
 
@@ -678,7 +677,7 @@
                         </svg>
                         <span class="wishlist-amount d-block position-absolute js-wishlist-count">3</span>
                     </div>
-                    <span>Wishlist</span>
+                    <span>Lista de Deseos</span>
                 </a>
             </div>
         </div>

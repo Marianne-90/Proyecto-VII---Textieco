@@ -6,7 +6,7 @@
         <div class="main-content-inner">
             <div class="main-content-wrap">
                 <div class="flex items-center flex-wrap justify-between gap20 mb-27">
-                    <h3>Category infomation</h3>
+                    <h3>Categoría infomation</h3>
                     <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
                         <li>
                             <a href="{{ route('admin.index')}}">
@@ -18,14 +18,14 @@
                         </li>
                         <li>
                             <a href="{{ route('admin.categories') }}">
-                                <div class="text-tiny">Categories</div>
+                                <div class="text-tiny">Categorías</div>
                             </a>
                         </li>
                         <li>
                             <i class="icon-chevron-right"></i>
                         </li>
                         <li>
-                            <div class="text-tiny">Edit Category</div>
+                            <div class="text-tiny">Edit Categoría</div>
                         </li>
                     </ul>
                 </div>
@@ -37,20 +37,20 @@
                         @csrf
                         <input type="hidden" name="id" value="{{ $category->id }}"/>
                         <fieldset class="name">
-                            <div class="body-title">Category Name <span class="tf-color-1">*</span></div>
+                            <div class="body-title">Categoría Nombre <span class="tf-color-1">*</span></div>
                             <input class="flex-grow" type="text" placeholder="Category name" name="name" tabindex="0"
                                 value="{{ $category->name }}" aria-required="true" required="">
                         </fieldset>
                         @error('name')<span class="alert alert-danger text-center">{{ $message }}</span>@enderror
                         <fieldset class="name">
-                            <div class="body-title">Category Slug <span class="tf-color-1">*</span></div>
+                            <div class="body-title">Categoría Slug <span class="tf-color-1">*</span></div>
                             <input class="flex-grow" type="text" placeholder="Category Slug" name="slug" tabindex="0"
                                 value="{{ $category->slug }}" aria-required="true" required="">
                         </fieldset>
                         @error('slug')<span class="alert alert-danger text-center">{{ $message }}</span>@enderror
 
                         <fieldset>
-                            <div class="body-title">Upload images <span class="tf-color-1">*</span>
+                            <div class="body-title">Subir Imágenes <span class="tf-color-1">*</span>
                             </div>
                             <div class="upload-image flex-grow">
 
@@ -64,7 +64,7 @@
                                         <span class="icon">
                                             <i class="icon-upload-cloud"></i>
                                         </span>
-                                        <span class="body-text">Drop your images here or select <span class="tf-color">click
+                                        <span class="body-text">Arrastra tus imágenes o selecciona <span class="tf-color">click
                                                 to browse</span></span>
                                         <input type="file" id="myFile" name="image" accept="image/*">
                                     </label>
@@ -76,7 +76,7 @@
 
                         <div class="bot">
                             <div></div>
-                            <button class="tf-button w208" type="submit">Save</button>
+                            <button class="tf-button w208" type="submit">Guardar</button>
                         </div>
                     </form>
                 </div>

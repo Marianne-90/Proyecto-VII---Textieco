@@ -32,7 +32,7 @@
                             <button class="accordion-button p-0 border-0 fs-5 text-uppercase" type="button"
                                 data-bs-toggle="collapse" data-bs-target="#accordion-filter-1" aria-expanded="true"
                                 aria-controls="accordion-filter-1">
-                                Product Categories
+                                Categorías de Producto
                                 <svg class="accordion-button__icon type2" viewBox="0 0 10 6"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <g aria-hidden="true" stroke="none" fill-rule="evenodd">
@@ -53,7 +53,7 @@
                                                     value="{{ $category->id }}" @if(in_array($category->id, explode(',', $f_categories))) checked @endif>
                                                 {{ $category->name }}
                                             </span>
-                                            <span class="text-right float-end">{{ $category->products->count() }}</span>
+                                            <span class="text-right float-end">{{ $category->Productos->count() }}</span>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -106,7 +106,7 @@
                             <button class="accordion-button p-0 border-0 fs-5 text-uppercase" type="button"
                                 data-bs-toggle="collapse" data-bs-target="#accordion-filter-brand" aria-expanded="true"
                                 aria-controls="accordion-filter-brand">
-                                Brands
+                                Marcas
                                 <svg class="accordion-button__icon type2" viewBox="0 0 10 6"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <g aria-hidden="true" stroke="none" fill-rule="evenodd">
@@ -127,7 +127,7 @@
                                                     @if(in_array($brand->id, explode(',', $f_brands))) checked @endif>
                                                 {{ $brand->name }}
                                             </span>
-                                            <span class="text-right float-end">{{ $brand->products->count() }}</span>
+                                            <span class="text-right float-end">{{ $brand->Productos->count() }}</span>
                                         </li>
                                     @endforeach
 
@@ -144,7 +144,7 @@
                             <button class="accordion-button p-0 border-0 fs-5 text-uppercase" type="button"
                                 data-bs-toggle="collapse" data-bs-target="#accordion-filter-price" aria-expanded="true"
                                 aria-controls="accordion-filter-price">
-                                Price
+                                Precio
                                 <svg class="accordion-button__icon type2" viewBox="0 0 10 6"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <g aria-hidden="true" stroke="none" fill-rule="evenodd">
@@ -161,11 +161,11 @@
                                 data-currency="$" />
                             <div class="price-range__info d-flex align-items-center mt-2">
                                 <div class="me-auto">
-                                    <span class="text-secondary">Min Price: </span>
+                                    <span class="text-secondary">Precio Min: </span>
                                     <span class="price-range__min">$250</span>
                                 </div>
                                 <div>
-                                    <span class="text-secondary">Max Price: </span>
+                                    <span class="text-secondary">Precio Max: </span>
                                     <span class="price-range__max">$450</span>
                                 </div>
                             </div>
@@ -268,33 +268,33 @@
                 <div class="d-flex justify-content-between mb-4 pb-md-2">
                     <div class="breadcrumb mb-0 d-none d-md-block flex-grow-1">
                         <a href="{{ route('home.index') }}"
-                            class="menu-link menu-link_us-s text-uppercase fw-medium">Home</a>
+                            class="menu-link menu-link_us-s text-uppercase fw-medium">Inicio</a>
                         <span class="breadcrumb-separator menu-link fw-medium ps-1 pe-1">/</span>
-                        <a href="#" class="menu-link menu-link_us-s text-uppercase fw-medium">The Shop</a>
+                        <a href="#" class="menu-link menu-link_us-s text-uppercase fw-medium">Comprar</a>
                     </div>
 
                     <div
                         class="shop-acs d-flex align-items-center justify-content-between justify-content-md-end flex-grow-1">
                         <select class="shop-acs__select form-select w-auto border-0 py-0 order-1 order-md-0"
                             aria-label="Page Size" name="pagesize" id="pagesize" style="margin-right:20px;">
-                            <option value="12" {{ $size == 12 ? 'selected' : '' }}>Show</option>
+                            <option value="12" {{ $size == 12 ? 'selected' : '' }}>Ver</option>
                             <option value="24" {{ $size == 24 ? 'selected' : '' }}>24</option>
                             <option value="48" {{ $size == 48 ? 'selected' : '' }}>48</option>
                             <option value="102" {{ $size == 102 ? 'selected' : '' }}>102</option>
                         </select>
                         <select class="shop-acs__select form-select w-auto border-0 py-0 order-1 order-md-0"
                             aria-label="Sort Items" name="orderby" id="orderby">
-                            <option value="-1" {{ $order == -1 ? 'selected' : '' }}>Default</option>
-                            <option value="1" {{ $order == 1 ? 'selected' : '' }}>Date, new to old</option>
-                            <option value="2" {{ $order == 2 ? 'selected' : '' }}>Date, old to new</option>
-                            <option value="3" {{ $order == 3 ? 'selected' : '' }}>Price, low to high</option>
-                            <option value="4" {{ $order == 4 ? 'selected' : '' }}>Price, high to low</option>
+                            <option value="-1" {{ $order == -1 ? 'selected' : '' }}>Orden</option>
+                            <option value="1" {{ $order == 1 ? 'selected' : '' }}>Fecha, nueva a antigua</option>
+                            <option value="2" {{ $order == 2 ? 'selected' : '' }}>Fecha, antigua a nueva</option>
+                            <option value="3" {{ $order == 3 ? 'selected' : '' }}>Precio, bajo a alto</option>
+                            <option value="4" {{ $order == 4 ? 'selected' : '' }}>Precio, alto a bajo</option>
                         </select>
 
                         <div class="shop-asc__seprator mx-3 bg-light d-none d-md-block order-md-0"></div>
 
                         <div class="col-size align-items-center order-1 d-none d-lg-flex">
-                            <span class="text-uppercase fw-medium me-2">View</span>
+                            <span class="text-uppercase fw-medium me-2">Listar</span>
                             <button class="btn-link fw-medium me-2 js-cols-size" data-target="products-grid"
                                 data-cols="2">2</button>
                             <button class="btn-link fw-medium me-2 js-cols-size" data-target="products-grid"
@@ -353,7 +353,7 @@
                                     @if(Cart::instance('cart')->content()->where('id', $product->id)->count() > 0)
                                         <a href="{{ route('cart.index') }}"
                                             class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-mediumbtn btn-warning mb-3">View
-                                            Cart</a>
+                                            Carro</a>
                                     @else
                                         <form name="addtocart-form" method="post" action="{{ route('cart.add') }}">
                                             @csrf
@@ -364,13 +364,13 @@
                                                 value="{{ $product->sale_price < $product->regular_price ? $product->sale_price : $product->regular_price }}">
                                             <button type="submit"
                                                 class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium"
-                                                data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
+                                                data-aside="cartDrawer" title="Add To Cart">Añadir al Carrito</button>
                                         </form>
                                     @endif
                                 </div>
 
                                 <div class="pc__info position-relative">
-                                    <p class="pc__category">{{ $product->category->name }}</p>
+                                    <p class="pc__category">{{ $product->Categoría->name }}</p>
                                     <h6 class="pc__title"><a
                                             href="{{ route('shop.product.details', ['product_slug' => $product->slug]) }}">{{ $product->name }}</a>
                                     </h6>
@@ -401,7 +401,7 @@
                                                 <use href="#icon_star" />
                                             </svg>
                                         </div>
-                                        <span class="reviews-note text-lowercase text-secondary ms-1">8k+ reviews</span>
+                                        <span class="reviews-note text-lowercase text-secondary ms-1">8k+ comentarios</span>
                                     </div>
 
                                     <button

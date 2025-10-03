@@ -14,7 +14,7 @@
                                         <i class="icon-shopping-bag"></i>
                                     </div>
                                     <div>
-                                        <div class="body-text mb-2">Total Orders</div>
+                                        <div class="body-text mb-2">Total de Órdenes</div>
                                         <h4>3</h4>
                                     </div>
                                 </div>
@@ -171,7 +171,7 @@
                             <div class="mb-2">
                                 <div class="block-legend">
                                     <div class="dot t2"></div>
-                                    <div class="text-tiny">Order</div>
+                                    <div class="text-tiny">Orden</div>
                                 </div>
                             </div>
                             <div class="flex items-center gap10">
@@ -203,15 +203,15 @@
                             <table class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
-                                        <th style="width: 80px">OrderNo</th>
-                                        <th>Name</th>
+                                        <th style="width: 80px">OrdenNo</th>
+                                        <th>Nombre</th>
                                         <th class="text-center">Phone</th>
                                         <th class="text-center">Subtotal</th>
                                         <th class="text-center">Tax</th>
                                         <th class="text-center">Total</th>
 
                                         <th class="text-center">Status</th>
-                                        <th class="text-center">Order Date</th>
+                                        <th class="text-center">Orden Date</th>
                                         <th class="text-center">Total Items</th>
                                         <th class="text-center">Delivered On</th>
                                         <th></th>
@@ -226,7 +226,7 @@
                                         <td class="text-center">$36.12</td>
                                         <td class="text-center">$208.12</td>
 
-                                        <td class="text-center">ordered</td>
+                                        <td class="text-center">Ordened</td>
                                         <td class="text-center">2024-07-11 00:54:14</td>
                                         <td class="text-center">2</td>
                                         <td></td>

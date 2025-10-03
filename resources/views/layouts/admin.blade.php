@@ -49,7 +49,7 @@
                     </div>
                     <div class="center">
                         <div class="center-item">
-                            <div class="center-heading">Main Home</div>
+                            <div class="center-heading">Inicio</div>
                             <ul class="menu-list">
                                 <li class="menu-item">
                                     <a href="{{ route('admin.index') }}" class="">
@@ -64,17 +64,17 @@
                                 <li class="menu-item has-children">
                                     <a href="javascript:void(0);" class="menu-item-button">
                                         <div class="icon"><i class="icon-shopping-cart"></i></div>
-                                        <div class="text">Products</div>
+                                        <div class="text">Productos</div>
                                     </a>
                                     <ul class="sub-menu">
                                         <li class="sub-menu-item">
                                             <a href="{{ route('admin.product.add') }}" class="">
-                                                <div class="text">Add Product</div>
+                                                <div class="text">Nuevo</div>
                                             </a>
                                         </li>
                                         <li class="sub-menu-item">
                                             <a href="{{ route('admin.products') }}" class="">
-                                                <div class="text">Products</div>
+                                                <div class="text">Productos</div>
                                             </a>
                                         </li>
                                     </ul>
@@ -82,17 +82,17 @@
                                 <li class="menu-item has-children">
                                     <a href="javascript:void(0);" class="menu-item-button">
                                         <div class="icon"><i class="icon-layers"></i></div>
-                                        <div class="text">Brand</div>
+                                        <div class="text">Marca</div>
                                     </a>
                                     <ul class="sub-menu">
                                         <li class="sub-menu-item">
                                             <a href="{{ route('admin.brand.add') }}" class="">
-                                                <div class="text">New Brand</div>
+                                                <div class="text">Nuevo</div>
                                             </a>
                                         </li>
                                         <li class="sub-menu-item">
                                             <a href="{{ route('admin.brands') }}" class="">
-                                                <div class="text">Brands</div>
+                                                <div class="text">Marcas</div>
                                             </a>
                                         </li>
                                     </ul>
@@ -100,17 +100,17 @@
                                 <li class="menu-item has-children">
                                     <a href="javascript:void(0);" class="menu-item-button">
                                         <div class="icon"><i class="icon-layers"></i></div>
-                                        <div class="text">Category</div>
+                                        <div class="text">Categoría</div>
                                     </a>
                                     <ul class="sub-menu">
                                         <li class="sub-menu-item">
                                             <a href={{ route('admin.category.add') }} class="">
-                                                <div class="text">New Category</div>
+                                                <div class="text">Nueva Categoría</div>
                                             </a>
                                         </li>
                                         <li class="sub-menu-item">
                                             <a href={{ route('admin.categories') }} class="">
-                                                <div class="text">Categories</div>
+                                                <div class="text">Categorías</div>
                                             </a>
                                         </li>
                                     </ul>
@@ -119,17 +119,17 @@
                                 <li class="menu-item has-children">
                                     <a href="javascript:void(0);" class="menu-item-button">
                                         <div class="icon"><i class="icon-file-plus"></i></div>
-                                        <div class="text">Order</div>
+                                        <div class="text">Orden</div>
                                     </a>
                                     <ul class="sub-menu">
                                         <li class="sub-menu-item">
                                             <a href="orders.html" class="">
-                                                <div class="text">Orders</div>
+                                                <div class="text">Ordenes</div>
                                             </a>
                                         </li>
                                         <li class="sub-menu-item">
                                             <a href="order-tracking.html" class="">
-                                                <div class="text">Order tracking</div>
+                                                <div class="text">Seguimiento</div>
                                             </a>
                                         </li>
                                     </ul>
@@ -137,27 +137,27 @@
                                 <li class="menu-item">
                                     <a href="slider.html" class="">
                                         <div class="icon"><i class="icon-image"></i></div>
-                                        <div class="text">Slider</div>
+                                        <div class="text">Galería</div>
                                     </a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="coupons.html" class="">
                                         <div class="icon"><i class="icon-grid"></i></div>
-                                        <div class="text">Coupns</div>
+                                        <div class="text">Cupones</div>
                                     </a>
                                 </li>
 
                                 <li class="menu-item">
                                     <a href="users.html" class="">
                                         <div class="icon"><i class="icon-user"></i></div>
-                                        <div class="text">User</div>
+                                        <div class="text">Usuario</div>
                                     </a>
                                 </li>
 
                                 <li class="menu-item">
                                     <a href="settings.html" class="">
                                         <div class="icon"><i class="icon-settings"></i></div>
-                                        <div class="text">Settings</div>
+                                        <div class="text">Configuración</div>
                                     </a>
                                 </li>
 
@@ -168,7 +168,7 @@
                                         <a href="{{ route('logout') }}" class=""
                                             onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                             <div class="icon"><i class="icon-settings"></i></div>
-                                            <div class="text">Logout</div>
+                                            <div class="text">Salir</div>
                                         </a>
                                     </form>
                                 </li>
@@ -193,7 +193,7 @@
 
                                 <form class="form-search flex-grow">
                                     <fieldset class="name">
-                                        <input type="text" placeholder="Search here..." class="show-search" name="name"
+                                        <input type="text" placeholder="Buscar..." class="show-search" name="name"
                                             tabindex="2" value="" aria-required="true" required="">
                                     </fieldset>
                                     <div class="button-submit">
@@ -253,7 +253,7 @@
                                         </ul>
                                         <ul class="">
                                             <li class="mb-14">
-                                                <div class="body-title">Order product</div>
+                                                <div class="body-title">Orden product</div>
                                             </li>
                                             <li class="mb-14">
                                                 <div class="divider"></div>
@@ -366,7 +366,7 @@
                                                         <i class="icon-noti-3"></i>
                                                     </div>
                                                     <div>
-                                                        <div class="body-title-2">Order shipped successfully</div>
+                                                        <div class="body-title-2">Orden shipped successfully</div>
                                                         <div class="text-tiny">Integer aliquam eros nec sollicitudin
                                                             sollicitudin</div>
                                                     </div>
@@ -378,7 +378,7 @@
                                                         <i class="icon-noti-4"></i>
                                                     </div>
                                                     <div>
-                                                        <div class="body-title-2">Order pending: <span>ID 305830</span>
+                                                        <div class="body-title-2">Orden pending: <span>ID 305830</span>
                                                         </div>
                                                         <div class="text-tiny">Ultricies at rhoncus at ullamcorper</div>
                                                     </div>
@@ -401,7 +401,7 @@
                                                     <img src="images/avatar/user-1.png" alt="">
                                                 </span>
                                                 <span class="flex flex-column">
-                                                    <span class="body-title mb-2">User Name</span>
+                                                    <span class="body-title mb-2">Usuario Nombre</span>
                                                     <span class="text-tiny">Admin</span>
                                                 </span>
                                             </span>

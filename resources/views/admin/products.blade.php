@@ -27,7 +27,7 @@
                         <div class="wg-filter flex-grow">
                             <form class="form-search">
                                 <fieldset class="name">
-                                    <input type="text" placeholder="Search here..." class="" name="name" tabindex="2"
+                                    <input type="text" placeholder="Buscar..." class="" name="name" tabindex="2"
                                         value="" aria-required="true" required="">
                                 </fieldset>
                                 <div class="button-submit">
@@ -36,7 +36,7 @@
                             </form>
                         </div>
                         <a class="tf-button style-1 w208" href="{{ route('admin.product.add') }}"><i
-                                class="icon-plus"></i>Add new</a>
+                                class="icon-plus"></i>Añadir Nuevo</a>
                     </div>
                     <div class="table-responsive">
                         @if(Session::has('status'))
@@ -47,15 +47,15 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Name</th>
+                                    <th>Nombre</th>
                                     <th>Price</th>
                                     <th>SalePrice</th>
                                     <th>SKU</th>
-                                    <th>Category</th>
-                                    <th>Brand</th>
-                                    <th>Featured</th>
+                                    <th>Categoría</th>
+                                    <th>Marca</th>
+                                    <th>Premium/th>
                                     <th>Stock</th>
-                                    <th>Quantity</th>
+                                    <th>Cantidad/th>
                                     <th>Action</th>
                                 </tr>
                             </thead>

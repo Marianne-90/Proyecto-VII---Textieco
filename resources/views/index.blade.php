@@ -26,12 +26,11 @@
             </div>
             <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
               <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-                New Arrivals</h6>
+                Recién Llegados</h6>
               <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Lorem Ipsum</h2>
               <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Lorem Ipsum</h2>
               <a href="#"
-                class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
-                Now</a>
+                class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Comprar Ahora</a>
             </div>
           </div>
         </div>
@@ -49,12 +48,11 @@
             </div>
             <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
               <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-                New Arrivals</h6>
+                Recién Llegados</h6>
               <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Lorem Ipsum</h2>
               <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Ipsum</h2>
               <a href="#"
-                class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
-                Now</a>
+                class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Comprar Ahora</a>
             </div>
           </div>
         </div>
@@ -68,12 +66,11 @@
             </div>
             <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
               <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-                New Arrivals</h6>
+                Recién Llegados</h6>
               <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Lorem Ipsum</h2>
               <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Lorem Ipsum</h2>
               <a href="#"
-                class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
-                Now</a>
+                class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Comprar Ahora</a>
             </div>
           </div>
         </div>
@@ -91,28 +88,28 @@
       <div class="mb-3 mb-xl-5 pt-1 pb-4"></div>
 
       <section class="hot-deals container">
-        <h2 class="section-title text-center mb-3 pb-xl-3 mb-xl-4">Hot Deals</h2>
+        <h2 class="section-title text-center mb-3 pb-xl-3 mb-xl-4">Ofertas Destacadas</h2>
         <div class="row">
           <div
             class="col-md-6 col-lg-4 col-xl-20per d-flex align-items-center flex-column justify-content-center py-4 align-items-md-start">
-            <h2>Summer Sale</h2>
-            <h2 class="fw-bold">Up to 60% Off</h2>
+            <h2>Ofertas de Otoño</h2>
+            <h2 class="fw-bold">Hasta 60% de descuento</h2>
 
             <div class="position-relative d-flex align-items-center text-center pt-xxl-4 js-countdown mb-3"
               data-date="18-3-2024" data-time="06:50">
               <div class="day countdown-unit">
                 <span class="countdown-num d-block"></span>
-                <span class="countdown-word text-uppercase text-secondary">Days</span>
+                <span class="countdown-word text-uppercase text-secondary">Días</span>
               </div>
 
               <div class="hour countdown-unit">
                 <span class="countdown-num d-block"></span>
-                <span class="countdown-word text-uppercase text-secondary">Hours</span>
+                <span class="countdown-word text-uppercase text-secondary">Horas</span>
               </div>
 
               <div class="min countdown-unit">
                 <span class="countdown-num d-block"></span>
-                <span class="countdown-word text-uppercase text-secondary">Mins</span>
+                <span class="countdown-word text-uppercase text-secondary">Minutos</span>
               </div>
 
               <div class="sec countdown-unit">
@@ -121,7 +118,7 @@
               </div>
             </div>
 
-            <a href="#" class="btn-link default-underline text-uppercase fw-medium mt-3">View All</a>
+            <a href="#" class="btn-link default-underline text-uppercase fw-medium mt-3">Ver Todo</a>
           </div>
           <div class="col-md-6 col-lg-8 col-xl-80per">
             <div class="position-relative">
@@ -178,10 +175,10 @@
                       <div
                         class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                         <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                          data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
+                          data-aside="cartDrawer" title="Añadir al Carrito">Añadir</button>
                         <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                          data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                          <span class="d-none d-xxl-block">Quick View</span>
+                          data-bs-toggle="modal" data-bs-target="#quickView" title="Vista Rápida">
+                          <span class="d-none d-xxl-block">Vista Rápida</span>
                           <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
                               <use href="#icon_view" />
@@ -215,10 +212,10 @@
                       <div
                         class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                         <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                          data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
+                          data-aside="cartDrawer" title="Add To Cart">Añadir</button>
                         <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                          data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                          <span class="d-none d-xxl-block">Quick View</span>
+                          data-bs-toggle="modal" data-bs-target="#quickView" title="Vista Rápida">
+                          <span class="d-none d-xxl-block">Vista Rápida</span>
                           <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
                               <use href="#icon_view" />
@@ -252,10 +249,10 @@
                       <div
                         class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                         <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                          data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
+                          data-aside="cartDrawer" title="Add To Cart">Añadir</button>
                         <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                          data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                          <span class="d-none d-xxl-block">Quick View</span>
+                          data-bs-toggle="modal" data-bs-target="#quickView" title="Vista Rápida">
+                          <span class="d-none d-xxl-block">Vista Rápida</span>
                           <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
                               <use href="#icon_view" />
@@ -290,10 +287,10 @@
                       <div
                         class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                         <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                          data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
+                          data-aside="cartDrawer" title="Añadir al Carrito">Añadir</button>
                         <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                          data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                          <span class="d-none d-xxl-block">Quick View</span>
+                          data-bs-toggle="modal" data-bs-target="#quickView" title="Vista Rápida">
+                          <span class="d-none d-xxl-block">Vista Rápida</span>
                           <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
                               <use href="#icon_view" />
@@ -327,10 +324,10 @@
                       <div
                         class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                         <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                          data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
+                          data-aside="cartDrawer" title="Añadir al Carrito">Añadir</button>
                         <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                          data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                          <span class="d-none d-xxl-block">Quick View</span>
+                          data-bs-toggle="modal" data-bs-target="#quickView" title="Vista Rápida">
+                          <span class="d-none d-xxl-block">Vista Rápida</span>
                           <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
                               <use href="#icon_view" />
@@ -364,10 +361,10 @@
                       <div
                         class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                         <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                          data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
+                          data-aside="cartDrawer" title="Añadir al Carrito">Añadir</button>
                         <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                          data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                          <span class="d-none d-xxl-block">Quick View</span>
+                          data-bs-toggle="modal" data-bs-target="#quickView" title="Vista Rápida">
+                          <span class="d-none d-xxl-block">Vista Rápida</span>
                           <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
                               <use href="#icon_view" />
@@ -401,10 +398,10 @@
                       <div
                         class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                         <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                          data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
+                          data-aside="cartDrawer" title="Añadir al Carrito">Añadir</button>
                         <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                          data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                          <span class="d-none d-xxl-block">Quick View</span>
+                          data-bs-toggle="modal" data-bs-target="#quickView" title="Vista Rápida">
+                          <span class="d-none d-xxl-block">Vista Rápida</span>
                           <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
                               <use href="#icon_view" />
@@ -439,10 +436,10 @@
                       <div
                         class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                         <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                          data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
+                          data-aside="cartDrawer" title="Add To Cart">Añadir</button>
                         <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                          data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                          <span class="d-none d-xxl-block">Quick View</span>
+                          data-bs-toggle="modal" data-bs-target="#quickView" title="Vista Rápida">
+                          <span class="d-none d-xxl-block">Vista Rápida</span>
                           <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
                               <use href="#icon_view" />
@@ -473,11 +470,11 @@
               <img loading="lazy" class="h-auto" src="{{asset('assets/images/home/demo3/category_9.jpg')}}" width="690" height="665"
                 alt="" />
               <div class="category-banner__item-mark">
-                Starting at $19
+                Desde $19
               </div>
               <div class="category-banner__item-content">
                 <h3 class="mb-0">Lorem Ipsum</h3>
-                <a href="#" class="btn-link default-underline text-uppercase fw-medium">Shop Now</a>
+                <a href="#" class="btn-link default-underline text-uppercase fw-medium">Comprar</a>
               </div>
             </div>
           </div>
@@ -486,11 +483,11 @@
               <img loading="lazy" class="h-auto" src="{{asset('assets/images/home/demo3/category_10.jpg')}}" width="690" height="665"
                 alt="" />
               <div class="category-banner__item-mark">
-                Starting at $19
+                Desde $19
               </div>
               <div class="category-banner__item-content">
                 <h3 class="mb-0">Lorem Ipsum</h3>
-                <a href="#" class="btn-link default-underline text-uppercase fw-medium">Shop Now</a>
+                <a href="#" class="btn-link default-underline text-uppercase fw-medium">Comprar</a>
               </div>
             </div>
           </div>
@@ -500,7 +497,7 @@
       <div class="mb-3 mb-xl-5 pt-1 pb-4"></div>
 
       <section class="products-grid container">
-        <h2 class="section-title text-center mb-3 pb-xl-3 mb-xl-4">Featured Products</h2>
+        <h2 class="section-title text-center mb-3 pb-xl-3 mb-xl-4">Productos Premium</h2>
 
         <div class="row">
           <div class="col-6 col-md-4 col-lg-3">
@@ -521,10 +518,10 @@
                 <div
                   class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                   <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                    data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
+                    data-aside="cartDrawer" title="Add To Cart">Añadir</button>
                   <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
                     data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                    <span class="d-none d-xxl-block">Quick View</span>
+                    <span class="d-none d-xxl-block">Ver</span>
                     <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <use href="#icon_view" />
@@ -557,10 +554,10 @@
                 <div
                   class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                   <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                    data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
+                    data-aside="cartDrawer" title="Add To Cart">Añadir</button>
                   <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
                     data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                    <span class="d-none d-xxl-block">Quick View</span>
+                    <span class="d-none d-xxl-block">Ver</span>
                     <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <use href="#icon_view" />
@@ -582,7 +579,7 @@
                   <img loading="lazy" src="{{asset('assets/images/home/demo3/product-6.jpg')}}" width="330" height="400"
                     alt="Cropped Faux leather Jacket" class="pc__img">
                 </a>
-                <div class="product-label text-uppercase bg-white top-0 left-0 mt-2 mx-2">New</div>
+                <div class="product-label text-uppercase bg-white top-0 left-0 mt-2 mx-2">Nuevo</div>
               </div>
 
               <div class="pc__info position-relative">
@@ -594,10 +591,10 @@
                 <div
                   class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                   <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                    data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
+                    data-aside="cartDrawer" title="Add To Cart">Añadir</button>
                   <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
                     data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                    <span class="d-none d-xxl-block">Quick View</span>
+                    <span class="d-none d-xxl-block">Ver</span>
                     <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <use href="#icon_view" />
@@ -632,10 +629,10 @@
                 <div
                   class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                   <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                    data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
+                    data-aside="cartDrawer" title="Add To Cart">Añadir</button>
                   <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
                     data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                    <span class="d-none d-xxl-block">Quick View</span>
+                    <span class="d-none d-xxl-block">Ver</span>
                     <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <use href="#icon_view" />
@@ -668,10 +665,10 @@
                 <div
                   class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                   <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                    data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
+                    data-aside="cartDrawer" title="Add To Cart">Añadir</button>
                   <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
                     data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                    <span class="d-none d-xxl-block">Quick View</span>
+                    <span class="d-none d-xxl-block">Ver</span>
                     <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <use href="#icon_view" />
@@ -704,10 +701,10 @@
                 <div
                   class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                   <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                    data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
+                    data-aside="cartDrawer" title="Add To Cart">Añadir</button>
                   <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
                     data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                    <span class="d-none d-xxl-block">Quick View</span>
+                    <span class="d-none d-xxl-block">Ver</span>
                     <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <use href="#icon_view" />
@@ -740,10 +737,10 @@
                 <div
                   class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                   <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                    data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
+                    data-aside="cartDrawer" title="Add To Cart">Añadir</button>
                   <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
                     data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                    <span class="d-none d-xxl-block">Quick View</span>
+                    <span class="d-none d-xxl-block">Ver</span>
                     <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <use href="#icon_view" />
@@ -777,10 +774,10 @@
                 <div
                   class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                   <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                    data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
+                    data-aside="cartDrawer" title="Add To Cart">Añadir</button>
                   <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
                     data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                    <span class="d-none d-xxl-block">Quick View</span>
+                    <span class="d-none d-xxl-block">Ver</span>
                     <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <use href="#icon_view" />
@@ -798,7 +795,7 @@
         </div><!-- /.row -->
 
         <div class="text-center mt-2">
-          <a class="btn-link btn-link_lg default-underline text-uppercase fw-medium" href="#">Load More</a>
+          <a class="btn-link btn-link_lg default-underline text-uppercase fw-medium" href="#">Cargar Más</a>
         </div>
       </section>
     </div>

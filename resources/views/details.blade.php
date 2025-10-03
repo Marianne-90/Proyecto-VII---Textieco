@@ -70,9 +70,9 @@
                 <div class="col-lg-5">
                     <div class="d-flex justify-content-between mb-4 pb-md-2">
                         <div class="breadcrumb mb-0 d-none d-md-block flex-grow-1">
-                            <a href="#" class="menu-link menu-link_us-s text-uppercase fw-medium">Home</a>
+                            <a href="#" class="menu-link menu-link_us-s text-uppercase fw-medium">Inicio</a>
                             <span class="breadcrumb-separator menu-link fw-medium ps-1 pe-1">/</span>
-                            <a href="#" class="menu-link menu-link_us-s text-uppercase fw-medium">The Shop</a>
+                            <a href="#" class="menu-link menu-link_us-s text-uppercase fw-medium">Comprar</a>
                         </div><!-- /.breadcrumb -->
 
                         <div
@@ -107,7 +107,7 @@
                                 <use href="#icon_star" />
                             </svg>
                         </div>
-                        <span class="reviews-note text-lowercase text-secondary ms-1">8k+ reviews</span>
+                        <span class="reviews-note text-lowercase text-secondary ms-1">8k+ Reseñas</span>
                     </div>
                     <div class="product-single__price">
                         <span class="current-price"> @if ($product->sale_price < $product->regular_price)
@@ -120,7 +120,7 @@
                         <p>{{ $product->short_description }}</p>
                     </div>
                     @if(Cart::instance('cart')->content()->where('id', $product->id)->count() > 0)
-                        <a href="{{ route('cart.index') }}" class="btn btn-warning mb-3">View Cart</a>
+                        <a href="{{ route('cart.index') }}" class="btn btn-warning mb-3">Ver Carrito</a>
                     @else
                         <form name="addtocart-form" method="post" action="{{ route('cart.add') }}">
                             @csrf
@@ -135,8 +135,7 @@
                                 <input type="hidden" name="name" value="{{ $product->name }}">
                                 <input type="hidden" name="price"
                                     value="{{ $product->sale_price < $product->regular_price ? $product->sale_price : $product->regular_price }}">
-                                <button type="submit" class="btn btn-primary btn-addtocart" data-aside="cartDrawer">Add to
-                                    Cart</button>
+                                <button type="submit" class="btn btn-primary btn-addtocart" data-aside="cartDrawer">Añadir al Carrito</button>
                             </div>
                         </form>
                     @endif
@@ -144,7 +143,7 @@
                         <a href="#" class="menu-link menu-link_us-s add-to-wishlist"><svg width="16" height="16"
                                 viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <use href="#icon_heart" />
-                            </svg><span>Add to Wishlist</span></a>
+                            </svg><span>Añadir a favoritos</span></a>
                         <share-button class="share-button">
                             <button
                                 class="menu-link menu-link_us-s to-share border-0 bg-transparent d-flex align-items-center">
@@ -152,7 +151,7 @@
                                     xmlns="http://www.w3.org/2000/svg">
                                     <use href="#icon_sharing" />
                                 </svg>
-                                <span>Share</span>
+                                <span>Compartir</span>
                             </button>
                             <details id="Details-share-template__main" class="m-1 xl:m-1.5" hidden="">
                                 <summary class="btn-solid m-1 xl:m-1.5 pt-3.5 pb-3 px-5">+</summary>
@@ -186,8 +185,8 @@
                             <span>{{$product->SKU}}</span>
                         </div>
                         <div class="meta-item">
-                            <label>Categories:</label>
-                            <span>{{$product->category->name}}</span>
+                            <label>Categorías:</label>
+                            <span>{{$product->Categoría->name}}</span>
                         </div>
                         <div class="meta-item">
                             <label>Tags:</label>
@@ -201,23 +200,23 @@
                     <li class="nav-item" role="presentation">
                         <a class="nav-link nav-link_underscore active" id="tab-description-tab" data-bs-toggle="tab"
                             href="#tab-description" role="tab" aria-controls="tab-description"
-                            aria-selected="true">Description</a>
+                            aria-selected="true">Descripción</a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link nav-link_underscore" id="tab-additional-info-tab" data-bs-toggle="tab"
                             href="#tab-additional-info" role="tab" aria-controls="tab-additional-info"
-                            aria-selected="false">Additional Information</a>
+                            aria-selected="false">Información Adicional</a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link nav-link_underscore" id="tab-reviews-tab" data-bs-toggle="tab"
-                            href="#tab-reviews" role="tab" aria-controls="tab-reviews" aria-selected="false">Reviews (2)</a>
+                            href="#tab-reviews" role="tab" aria-controls="tab-reviews" aria-selected="false">Reseñas (2)</a>
                     </li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="tab-description" role="tabpanel"
                         aria-labelledby="tab-description-tab">
                         <div class="product-single__description">
-                            <p>{{$product->description}}</p>
+                            <p>{{$product->Descripción}}</p>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="tab-additional-info" role="tabpanel"
@@ -225,7 +224,7 @@
                         <p> ... </p>
                     </div>
                     <div class="tab-pane fade" id="tab-reviews" role="tabpanel" aria-labelledby="tab-reviews-tab">
-                        <h2 class="product-single__reviews-title">Reviews</h2>
+                        <h2 class="product-single__reviews-title">Reseñas</h2>
                         <div class="product-single__reviews-list">
                             <div class="product-single__reviews-item">
                                 <div class="customer-avatar">
@@ -358,7 +357,7 @@
             </div>
         </section>
         <section class="products-carousel container">
-            <h2 class="h3 text-uppercase mb-4 pb-xl-2 mb-xl-4">Related <strong>Products</strong></h2>
+            <h2 class="h3 text-uppercase mb-4 pb-xl-2 mb-xl-4">Productos <strong>Relacionados</strong></h2>
 
             <div id="related_products" class="position-relative">
                 <div class="swiper-container js-swiper-slider" data-settings='{
@@ -421,13 +420,13 @@
                                 <button
                                     type="submit"
                                     class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium"
-                                    data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
+                                    data-aside="cartDrawer" title="Add To Cart">Añadir al Carrito</button>
                                 </form>
                                 @endif
                                 </div>
 
                                 <div class="pc__info position-relative">
-                                    <p class="pc__category">{{ $rproduct->category->name }}</p>
+                                    <p class="pc__category">{{ $rproduct->Categoría->name }}</p>
                                     <h6 class="pc__title"><a
                                             href="{{ route('shop.product.details', ['product_slug' => $rproduct->slug]) }}">{{ $rproduct->name }}</a>
                                     </h6>
