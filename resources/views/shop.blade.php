@@ -351,8 +351,8 @@
                                     </div>
                                     @if(Cart::instance('cart')->content()->where('id', $product->id)->count() > 0)
                                         <a href="{{ route('cart.index') }}"
-                                            class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-mediumbtn btn-warning mb-3">View
-                                            Carro</a>
+                                            class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-mediumbtn btn-warning mb-3">Ir a
+                                            Carrit  o</a>
                                     @else
                                         <form name="addtocart-form" method="post" action="{{ route('cart.add') }}">
                                             @csrf

@@ -6,7 +6,7 @@
         <div class="main-content-inner">
             <div class="main-content-wrap">
                 <div class="flex items-center flex-wrap justify-between gap20 mb-27">
-                    <h3>All Products</h3>
+                    <h3>Todos los Productos</h3>
                     <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
                         <li>
                             <a href="{{ route('admin.index') }}">

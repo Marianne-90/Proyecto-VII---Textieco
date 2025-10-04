@@ -384,7 +384,7 @@
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li><a href="#" class="tf-button w-full">View all</a></li>
+                                            <li><a href="#" class="tf-button w-full">Ver todo</a></li>
                                         </ul>
                                     </div>
                                 </div>

@@ -216,7 +216,7 @@
                     <div class="tab-pane fade show active" id="tab-description" role="tabpanel"
                         aria-labelledby="tab-description-tab">
                         <div class="product-single__description">
-                            <p>{{$product->Descripción}}</p>
+                            <p>{{$product->description}}</p>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="tab-additional-info" role="tabpanel"
@@ -408,7 +408,7 @@
                                         @endforeach
                                     </a>
                                   @if(Cart::instance('cart')->content()->where('id', $rproduct->id)->count() > 0)
-                                 <a href="{{ route('cart.index') }}" class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-mediumbtn btn-warning mb-3">View Cart</a>
+                                 <a href="{{ route('cart.index') }}" class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-mediumbtn btn-warning mb-3">Ver Carrito</a>
                                 @else
                                 <form name="addtocart-form" method="post" action="{{ route('cart.add') }}">
                                 @csrf
@@ -426,7 +426,7 @@
                                 </div>
 
                                 <div class="pc__info position-relative">
-                                    <p class="pc__category">{{ $rproduct->Categoría->name }}</p>
+                                    <p class="pc__category">{{ $rproduct->category->name }}</p>
                                     <h6 class="pc__title"><a
                                             href="{{ route('shop.product.details', ['product_slug' => $rproduct->slug]) }}">{{ $rproduct->name }}</a>
                                     </h6>

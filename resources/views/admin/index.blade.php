@@ -194,7 +194,7 @@
                         <h5>Recent orders</h5>
                         <div class="dropdown default">
                             <a class="btn btn-secondary dropdown-toggle" href="#">
-                                <span class="view-all">View all</span>
+                                <span class="view-all">Ver todo</span>
                             </a>
                         </div>
                     </div>
