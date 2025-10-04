@@ -53,7 +53,7 @@
                                                     value="{{ $category->id }}" @if(in_array($category->id, explode(',', $f_categories))) checked @endif>
                                                 {{ $category->name }}
                                             </span>
-                                            <span class="text-right float-end">{{ $category->Productos->count() }}</span>
+                                            <span class="text-right float-end">{{ $category->products->count() }}</span>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -127,7 +127,7 @@
                                                     @if(in_array($brand->id, explode(',', $f_brands))) checked @endif>
                                                 {{ $brand->name }}
                                             </span>
-                                            <span class="text-right float-end">{{ $brand->Productos->count() }}</span>
+                                            <span class="text-right float-end">{{ $brand->products->count() }}</span>
                                         </li>
                                     @endforeach
 
@@ -196,14 +196,13 @@
                                     <div class="slideshow-text container p-3 p-xl-5">
                                         <h2
                                             class="text-uppercase section-title fw-normal mb-3 animate animate_fade animate_btt animate_delay-2">
-                                            Lorem Ipsum <br /><strong>LOREM</strong></h2>
-                                        <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Intore veritatis et
-                                            quasi architecto beatae vitae dicta sunt explicabo</h6>
+                                            Nueva Colección <br /><strong>OTOÑO</strong></h2>
+                                        <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Los colores de otoño ya están aquí aprovéchalos en tus proyectos</p>
                                     </div>
                                 </div>
                                 <div class="slide-split_media position-relative">
                                     <div class="slideshow-bg" style="background-color: #f5e6e0;">
-                                        <img loading="lazy" src="assets/images/shop/shop_banner3.jpg" width="630"
+                                        <img loading="lazy" src="assets/images/shop/shop_banner3.png" width="630"
                                             height="450" alt="Women's accessories"
                                             class="slideshow-bg__img object-fit-cover" />
                                     </div>
@@ -370,7 +369,7 @@
                                 </div>
 
                                 <div class="pc__info position-relative">
-                                    <p class="pc__category">{{ $product->Categoría->name }}</p>
+                                    <p class="pc__category">{{ $product->category->name }}</p>
                                     <h6 class="pc__title"><a
                                             href="{{ route('shop.product.details', ['product_slug' => $product->slug]) }}">{{ $product->name }}</a>
                                     </h6>

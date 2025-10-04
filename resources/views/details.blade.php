@@ -186,7 +186,7 @@
                         </div>
                         <div class="meta-item">
                             <label>Categorías:</label>
-                            <span>{{$product->Categoría->name}}</span>
+                            <span>{{$product->category->name}}</span>
                         </div>
                         <div class="meta-item">
                             <label>Tags:</label>

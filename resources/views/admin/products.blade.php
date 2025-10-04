@@ -53,9 +53,9 @@
                                     <th>SKU</th>
                                     <th>Categoría</th>
                                     <th>Marca</th>
-                                    <th>Premium/th>
+                                    <th>Premium</th>
                                     <th>Stock</th>
-                                    <th>Cantidad/th>
+                                    <th>Cantidad</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>

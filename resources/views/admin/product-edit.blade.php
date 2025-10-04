@@ -67,7 +67,7 @@
                                     <select class="" name="category_id">
                                         <option>Selecciona Categoría</option>
                                         @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}" {{ $category->id == $product->Categoría_id ? 'selected' : '' }}>{{ $category->name }}</option>
+                                            <option value="{{ $category->id }}" {{ $category->id == $product->category_id ? 'selected' : '' }}>{{ $category->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -82,7 +82,7 @@
                                     <select class="" name="brand_id">
                                         <option>Selecciona Marca</option>
                                         @foreach ($brands as $brand)
-                                            <option value="{{ $brand->id }}" {{ $brand->id == $product->Marca_id ? 'selected' : '' }}>{{ $brand->name }}</option>
+                                            <option value="{{ $brand->id }}" {{ $brand->id == $product->brand_id ? 'selected' : '' }}>{{ $brand->name }}</option>
                                         @endforeach
 
                                     </select>
@@ -107,7 +107,7 @@
                             <div class="body-title mb-10">Descripción <span class="tf-color-1">*</span>
                             </div>
                             <textarea class="mb-10" name="description" placeholder="Description" tabindex="0"
-                                aria-required="true" required="">{{ $product->Descripción }}</textarea>
+                                aria-required="true" required="">{{ $product->description }}</textarea>
                             <div class="text-tiny">Do not exceed 100 characters when entering the
                                 product name.</div>
                         </fieldset>
