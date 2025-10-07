@@ -108,7 +108,7 @@
                     title: "¿Estás seguro?",
                     text: "¿Quieres eliminar este registro?",
                     type: "warning",
-                    buttons: ["NO", "YES"],
+                    buttons: ["NO", "SI"],
                     confirmButtonColor: '#dc3545'
                 }).then(function (result) {
                     if (result) {

@@ -225,7 +225,7 @@
                                 <div class="select mb-10">
                                     <select class="" name="featured">
                                         <option value="0" {{ $product->featured == 0 ? 'selected' : '' }}>No</option>
-                                        <option value="1" {{ $product->featured == 1 ? 'selected' : '' }}>Yes</option>
+                                        <option value="1" {{ $product->featured == 1 ? 'selected' : '' }}>SI</option>
                                     </select>
                                 </div>
                             </fieldset>
