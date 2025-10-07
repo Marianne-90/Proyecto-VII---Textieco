@@ -1,5 +1,17 @@
 @extends('layouts.app')
 @section('content')
+    <style>
+        /* Sprint 4 */
+        .text-success {
+            color: green !important;
+        }
+
+        .text-danger {
+            color: red !important;
+        }
+    </style>
+
+
     <main class="pt-90">
         <div class="mb-4 pb-4"></div>
         <section class="shop-checkout container">
@@ -105,8 +117,15 @@
                             </tbody>
                         </table>
                         <div class="cart-table-footer">
+<<<<<<< HEAD
                             <form action="#" class="position-relative bg-body">
                                 <input class="form-control" type="text" name="coupon_code" placeholder="Código de Cupón">
+=======
+                            <form action="{{ route('cart.coupon.apply') }}" class="position-relative bg-body" method="POST">
+                                @csrf
+                                <input class="form-control" type="text" name="coupon_code" placeholder="Coupon Code"
+                                    value="@if (Session::has('coupon')){{ Session::get('coupon')['code'] }} Applied @endif">
+>>>>>>> origin/main
                                 <input class="btn-link fw-medium position-absolute top-0 end-0 h-100 px-4" type="submit"
                                     value="APLICAR">
                             </form>
@@ -116,10 +135,24 @@
                                 <button class="btn btn-light" type="submit">LIMPIAR</button>
                             </form>
                         </div>
+                        <div>
+                            @if (Session::has('success'))
+                                <p class="text-success">
+                                    {{ Session::get('success') }}
+                                </p>
+                            @elseif (Session::has('error'))
+                                <p class="text-danger">
+                                    {{ Session::get('error') }}
+                                </p>
+                            @endif
+                        </div>
+
+
                     </div>
                     <div class="shopping-cart__totals-wrapper">
                         <div class="sticky-content">
                             <div class="shopping-cart__totals">
+<<<<<<< HEAD
                                 <h3>Total del Carrito</h3>
                                 <table class="cart-totals">
                                     <tbody>
@@ -141,6 +174,61 @@
                                         </tr>
                                     </tbody>
                                 </table>
+=======
+
+                                <h3>Cart Totals</h3>
+                                @if(Session::has('discounts'))
+                                    <table class="cart-totals">
+                                        <tbody>
+                                            <tr>
+                                                <th>Subtotal</th>
+                                                <td>{{ Cart::instance('cart')->subtotal() }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Discount {{ Session::get('coupon')['code'] }}</th>
+                                                <td>{{ Session::get('discounts')['discount']  }}</td>
+                                            </tr>
+                                             <tr>
+                                                <th>Subtotal After Discount</th>
+                                                <td>{{ Session::get('discounts')['subtotal'] }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Shipping</th>
+                                                <td>Free</td>
+                                            </tr>
+                                            <tr>
+                                                <th>VAT</th>
+                                                <td>{{ Session::get('discounts')['tax'] }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Total</th>
+                                                <td>{{ Session::get('discounts')['total'] }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                @else
+                                    <table class="cart-totals">
+                                        <tbody>
+                                            <tr>
+                                                <th>Subtotal</th>
+                                                <td>{{ Cart::instance('cart')->subtotal() }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Shipping</th>
+                                                <td>Free</td>
+                                            </tr>
+                                            <tr>
+                                                <th>VAT</th>
+                                                <td>${{ Cart::instance('cart')->tax() }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Total</th>
+                                                <td>${{ Cart::instance('cart')->total() }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                @endif
+>>>>>>> origin/main
                             </div>
                             <div class="mobile_fixed-btn_wrapper">
                                 <div class="button-wrapper container">

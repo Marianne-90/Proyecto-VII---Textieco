@@ -14,6 +14,10 @@
             color: #e4e4e4 border-radius:0;
             margin-right: 0.75rem;
         }
+
+        .filled-heart {
+            color: orange;
+        }
     </style>
 
     <main class="pt-90">
@@ -156,17 +160,26 @@
                         </h5>
                         <div id="accordion-filter-price" class="accordion-collapse collapse show border-0"
                             aria-labelledby="accordion-heading-price" data-bs-parent="#price-filters">
-                            <input class="price-range-slider" type="text" name="price_range" value="" data-slider-min="10"
-                                data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]"
-                                data-currency="$" />
+                            <input class="price-range-slider" type="text" name="price_range" value="" data-slider-min="1"
+                                data-slider-max="1000" data-slider-step="5"
+                                data-slider-value="[{{ $min_price }},{{ $max_price }}]" data-currency="$" />
                             <div class="price-range__info d-flex align-items-center mt-2">
                                 <div class="me-auto">
+<<<<<<< HEAD
                                     <span class="text-secondary">Precio Min: </span>
                                     <span class="price-range__min">$250</span>
                                 </div>
                                 <div>
                                     <span class="text-secondary">Precio Max: </span>
                                     <span class="price-range__max">$450</span>
+=======
+                                    <span class="text-secondary">Min Price: </span>
+                                    <span class="price-range__min">$1</span>
+                                </div>
+                                <div>
+                                    <span class="text-secondary">Max Price: </span>
+                                    <span class="price-range__max">$1000</span>
+>>>>>>> origin/main
                                 </div>
                             </div>
                         </div>
@@ -176,18 +189,18 @@
 
             <div class="shop-list flex-grow-1">
                 <div class="swiper-container js-swiper-slider slideshow slideshow_small slideshow_split" data-settings='{
-                                    "autoplay": {
-                                      "delay": 5000
-                                    },
-                                    "slidesPerView": 1,
-                                    "effect": "fade",
-                                    "loop": true,
-                                    "pagination": {
-                                      "el": ".slideshow-pagination",
-                                      "type": "bullets",
-                                      "clickable": true
-                                    }
-                                  }'>
+                                            "autoplay": {
+                                              "delay": 5000
+                                            },
+                                            "slidesPerView": 1,
+                                            "effect": "fade",
+                                            "loop": true,
+                                            "pagination": {
+                                              "el": ".slideshow-pagination",
+                                              "type": "bullets",
+                                              "clickable": true
+                                            }
+                                          }'>
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="slide-split h-100 d-block d-md-flex overflow-hidden">
@@ -402,15 +415,37 @@
                                         </div>
                                         <span class="reviews-note text-lowercase text-secondary ms-1">8k+ comentarios</span>
                                     </div>
-
-                                    <button
-                                        class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist"
-                                        title="Add To Wishlist">
-                                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <use href="#icon_heart" />
-                                        </svg>
-                                    </button>
+                                    @if(Cart::instance('wishlist')->content()->where('id', $product->id)->count() > 0)
+                                    <form action="{{ route('wishlist.item.remove', ['rowId' => Cart::instance('wishlist')->content()->where('id', $product->id)->first()->rowId]) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button
+                                            class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist filled-heart"
+                                            title="Remove From Wishlist" type="submit">
+                                            <svg width="16" height="16" viewBox="0 0 20 20" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <use href="#icon_heart" />
+                                            </svg>
+                                        </button>
+                                    </form>
+                                    @else
+                                        <form action="{{ route('wishlist.add') }}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{ $product->id }}">
+                                            <input type="hidden" name="name" value="{{ $product->name }}">
+                                            <input type="hidden" name="quantity" value="1">
+                                            <input type="hidden" name="price"
+                                                value="{{ $product->sale_price < $product->regular_price ? $product->sale_price : $product->regular_price }}">
+                                            <button
+                                                class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist"
+                                                title="Add To Wishlist" type="submit">
+                                                <svg width="16" height="16" viewBox="0 0 20 20" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <use href="#icon_heart" />
+                                                </svg>
+                                            </button>
+                                        </form>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -430,73 +465,56 @@
         <input type="hidden" name="order" id="order" value="{{ $order }}">
         <input type="hidden" name="brands" id="hdnBrands">
         <input type="hidden" name="categories" id="hdnCategories">
+        <input type="hidden" name="min" id="hdnMin" value="{{ $min_price }}">
+        <input type="hidden" name="max" id="hdnMax" value="{{ $max_price }}">
     </form>
 @endsection
 {{-- Sprint 3 --}}
 @push('scripts')
     <script>
         $(function () {
-            $('#pagesize').on('change', function () {
-                $('#size').val($("#pagesize option:selected").val());
-                $('#frmfilter').submit();
-            });
+            const $form = $('#frmfilter');
 
-            $('#orderby').on('change', function () {
-                $('#order').val($("#orderby option:selected").val());
-                $('#frmfilter').submit();
-            });
-
-            $("input[name='brands']").on('change', function () {
-                let brands = "";
-                $("input[name='brands']:checked").each(function () {
-                    if (brands == "") {
-                        brands += $(this).val();
-                    } else {
-                        brands += "," + $(this).val();
-                    }
+            // Vincula un <select> a un hidden y envía el formulario al cambiar
+            function bindSelect(selectSelector, hiddenSelector) {
+                $(selectSelector).on('change', function () {
+                    $(hiddenSelector).val($(this).find('option:selected').val());
+                    $form.submit();
                 });
+            }
 
-                let categories = "";
-                $("input[name='categories']:checked").each(function () {
-                    if (categories == "") {
-                        categories += $(this).val();
-                    } else {
-                        categories += "," + $(this).val();
-                    }
-                });
+            // Devuelve los valores chequeados de un grupo de checkboxes como CSV
+            function getCheckedCSV(name) {
+                return $(`input[name='${name}']:checked`)
+                    .map(function () { return this.value; })
+                    .get()
+                    .join(',');
+            }
 
-                $('#hdnBrands').val(brands);
-                $('#hdnCategories').val(categories);
+            // Actualiza hidden de filtros y envía el formulario
+            function onFacetChange() {
+                $('#hdnBrands').val(getCheckedCSV('brands'));
+                $('#hdnCategories').val(getCheckedCSV('categories'));
+                $form.submit();
+            }
 
-                $('#frmfilter').submit();
+            // Enlaces
+            bindSelect('#pagesize', '#size');
+            bindSelect('#orderby', '#order');
 
-            });
+            $("input[name='brands'], input[name='categories']").on('change', onFacetChange);
 
-            $("input[name='categories']").on('change', function () {
-                let categories = "";
-                $("input[name='categories']:checked").each(function () {
-                    if (categories == "") {
-                        categories += $(this).val();
-                    } else {
-                        categories += "," + $(this).val();
-                    }
-                });
+            //nuevo
+            $("[name='price_range']").on('change', function () {
 
-                let brands = "";
-                $("input[name='brands']:checked").each(function () {
-                    if (brands == "") {
-                        brands += $(this).val();
-                    } else {
-                        brands += "," + $(this).val();
-                    }
-                });
-
-                $('#hdnBrands').val(brands);
-                $('#hdnCategories').val(categories);
-
-                $('#frmfilter').submit();
-
+                const range = $(this).val().split(',');
+                $('#hdnMin').val(range[0]);
+                $('#hdnMax').val(range[1]);
+                setTimeout(() => {
+                    $form.submit();
+                }, 2000);
             });
         });
     </script>
+
 @endpush
