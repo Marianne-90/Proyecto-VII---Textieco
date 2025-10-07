@@ -165,21 +165,12 @@
                                 data-slider-value="[{{ $min_price }},{{ $max_price }}]" data-currency="$" />
                             <div class="price-range__info d-flex align-items-center mt-2">
                                 <div class="me-auto">
-<<<<<<< HEAD
-                                    <span class="text-secondary">Precio Min: </span>
-                                    <span class="price-range__min">$250</span>
-                                </div>
-                                <div>
-                                    <span class="text-secondary">Precio Max: </span>
-                                    <span class="price-range__max">$450</span>
-=======
                                     <span class="text-secondary">Min Price: </span>
                                     <span class="price-range__min">$1</span>
                                 </div>
                                 <div>
                                     <span class="text-secondary">Max Price: </span>
                                     <span class="price-range__max">$1000</span>
->>>>>>> origin/main
                                 </div>
                             </div>
                         </div>

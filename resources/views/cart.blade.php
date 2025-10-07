@@ -117,15 +117,10 @@
                             </tbody>
                         </table>
                         <div class="cart-table-footer">
-<<<<<<< HEAD
-                            <form action="#" class="position-relative bg-body">
-                                <input class="form-control" type="text" name="coupon_code" placeholder="Código de Cupón">
-=======
                             <form action="{{ route('cart.coupon.apply') }}" class="position-relative bg-body" method="POST">
                                 @csrf
                                 <input class="form-control" type="text" name="coupon_code" placeholder="Coupon Code"
                                     value="@if (Session::has('coupon')){{ Session::get('coupon')['code'] }} Applied @endif">
->>>>>>> origin/main
                                 <input class="btn-link fw-medium position-absolute top-0 end-0 h-100 px-4" type="submit"
                                     value="APLICAR">
                             </form>
@@ -152,29 +147,6 @@
                     <div class="shopping-cart__totals-wrapper">
                         <div class="sticky-content">
                             <div class="shopping-cart__totals">
-<<<<<<< HEAD
-                                <h3>Total del Carrito</h3>
-                                <table class="cart-totals">
-                                    <tbody>
-                                        <tr>
-                                            <th>Subtotal</th>
-                                            <td>{{ Cart::instance('cart')->subtotal() }}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Envío</th>
-                                            <td>Free</td>
-                                        </tr>
-                                        <tr>
-                                            <th>VAT</th>
-                                            <td>${{ Cart::instance('cart')->tax() }}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Total</th>
-                                            <td>${{ Cart::instance('cart')->total() }}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-=======
 
                                 <h3>Cart Totals</h3>
                                 @if(Session::has('discounts'))
@@ -228,7 +200,6 @@
                                         </tbody>
                                     </table>
                                 @endif
->>>>>>> origin/main
                             </div>
                             <div class="mobile_fixed-btn_wrapper">
                                 <div class="button-wrapper container">
