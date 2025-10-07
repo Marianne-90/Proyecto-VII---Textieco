@@ -3,7 +3,7 @@
     <div class="main-content-inner">
         <div class="main-content-wrap">
             <div class="flex items-center flex-wrap justify-between gap20 mb-27">
-                <h3>Coupon infomation</h3>
+                <h3>Información del Cupón</h3>
                 <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
                     <li>
                         <a href="{{ route('admin.index') }}">
@@ -15,14 +15,14 @@
                     </li>
                     <li>
                         <a href="{{ route('admin.coupons') }}">
-                            <div class="text-tiny">Coupons</div>
+                            <div class="text-tiny">Cupones</div>
                         </a>
                     </li>
                     <li>
                         <i class="icon-chevron-right"></i>
                     </li>
                     <li>
-                        <div class="text-tiny">New Coupon</div>
+                        <div class="text-tiny">Nuevo Cupón</div>
                     </li>
                 </ul>
             </div>
@@ -30,20 +30,20 @@
                 <form class="form-new-product form-style-1" method="POST" action="{{ route('admin.coupon.store') }}">
                     @csrf
                     <fieldset class="name">
-                        <div class="body-title">Coupon Code <span class="tf-color-1">*</span></div>
-                        <input class="flex-grow" type="text" placeholder="Coupon Code" name="code" tabindex="0"
+                        <div class="body-title">Código de Cupón <span class="tf-color-1">*</span></div>
+                        <input class="flex-grow" type="text" placeholder="Código de Cupón" name="code" tabindex="0"
                             value="{{ old('code') }}" aria-required="true" required="">
                     </fieldset>
                     @error('code')
                         <span class="alert alert-danger text-center">{{ $message }}</span>
                     @enderror
                     <fieldset class="category">
-                        <div class="body-title">Coupon Type</div>
+                        <div class="body-title">Tipo</div>
                         <div class="select flex-grow">
                             <select class="" name="type">
-                                <option value="">Select</option>
-                                <option value="fixed">Fixed</option>
-                                <option value="percent">Percent</option>
+                                <option value="">Seleccionar</option>
+                                <option value="fixed">Fijo</option>
+                                <option value="percent">Porcentaje</option>
                             </select>
                         </div>
                     </fieldset>
@@ -52,23 +52,23 @@
                     @enderror
                     <fieldset class="name">
                         <div class="body-title">Value <span class="tf-color-1">*</span></div>
-                        <input class="flex-grow" type="text" placeholder="Coupon Value" name="value" tabindex="0"
+                        <input class="flex-grow" type="text" placeholder="Valor" name="value" tabindex="0"
                             value="{{ old('value') }}" aria-required="true" required="">
                     </fieldset>
                     @error('value')
                         <span class="alert alert-danger text-center">{{ $message }}</span>
                     @enderror
                     <fieldset class="name">
-                        <div class="body-title">Cart Value <span class="tf-color-1">*</span></div>
-                        <input class="flex-grow" type="text" placeholder="Cart Value" name="cart_value" tabindex="0"
+                        <div class="body-title">Valor de Compra<span class="tf-color-1">*</span></div>
+                        <input class="flex-grow" type="text" placeholder="Valor de Compra" name="cart_value" tabindex="0"
                             value="{{ old('cart_value') }}" aria-required="true" required="">
                     </fieldset>
                     @error('cart_value')
                         <span class="alert alert-danger text-center">{{ $message }}</span>
                     @enderror
                     <fieldset class="name">
-                        <div class="body-title">Expiry Date <span class="tf-color-1">*</span></div>
-                        <input class="flex-grow" type="date" placeholder="Expiry Date" name="expiry_date" tabindex="0"
+                        <div class="body-title">Expiración<span class="tf-color-1">*</span></div>
+                        <input class="flex-grow" type="date" placeholder="Expiración" name="expiry_date" tabindex="0"
                             value="{{ old('expiry_date') }}" aria-required="true" required="">
                     </fieldset>
                     @error('expiry_date')
@@ -76,7 +76,7 @@
                     @enderror
                     <div class="bot">
                         <div></div>
-                        <button class="tf-button w208" type="submit">Save</button>
+                        <button class="tf-button w208" type="submit">Guardar</button>
                     </div>
                 </form>
             </div>

@@ -3,7 +3,7 @@
     <li><a href="account-orders.html" class="menu-link menu-link_us-s">Ordenes</a></li>
     <li><a href="account-address.html" class="menu-link menu-link_us-s">Direcciones</a></li>
     <li><a href="account-details.html" class="menu-link menu-link_us-s">Detalles de Cuenta</a></li>
-    <li><a href="account-wishlist.html" class="menu-link menu-link_us-s">Wishlist</a></li>
+    <li><a href="account-wishlist.html" class="menu-link menu-link_us-s">Lista de Deseos</a></li>
 
     <li>
         <form method="POST" action="{{ route('logout') }}" id="logout-form">

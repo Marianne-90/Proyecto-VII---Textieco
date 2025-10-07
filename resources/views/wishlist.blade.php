@@ -3,18 +3,18 @@
     <main class="pt-90">
         <div class="mb-4 pb-4"></div>
         <section class="shop-checkout container">
-            <h2 class="page-title">Wishlist</h2>
+            <h2 class="page-title">Lista de Deseos</h2>
             <div class="shopping-cart">
                 @if (Cart::instance('wishlist')->count() > 0)
                     <div class="cart-table__wrapper">
                         <table class="cart-table">
                             <thead>
                                 <tr>
-                                    <th>Product</th>
+                                    <th>Producto</th>
                                     <th></th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Action</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Acción</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -46,7 +46,7 @@
                                                     <form action="{{ route('wishlist.move.to.cart', ['rowId' => $item->rowId]) }}"
                                                         method="POST">
                                                         @csrf
-                                                        <button type="submit" class="btn btn-sm btn-warning">Move to Cart</button>
+                                                        <button type="submit" class="btn btn-sm btn-warning">Mover a carrito</button>
                                                     </form>
                                                 </div>
                                                 <div class="col-6">
@@ -76,7 +76,7 @@
                             <form action="{{ route('wishlist.clear') }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-light" type="submit">CLEAR WISHLIST</button>
+                                <button class="btn btn-light" type="submit">LIMPIAR LISTA DE DESEOS</button>
                             </form>
                         </div>
                     </div>

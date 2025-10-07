@@ -7,7 +7,7 @@
             <!-- main-content-wrap -->
             <div class="main-content-wrap">
                 <div class="flex items-center flex-wrap justify-between gap20 mb-27">
-                    <h3>Update Product</h3>
+                    <h3>Editar Producto</h3>
                     <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
                         <li>
                             <a href="{{ route('admin.index') }}">
@@ -26,7 +26,7 @@
                             <i class="icon-chevron-right"></i>
                         </li>
                         <li>
-                            <div class="text-tiny">Update Product</div>
+                            <div class="text-tiny">Editar Producto</div>
                         </li>
                     </ul>
                 </div>
@@ -234,7 +234,7 @@
                             @enderror
                         </div>
                         <div class="cols gap10">
-                            <button class="tf-button w-full" type="submit">Update product</button>
+                            <button class="tf-button w-full" type="submit">Actualizar producto</button>
                         </div>
                     </div>
                 </form>

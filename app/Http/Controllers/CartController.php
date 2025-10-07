@@ -55,7 +55,7 @@ class CartController extends Controller
             $coupon = Coupon::where('code', $coupon_code)->where('expiry_date', '>', now())->first();
             if (!$coupon) {
                 // Apply the coupon to the cart
-                return redirect()->back()->with('error', 'Invalid coupon code.');
+                return redirect()->back()->with('error', 'Código de cupón inválido');
             } else {
                 Session::put('coupon', [
                     'code' => $coupon->code,
@@ -64,10 +64,10 @@ class CartController extends Controller
                     'cart_value' => $coupon->cart_value,
                 ]);
                 $this->calculateDiscount();
-                return redirect()->back()->with('success', 'Coupon applied successfully!');
+                return redirect()->back()->with('success', 'Cupón aplicado exitosamente!');
             }
         } else {
-            return redirect()->back()->with('error', 'Invalid coupon code.');
+            return redirect()->back()->with('error', 'Código de cupón inválido');
         }
 
     }

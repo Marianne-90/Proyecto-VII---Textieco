@@ -155,7 +155,7 @@
                                     onclick="this.closest('form').submit();"><svg width="16" height="16" viewBox="0 0 20 20"
                                         fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <use href="#icon_heart" />
-                                    </svg><span>Remove from Wishlist</span></a>
+                                    </svg><span>Quitar de la lista de Deseos</span></a>
                             </form>
                         @else
                             <form action="{{ route('wishlist.add') }}" method="POST" id="wishlist-form">
@@ -169,7 +169,7 @@
                                     onclick="document.getElementById('wishlist-form').submit();"><svg width="16" height="16"
                                         viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <use href="#icon_heart" />
-                                    </svg><span>Add to Wishlist</span></a>
+                                    </svg><span>Añadir a la lista de Deseos</span></a>
                             </form>
                         @endif
                         <share-button class="share-button">
@@ -449,7 +449,7 @@
                                                 value="{{ $rproduct->sale_price < $rproduct->regular_price ? $rproduct->sale_price : $rproduct->regular_price }}">
                                             <button type="submit"
                                                 class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium"
-                                                data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
+                                                data-aside="cartDrawer" title="Add To Cart">Añadir al carrito</button>
                                         </form>
                                     @endif
                                 </div>
@@ -469,7 +469,7 @@
 
                                     <button
                                         class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist"
-                                        title="Add To Wishlist">
+                                        title="Añadir a la lista de Deseos">
                                         <svg width="16" height="16" viewBox="0 0 20 20" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <use href="#icon_heart" />

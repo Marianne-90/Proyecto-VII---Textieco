@@ -17,7 +17,7 @@
                             <i class="icon-chevron-right"></i>
                         </li>
                         <li>
-                            <div class="text-tiny">All Products</div>
+                            <div class="text-tiny">Todos los Productos</div>
                         </li>
                     </ul>
                 </div>

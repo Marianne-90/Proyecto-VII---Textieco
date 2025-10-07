@@ -202,7 +202,7 @@
                                     <div class="box-content-search" id="box-content-search">
                                         <ul class="mb-24">
                                             <li class="mb-14">
-                                                <div class="body-title">Top selling product</div>
+                                                <div class="body-title">Producto más vendido</div>
                                             </li>
                                             <li class="mb-14">
                                                 <div class="divider"></div>
@@ -253,7 +253,7 @@
                                         </ul>
                                         <ul class="">
                                             <li class="mb-14">
-                                                <div class="body-title">Orden product</div>
+                                                <div class="body-title">Ordenar productos</div>
                                             </li>
                                             <li class="mb-14">
                                                 <div class="divider"></div>
@@ -342,7 +342,7 @@
                                                         <i class="icon-noti-1"></i>
                                                     </div>
                                                     <div>
-                                                        <div class="body-title-2">Discount available</div>
+                                                        <div class="body-title-2">Descuento Disponible</div>
                                                         <div class="text-tiny">Morbi sapien massa, ultricies at rhoncus
                                                             at, ullamcorper nec diam</div>
                                                     </div>

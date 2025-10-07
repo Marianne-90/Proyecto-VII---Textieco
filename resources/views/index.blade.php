@@ -184,7 +184,7 @@
                               <use href="#icon_view" />
                             </svg></span>
                         </button>
-                        <button class="pc__btn-wl bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
+                        <button class="pc__btn-wl bg-transparent border-0 js-add-wishlist" title="Añadir a la lista de Deseos">
                           <svg width="16" height="16" viewBox="0 0 20 20" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <use href="#icon_heart" />
