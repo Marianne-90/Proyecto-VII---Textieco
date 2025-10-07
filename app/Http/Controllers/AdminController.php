@@ -422,7 +422,7 @@ class AdminController extends Controller
         }
 
         $product->delete();
-        return redirect()->route('admin.products')->with('status', 'Product has been deleted successfully.');
+        return redirect()->route('admin.products')->with('status', 'Se ha eliminado de manera exitosa');
     }
 
     public function coupons(){
@@ -490,7 +490,7 @@ class AdminController extends Controller
     {
         $coupon = Coupon::find($id);
         $coupon->delete();
-        return redirect()->route('admin.coupons')->with('status', 'Coupon has been deleted successfully');
+        return redirect()->route('admin.coupons')->with('status', 'Se ha eliminado de manera exitosa');
     }
 
 }

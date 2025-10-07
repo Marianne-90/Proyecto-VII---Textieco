@@ -105,8 +105,8 @@
                 e.preventDefault();
                 var form = $(this).closest('form');
                 swal({
-                    title: "Are you sure?",
-                    text: "You want to delete this record?",
+                    title: "¿Estás seguro?",
+                    text: "¿Quieres eliminar este registro?",
                     type: "warning",
                     buttons: ["NO", "YES"],
                     confirmButtonColor: '#dc3545'
