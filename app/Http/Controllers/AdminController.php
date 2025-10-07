@@ -483,7 +483,7 @@ class AdminController extends Controller
         $coupon->expiry_date = $request->expiry_date;
         $coupon->save();
 
-        return redirect()->route('admin.coupons')->with('status', 'Coupon has been updated successfully');
+        return redirect()->route('admin.coupons')->with('status', 'Cupón actualizado de manera exitosa');
     }
 
     public function coupon_delete($id)
