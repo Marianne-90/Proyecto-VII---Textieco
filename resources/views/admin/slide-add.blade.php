@@ -23,7 +23,7 @@
                         <i class="icon-chevron-right"></i>
                     </li>
                     <li>
-                        <div class="text-tiny">New Slide</div>
+                        <div class="text-tiny">Nueva Slide</div>
                     </li>
                 </ul>
             </div>
@@ -33,7 +33,7 @@
                     enctype="multipart/form-data">
                     @csrf
                     <fieldset class="name">
-                        <div class="body-title">Tagline <span class="tf-color-1">*</span></div>
+                        <div class="body-title">Línea Tag <span class="tf-color-1">*</span></div>
                         <input class="flex-grow" type="text" placeholder="Tagline" name="tagline" tabindex="0"
                             value="{{ old('tagline') }}" aria-required="true" required="">
                     </fieldset>
@@ -49,8 +49,8 @@
                         <span class="alert alert-danger text-center">{{ $message }}</span>
                     @enderror
                     <fieldset class="name">
-                        <div class="body-title">Subtitle <span class="tf-color-1">*</span></div>
-                        <input class="flex-grow" type="text" placeholder="Subtitle" name="subtitle" tabindex="0"
+                        <div class="body-title">Subtítulo <span class="tf-color-1">*</span></div>
+                        <input class="flex-grow" type="text" placeholder="Subtítulo" name="subtitle" tabindex="0"
                             value="{{ old('subtitle') }}" aria-required="true" required="">
                     </fieldset>
                     @error('tagline')
@@ -65,7 +65,7 @@
                         <span class="alert alert-danger text-center">{{ $message }}</span>
                     @enderror
                     <fieldset>
-                        <div class="body-title">Upload images <span class="tf-color-1">*</span>
+                        <div class="body-title">Cargar Imagen <span class="tf-color-1">*</span>
                         </div>
                         <div class="upload-image flex-grow">
                             <div class="item" id="imgpreview" style="display: none">
@@ -76,8 +76,8 @@
                                     <span class="icon">
                                         <i class="icon-upload-cloud"></i>
                                     </span>
-                                    <span class="body-text">Drop your images here or select <span class="tf-color">click to
-                                            browse</span></span>
+                                    <span class="body-text">Drope sus imágenes aquí o seleccione <span class="tf-color">haga clic para
+                                            explorar</span></span>
                                     <input type="file" id="myFile" name="image">
                                 </label>
                             </div>
@@ -87,12 +87,12 @@
                         <span class="alert alert-danger text-center">{{ $message }}</span>
                     @enderror
                     <fieldset class="category">
-                        <div class="body-title">Status</div>
+                        <div class="body-title">Estado</div>
                         <div class="select flex-grow">
                             <select class="" name="status">
-                                <option>Select</option>
-                                <option value="1" @if(old('status') == 1) selected @endif>Active</option>
-                                <option value="0" @if(old('status') == 0) selected @endif>Inactive</option>
+                                <option>Seleccionar</option>
+                                <option value="1" @if(old('status') == 1) selected @endif>Activo</option>
+                                <option value="0" @if(old('status') == 0) selected @endif>Inactivo</option>
                             </select>
                         </div>
                     </fieldset>
@@ -101,7 +101,7 @@
                     @enderror
                     <div class="bot">
                         <div></div>
-                        <button class="tf-button w208" type="submit">Save</button>
+                        <button class="tf-button w208" type="submit">Guardar</button>
                     </div>
                 </form>
             </div>

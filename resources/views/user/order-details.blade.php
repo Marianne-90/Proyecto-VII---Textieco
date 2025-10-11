@@ -122,10 +122,10 @@
                         <div class="flex items-center justify-between gap10 flex-wrap">
                             <div class="row">
                                 <div class="col-6">
-                                    <h5>Ordered Details</h5>
+                                    <h5>Detalles de la Orden</h5>
                                 </div>
                                 <div class="col-6 text-right">
-                                    <a class="btn btn-sm btn-danger" href="{{ route('user.orders') }}">Back</a>
+                                    <a class="btn btn-sm btn-danger" href="{{ route('user.orders') }}">Volver</a>
 
                                 </div>
                             </div>
@@ -139,30 +139,30 @@
                             <table class="table table-bordered table-striped table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>Order No</th>
+                                        <th>No. de Orden</th>
                                         <td>{{ $order->id }}</td>
-                                        <th>Mobile</th>
+                                        <th>Teléfono</th>
                                         <td>{{ $order->phone }}</td>
-                                        <th>Zip</th>
+                                        <th>Código Postal</th>
                                         <td>{{ $order->zip }}</td>
                                     </tr>
                                     <tr>
-                                        <th>Order Date</th>
+                                        <th>Fecha de Orden</th>
                                         <td>{{ $order->created_at }}</td>
-                                        <th>Delivered Date</th>
+                                        <th>Fecha de Entrega</th>
                                         <td>{{ $order->delivered_at }}</td>
-                                        <th>Canceled Date</th>
+                                        <th>Fecha de Cancelación</th>
                                         <td>{{ $order->canceled_date }}</td>
                                     </tr>
                                     <tr>
-                                        <th>Order Status</th>
+                                        <th>Estado de la Orden</th>
                                         <td colspan="5">
                                             @if($order->status == 'delivered')
-                                                <span class="badge bg-success">Delivered</span>
+                                                <span class="badge bg-success">Entregado</span>
                                             @elseif($order->status == 'canceled')
-                                                <span class="badge bg-danger">Canceled</span>
+                                                <span class="badge bg-danger">Cancelado</span>
                                             @else
-                                                <span class="badge bg-warning">Ordered</span>
+                                                <span class="badge bg-warning">Ordenado</span>
                                             @endif
                                         </td>
                                     </tr>
@@ -174,22 +174,22 @@
                         <div class="wg-box">
                             <div class="flex items-center justify-between gap10 flex-wrap">
                                 <div class="wg-filter flex-grow">
-                                    <h5>Ordered Items</h5>
+                                    <h5>Artículos Ordenados</h5>
                                 </div>
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th class="text-center">Price</th>
-                                            <th class="text-center">Quantity</th>
+                                            <th>Nombre</th>
+                                            <th class="text-center">Precio</th>
+                                            <th class="text-center">Cantidad</th>
                                             <th class="text-center">SKU</th>
-                                            <th class="text-center">Category</th>
-                                            <th class="text-center">Brand</th>
-                                            <th class="text-center">Options</th>
-                                            <th class="text-center">Return Status</th>
-                                            <th class="text-center">Action</th>
+                                            <th class="text-center">Categoría</th>
+                                            <th class="text-center">Marca</th>
+                                            <th class="text-center">Opciones</th>
+                                            <th class="text-center">Estado de Devolución</th>
+                                            <th class="text-center">Acción</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -235,7 +235,7 @@
                         </div>
 
                         <div class="wg-box mt-5">
-                            <h5>Shipping Address</h5>
+                            <h5>Dirección de Envío</h5>
                             <div class="my-account__address-item col-md-6">
                                 <div class="my-account__address-item__detail">
                                     <p>{{ $order->name }}</p>
@@ -245,40 +245,40 @@
                                     <p>{{ $order->landmark }}</p>
                                     <p>{{ $order->zip }}</p>
                                     <br>
-                                    <p>Mobile : {{ $order->phone }}</p>
+                                    <p>Móvil : {{ $order->phone }}</p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="wg-box mt-5">
-                            <h5>Transactions</h5>
+                            <h5>Transacciones</h5>
                             <table class="table table-striped table-bordered table-transaction">
                                 <tbody>
                                     <tr>
                                         <th>Subtotal</th>
                                         <td>${{ $order->subtotal }}</td>
-                                        <th>Tax</th>
+                                        <th>Impuesto</th>
                                         <td>${{ $order->tax }}</td>
-                                        <th>Discount</th>
+                                        <th>Descuento</th>
                                         <td>${{ $order->discount }}</td>
                                     </tr>
                                     <tr>
                                         <th>Total</th>
                                         <td>${{ $order->total }}</td>
-                                        <th>Payment Mode</th>
+                                        <th>Método de Pago</th>
                                         <td>{{ $transaction->mode }}</td>
-                                        <th>Status</th>
+                                        <th>Estado</th>
                                         <td>
                                             @if($transaction->status == 'approved')
-                                                <span class="badge bg-success">Approved</span>
+                                                <span class="badge bg-success">Aprobado</span>
                                                 <blade
                                                     elseif|(%24transaction-%3Estatus%20%3D%3D%20%26%2339%3Bdeclined%26%2339%3B) />
-                                                <span class="badge bg-warning">Declined</span>
+                                                <span class="badge bg-warning">Rechazado</span>
                                                 <blade
                                                     elseif|(%24transaction-%3Estatus%20%3D%3D%20%26%2339%3Brefunded%26%2339%3B) />
-                                                <span class="badge bg-secondary">Refunded</span>
+                                                <span class="badge bg-secondary">Reembolsado</span>
                                             @else
-                                                <span class="badge bg-danger">Pending</span>
+                                                <span class="badge bg-danger">Pendiente</span>
                                             @endif
                                         </td>
                                     </tr>
@@ -293,7 +293,7 @@
                                 @csrf
                                 @method('PUT')
                                 <input type="hidden" name="order_id" value="{{ $order->id }}">
-                                <button class="btn btn-danger cancel-order" type="button">Cancel Order</button>
+                                <button class="btn btn-danger cancel-order" type="button">Cancelar Pedido</button>
                             </form>
                         </div>
                         @endif
@@ -311,10 +311,10 @@
                 e.preventDefault();
                 var form = $(this).closest('form');
                 swal({
-                    title: "Are you sure?",
-                    text: "You want to cancel this order?",
+                    title: "¿Estás seguro?",
+                    text: "¿Quieres cancelar este pedido?",
                     type: "warning",
-                    buttons: ["NO", "YES"],
+                    buttons: ["NO", "SI"],
                     confirmButtonColor: '#dc3545'
                 }).then(function (result) {
                     if (result) {

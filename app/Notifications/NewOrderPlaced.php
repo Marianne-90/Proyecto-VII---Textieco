@@ -16,8 +16,8 @@ class NewOrderPlaced extends Notification
     public function toDatabase($notifiable)
     {
         return [
-            'title'   => 'New Order',
-            'message' => "Order #{$this->order->id} from {$this->order->user->name}",
+            'title'   => 'Pedido Nuevo',
+            'message' => "Pedido #{$this->order->id} de {$this->order->user->name}",
             'url'     => route('admin.index'), // o route('admin.orders.show', $this->order)
             'meta'    => ['order_id' => $this->order->id],
         ];

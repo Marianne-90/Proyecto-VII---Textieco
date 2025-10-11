@@ -199,7 +199,7 @@
                                                 d="M2 1a1 1 0 011-1h7a1 1 0 011 1v9a1 1 0 01-1 1V1H2zM1 2a1 1 0 00-1 1v9a1 1 0 001 1h7a1 1 0 001-1V3a1 1 0 00-1-1H1zm0 10V3h7v9H1z"
                                                 fill="currentColor"></path>
                                         </svg>
-                                        <span class="sr-only">Copy link</span>
+                                        <span class="sr-only">Vincular</span>
                                     </button>
                                 </div>
                             </details>
@@ -260,7 +260,7 @@
                                 </div>
                                 <div class="customer-review">
                                     <div class="customer-name">
-                                        <h6>Janice Miller</h6>
+                                        <h6>Juana Molina</h6>
                                         <div class="reviews-group d-flex">
                                             <svg class="review-star" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg">
                                                 <use href="#icon_star" />
@@ -293,7 +293,7 @@
                                 </div>
                                 <div class="customer-review">
                                     <div class="customer-name">
-                                        <h6>Benjam Porter</h6>
+                                        <h6>Carlos Cuevas</h6>
                                         <div class="reviews-group d-flex">
                                             <svg class="review-star" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg">
                                                 <use href="#icon_star" />
@@ -323,10 +323,10 @@
                         </div>
                         <div class="product-single__review-form">
                             <form name="customer-review-form">
-                                <h5>Be the first to review “{{ $product->name }}”</h5>
-                                <p>Your email address will not be published. Required fields are marked *</p>
+                                <h5>Se el primero en Opinar “{{ $product->name }}”</h5>
+                                <p>Su dirección de correo electrónico no será publicada. Los campos obligatorios están marcados *</p>
                                 <div class="select-star-rating">
-                                    <label>Your rating *</label>
+                                    <label>Su calificación *</label>
                                     <span class="star-rating">
                                         <svg class="star-rating__star-icon" width="12" height="12" fill="#ccc"
                                             viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -372,11 +372,11 @@
                                     <input class="form-check-input form-check-input_fill" type="checkbox" value=""
                                         id="remember_checkbox">
                                     <label class="form-check-label" for="remember_checkbox">
-                                        Save my name, email, and website in this browser for the next time I comment.
+                                        Guardar mi nombre, correo electrónico y sitio web en este navegador para la próxima vez que comente.
                                     </label>
                                 </div>
                                 <div class="form-action">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary">Enviar</button>
                                 </div>
                             </form>
                         </div>

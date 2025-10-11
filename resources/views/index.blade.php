@@ -28,12 +28,11 @@
                             <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
                                 <h6
                                     class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-                                    New Arrivals</h6>
+                                    Nuevas Llegadas</h6>
                                 <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">{{$slide->title}}</h2>
                                 <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">{{$slide->subtitle}}</h2>
                                 <a href="{{$slide->link}}"
-                                    class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
-                                    Now</a>
+                                    class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -53,12 +52,12 @@
             <div class="mb-3 mb-xl-5 pt-1 pb-4"></div>
 
             <section class="hot-deals container">
-                <h2 class="section-title text-center mb-3 pb-xl-3 mb-xl-4">Hot Deals</h2>
+                <h2 class="section-title text-center mb-3 pb-xl-3 mb-xl-4">Ofertas Especiales</h2>
                 <div class="row">
                     <div
                         class="col-md-6 col-lg-4 col-xl-20per d-flex align-items-center flex-column justify-content-center py-4 align-items-md-start">
-                        <h2>Summer Sale</h2>
-                        <h2 class="fw-bold">Up to 60% Off</h2>
+                        <h2>Venta de Otoño</h2>
+                        <h2 class="fw-bold">Hasta 60% de Descuento</h2>
 
                         <div class="position-relative d-flex align-items-center text-center pt-xxl-4 js-countdown mb-3"
                             data-date="18-3-2024" data-time="06:50">
@@ -495,7 +494,7 @@
                             </div>
                             <div class="category-banner__item-content">
                                 <h3 class="mb-0">Lorem Ipsum</h3>
-                                <a href="#" class="btn-link default-underline text-uppercase fw-medium">Shop Now</a>
+                                <a href="#" class="btn-link default-underline text-uppercase fw-medium">Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -508,7 +507,7 @@
                             </div>
                             <div class="category-banner__item-content">
                                 <h3 class="mb-0">Lorem Ipsum</h3>
-                                <a href="#" class="btn-link default-underline text-uppercase fw-medium">Shop Now</a>
+                                <a href="#" class="btn-link default-underline text-uppercase fw-medium">Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -606,7 +605,7 @@
                                     <img loading="lazy" src="{{asset('assets/images/home/demo3/product-6.jpg')}}"
                                         width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
                                 </a>
-                                <div class="product-label text-uppercase bg-white top-0 left-0 mt-2 mx-2">New</div>
+                                <div class="product-label text-uppercase bg-white top-0 left-0 mt-2 mx-2">Nuevo</div>
                             </div>
 
                             <div class="pc__info position-relative">

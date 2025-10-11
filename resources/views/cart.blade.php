@@ -120,9 +120,9 @@
                             @if(!Session::has('coupon'))
                                 <form action="{{ route('cart.coupon.apply') }}" class="position-relative bg-body" method="POST">
                                     @csrf
-                                    <input class="form-control" type="text" name="coupon_code" placeholder="Coupon Code" value="">
+                                    <input class="form-control" type="text" name="coupon_code" placeholder="Código de Cupón" value="">
                                     <input class="btn-link fw-medium position-absolute top-0 end-0 h-100 px-4" type="submit"
-                                        value="APPLY COUPON">
+                                        value="APLICAR CUPÓN">
                                 </form>
                             @else
                                 <form action="{{ route('cart.coupon.remove') }}" class="position-relative bg-body" method="POST">
@@ -168,11 +168,11 @@
                                                 <td class="text-right">{{ Cart::instance('cart')->subtotal() }}</td>
                                             </tr>
                                             <tr>
-                                                <th>Discount {{ Session::get('coupon')['code'] }}</th>
+                                                <th>Descuento {{ Session::get('coupon')['code'] }}</th>
                                                 <td class="text-right">{{ Session::get('discounts')['discount']  }}</td>
                                             </tr>
                                             <tr>
-                                                <th>Subtotal After Discount</th>
+                                                <th>Precio después de descuento</th>
                                                 <td class="text-right">{{ Session::get('discounts')['subtotal'] }}</td>
                                             </tr>
                                             <tr>
@@ -180,7 +180,7 @@
                                                 <td>Gratis</td>
                                             </tr>
                                             <tr>
-                                                <th>VAT</th>
+                                                <th>IVA</th>
                                                 <td class="text-right">{{ Session::get('discounts')['tax'] }}</td>
                                             </tr>
                                             <tr>
@@ -197,11 +197,11 @@
                                                 <td class="text-right">{{ Cart::instance('cart')->subtotal() }}</td>
                                             </tr>
                                             <tr>
-                                                <th>Shipping</th>
-                                                <td class="text-right">Free</td>
+                                                <th>Envío</th>
+                                                <td class="text-right">Gratis</td>
                                             </tr>
                                             <tr>
-                                                <th>VAT</th>
+                                                <th>IVA</th>
                                                 <td class="text-right">${{ Cart::instance('cart')->tax() }}</td>
                                             </tr>
                                             <tr>
@@ -214,7 +214,7 @@
                             </div>
                             <div class="mobile_fixed-btn_wrapper">
                                 <div class="button-wrapper container">
-                                    <a href="{{ route('cart.checkout') }}" class="btn btn-primary btn-checkout">PROCEED TO CHECKOUT</a>
+                                    <a href="{{ route('cart.checkout') }}" class="btn btn-primary btn-checkout">PROCEDER A LA COMPRA</a>
                                 </div>
                             </div>
                         </div>

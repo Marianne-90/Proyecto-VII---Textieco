@@ -130,13 +130,8 @@
                                     </a>
                                     <ul class="sub-menu">
                                         <li class="sub-menu-item">
-<<<<<<< HEAD
-                                            <a href="orders.html" class="">
-                                                <div class="text">Ordenes</div>
-=======
                                             <a href="{{ route('admin.orders') }}" class="">
-                                                <div class="text">Orders</div>
->>>>>>> origin/main
+                                                <div class="text">Órdenes</div>
                                             </a>
                                         </li>
                                         <li class="sub-menu-item">
@@ -350,7 +345,7 @@
                                             <ul class="dropdown-menu dropdown-menu-end has-content"
                                                 aria-labelledby="dropdownMenuButton2">
                                                 <li>
-                                                    <h6>Notifications</h6>
+                                                    <h6>Notificaciones</h6>
                                                 </li>
 
                                                 @foreach ($notifications as $n)
@@ -379,7 +374,7 @@
 
                                                 <form method="POST" action="{{ route('admin.notifications.destroyAll') }}">
                                                     @csrf @method('DELETE')
-                                                    <button class="tf-button w-full">Delete</button>
+                                                    <button class="tf-button w-full">Eliminar</button>
                                                 </form>
 
                                             </ul>
@@ -480,9 +475,9 @@
         </div>
     </div>
 
-    <script src="{{ asset('js/jquery.min.js')}}"></script>
-    <script src="{{ asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{ asset('js/bootstrap-select.min.js')}}"></script>
+<script src="{{ asset('assets/js/plugins/jquery.min.js')}}"></script>
+    <script src="{{ asset('assets/js/plugins/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ asset('assets/js/plugins/bootstrap-slider.min.js')}}"></script>
     <script src="{{ asset('js/sweetalert.min.js')}}"></script>
     <script src="{{ asset('js/apexcharts/apexcharts.js')}}"></script>
     <script src="{{ asset('js/main.js')}}"></script>

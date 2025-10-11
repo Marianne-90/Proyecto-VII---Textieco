@@ -3,27 +3,27 @@
     <main class="pt-90">
         <div class="mb-4 pb-4"></div>
         <section class="shop-checkout container">
-            <h2 class="page-title">Shipping and Checkout</h2>
+            <h2 class="page-title">Detalles de Envío</h2>
             <div class="checkout-steps">
                 <a href="{{ route('cart.index') }}" class="checkout-steps__item active">
                     <span class="checkout-steps__item-number">01</span>
                     <span class="checkout-steps__item-title">
-                        <span>Shopping Bag</span>
-                        <em>Manage Your Items List</em>
+                        <span>Carrito de Compras</span>
+                        <em>Gestionar tu lista de artículos</em>
                     </span>
                 </a>
                 <a href="javascript:void(0)" class="checkout-steps__item active">
                     <span class="checkout-steps__item-number">02</span>
                     <span class="checkout-steps__item-title">
-                        <span>Shipping and Checkout</span>
-                        <em>Checkout Your Items List</em>
+                        <span>Envío y Pago</span>
+                        <em>Revisa y Completa tu Pedido</em>
                     </span>
                 </a>
                 <a href="javascript:void(0)" class="checkout-steps__item">
                     <span class="checkout-steps__item-number">03</span>
                     <span class="checkout-steps__item-title">
-                        <span>Confirmation</span>
-                        <em>Review And Submit Your Order</em>
+                        <span>Confirmación</span>
+                        <em>Revisa y Envía tu Pedido</em>
                     </span>
                 </a>
             </div>
@@ -33,7 +33,7 @@
                     <div class="billing-info__wrapper">
                         <div class="row">
                             <div class="col-6">
-                                <h4>SHIPPING DETAILS</h4>
+                                <h4>DETALLES DE ENVÍO</h4>
                             </div>
                             <div class="col-6">
                             </div>
@@ -62,7 +62,7 @@
                                     <div class="form-floating my-3">
                                         <input type="text" class="form-control" name="name" required=""
                                             value="{{ old('name') }}">
-                                        <label for="name">Full Name *</label>
+                                        <label for="name">Nombre Completo *</label>
                                         @error('name') <span class="text-danger">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
@@ -70,14 +70,14 @@
                                     <div class="form-floating my-3">
                                         <input type="text" class="form-control" name="phone" required=""
                                             value="{{ old('phone') }}">
-                                        <label for="phone">Phone Number *</label>
+                                        <label for="phone">Número de Teléfono *</label>
                                         @error('phone') <span class="text-danger">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-floating my-3">
                                         <input type="text" class="form-control" name="zip" required="" value="{{ old('zip') }}">
-                                        <label for="zip">Pincode *</label>
+                                        <label for="zip">Código Postal *</label>
                                         @error('zip') <span class="text-danger">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
@@ -85,7 +85,7 @@
                                     <div class="form-floating mt-3 mb-3">
                                         <input type="text" class="form-control" name="state" required=""
                                             value="{{ old('state') }}">
-                                        <label for="state">State *</label>
+                                        <label for="state">Estado *</label>
                                         @error('state') <span class="text-danger">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
@@ -93,7 +93,7 @@
                                     <div class="form-floating my-3">
                                         <input type="text" class="form-control" name="city" required=""
                                             value="{{ old('city') }}">
-                                        <label for="city">Town / City *</label>
+                                        <label for="city">Ciudad *</label>
                                         @error('city') <span class="text-danger">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
@@ -101,7 +101,7 @@
                                     <div class="form-floating my-3">
                                         <input type="text" class="form-control" name="address" required=""
                                             value="{{ old('address') }}">
-                                        <label for="address">House no, Building Name *</label>
+                                        <label for="address">Número de Casa, Nombre del Edificio *</label>
                                         @error('address') <span class="text-danger">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
@@ -109,7 +109,7 @@
                                     <div class="form-floating my-3">
                                         <input type="text" class="form-control" name="locality" required=""
                                             value="{{ old('locality') }}">
-                                        <label for="locality">Road Name, Area, Colony *</label>
+                                        <label for="locality">Nombre de la Calle, Área, Colonia *</label>
                                         @error('locality') <span class="text-danger">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
@@ -117,7 +117,7 @@
                                     <div class="form-floating my-3">
                                         <input type="text" class="form-control" name="landmark" required=""
                                             value="{{ old('landmark') }}">
-                                        <label for="landmark">Landmark *</label>
+                                        <label for="landmark">Punto de Referencia *</label>
                                         @error('landmark') <span class="text-danger">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
@@ -127,11 +127,11 @@
                     <div class="checkout__totals-wrapper">
                         <div class="sticky-content">
                             <div class="checkout__totals">
-                                <h3>Your Order</h3>
+                                <h3>Tu Pedido</h3>
                                 <table class="checkout-cart-items">
                                     <thead>
                                         <tr>
-                                            <th>PRODUCT</th>
+                                            <th>PRODUCTO</th>
                                             <th align="right">SUBTOTAL</th>
                                         </tr>
                                     </thead>
@@ -157,19 +157,19 @@
                                                 <td class="text-right">${{ Cart::instance('cart')->subtotal() }}</td>
                                             </tr>
                                             <tr>
-                                                <th>Discount {{ Session::get('coupon')['code'] }}</th>
+                                                <th>Descuento {{ Session::get('coupon')['code'] }}</th>
                                                 <td class="text-right">${{ Session::get('discounts')['discount']  }}</td>
                                             </tr>
                                             <tr>
-                                                <th>Subtotal After Discount</th>
+                                                <th>Subtotal Después del Descuento</th>
                                                 <td class="text-right">${{ Session::get('discounts')['subtotal'] }}</td>
                                             </tr>
                                             <tr>
-                                                <th>Shipping</th>
-                                                <td class="text-right">Free</td>
+                                                <th>Envío</th>
+                                                <td class="text-right">Gratis</td>
                                             </tr>
                                             <tr>
-                                                <th>VAT</th>
+                                                <th>IVA</th>
                                                 <td class="text-right">${{ Session::get('discounts')['tax'] }}</td>
                                             </tr>
                                             <tr>
@@ -185,11 +185,11 @@
                                                 <td class="text-right">${{ Cart::instance('cart')->subtotal() }}</td>
                                             </tr>
                                             <tr>
-                                                <th>SHIPPING</th>
-                                                <td class="text-right">Free shipping</td>
+                                                <th>ENVÍO</th>
+                                                <td class="text-right">Envío gratis</td>
                                             </tr>
                                             <tr>
-                                                <th>VAT</th>
+                                                <th>IVA</th>
                                                 <td class="text-right">${{ Cart::instance('cart')->tax() }}</td>
                                             </tr>
                                             <tr>
@@ -205,7 +205,7 @@
                                     <input class="form-check-input form-check-input_fill" type="radio" name="mode"
                                         id="mode1" value="card">
                                     <label class="form-check-label" for="mode1">
-                                        Debit or Credit Card
+                                        Tarjeta de Débito o Crédito
 
                                     </label>
                                 </div>
@@ -221,18 +221,18 @@
                                     <input class="form-check-input form-check-input_fill" type="radio" name="mode"
                                         id="mode3" value="cod">
                                     <label class="form-check-label" for="mode3">
-                                        Cash on delivery
+                                        Contra reembolso
                                     </label>
                                 </div>
                                 <div class="policy-text">
-                                    Your personal data will be used to process your order, support your experience
-                                    throughout this
-                                    website, and for other purposes described in our <a href="terms.html"
-                                        target="_blank">privacy
-                                        policy</a>.
+                                    Sus datos personales se utilizarán para procesar su pedido, apoyar su experiencia
+                                    en este
+                                    sitio web y para otros fines descritos en nuestra <a href="terms.html"
+                                        target="_blank">política de
+                                        privacidad</a>.
                                 </div>
                             </div>
-                            <button class="btn btn-primary btn-checkout" type="submit">PLACE ORDER</button>
+                            <button class="btn btn-primary btn-checkout" type="submit">REALIZAR PEDIDO</button>
                         </div>
                     </div>
                 </div>

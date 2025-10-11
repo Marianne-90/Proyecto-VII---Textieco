@@ -43,26 +43,26 @@
                                 <td>{{ $order->id }}</td>
                                 <th>Mobile</th>
                                 <td>{{ $order->phone }}</td>
-                                <th>Zip</th>
+                                <th>Código Postal</th>
                                 <td>{{ $order->zip }}</td>
                             </tr>
                             <tr>
-                                <th>Order Date</th>
+                                <th>Fecha de Pedido</th>
                                 <td>{{ $order->created_at }}</td>
-                                <th>Delivered Date</th>
+                                <th>Fecha de Entrega</th>
                                 <td>{{ $order->delivered_at }}</td>
-                                <th>Canceled Date</th>
+                                <th>Fecha de Cancelación</th>
                                 <td>{{ $order->canceled_date }}</td>
                             </tr>
                             <tr>
-                                <th>Order Status</th>
+                                <th>Estado del Pedido</th>
                                 <td colspan="5">
                                     @if($order->status == 'delivered')
-                                        <span class="badge bg-success">Delivered</span>
+                                        <span class="badge bg-success">Entregado</span>
                                     @elseif($order->status == 'canceled')
-                                        <span class="badge bg-danger">Canceled</span>
+                                        <span class="badge bg-danger">Cancelado</span>
                                     @else
-                                        <span class="badge bg-warning">Ordered</span>
+                                        <span class="badge bg-warning">Pedido Realizado</span>
                                     @endif
                                 </td>
                             </tr>
@@ -79,22 +79,22 @@
         <div class="wg-box">
             <div class="flex items-center justify-between gap10 flex-wrap">
                 <div class="wg-filter flex-grow">
-                    <h5>Ordered Items</h5>
+                    <h5>Artículos Pedidos</h5>
                 </div>
             </div>
             <div class="table-responsive">
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th class="text-center">Price</th>
-                            <th class="text-center">Quantity</th>
+                            <th>Nombre</th>
+                            <th class="text-center">Precio</th>
+                            <th class="text-center">Cantidad</th>
                             <th class="text-center">SKU</th>
-                            <th class="text-center">Category</th>
-                            <th class="text-center">Brand</th>
-                            <th class="text-center">Options</th>
-                            <th class="text-center">Return Status</th>
-                            <th class="text-center">Action</th>
+                            <th class="text-center">Categoría</th>
+                            <th class="text-center">Marca</th>
+                            <th class="text-center">Opciones</th>
+                            <th class="text-center">Estado de Devolución</th>
+                            <th class="text-center">Acción</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -138,7 +138,7 @@
         </div>
 
         <div class="wg-box mt-5">
-            <h5>Shipping Address</h5>
+            <h5>Dirección de Envío</h5>
             <div class="my-account__address-item col-md-6">
                 <div class="my-account__address-item__detail">
                     <p>{{ $order->name }}</p>
@@ -148,38 +148,38 @@
                     <p>{{ $order->landmark }}</p>
                     <p>{{ $order->zip }}</p>
                     <br>
-                    <p>Mobile : {{ $order->phone }}</p>
+                    <p>Móvil : {{ $order->phone }}</p>
                 </div>
             </div>
         </div>
 
         <div class="wg-box mt-5">
-            <h5>Transactions</h5>
+            <h5>Transacciones</h5>
             <table class="table table-striped table-bordered table-transaction">
                 <tbody>
                     <tr>
                         <th>Subtotal</th>
                         <td>${{ $order->subtotal }}</td>
-                        <th>Tax</th>
+                        <th>IVA</th>
                         <td>${{ $order->tax }}</td>
-                        <th>Discount</th>
+                        <th>Descuento</th>
                         <td>${{ $order->discount }}</td>
                     </tr>
                     <tr>
                         <th>Total</th>
                         <td>${{ $order->total }}</td>
-                        <th>Payment Mode</th>
+                        <th>Método de Pago</th>
                         <td>{{ $transaction->mode }}</td>
                         <th>Status</th>
                         <td>
                             @if($transaction->status == 'approved')
-                                <span class="badge bg-success">Approved</span>
+                                <span class="badge bg-success">Aprobado</span>
                             @elseif($transaction->status == 'declined')
-                                <span class="badge bg-warning">Declined</span>
+                                <span class="badge bg-warning">Rechazado</span>
                             @elseif($transaction->status == 'refunded')
-                                <span class="badge bg-secondary">Refunded</span>
+                                <span class="badge bg-secondary">Reembolsado</span>
                             @else
-                                <span class="badge bg-danger">Pending</span>
+                                <span class="badge bg-danger">Pendiente</span>
                             @endif
                         </td>
                     </tr>
@@ -189,7 +189,7 @@
         </div>
 
         <div class="wg-box mt-5">
-            <h5>Update Order Status</h5>
+            <h5>Actualizar Estado del Pedido</h5>
             <form action="{{ route('admin.order.status.update') }}" method="POST">
                 @csrf
                 @method('PUT')
@@ -199,14 +199,14 @@
                         {{-- <label for="status" class="col-sm-2 col-form-label">Order Status</label> --}}
                         <div class="select">
                             <select name="order_status" id="order_status" required>
-                            <option value="ordered" {{ $order->status == 'ordered' ? 'selected' : '' }}>Ordered</option>
-                            <option value="delivered" {{ $order->status == 'delivered' ? 'selected' : '' }}>Delivered</option>
-                            <option value="canceled" {{ $order->status == 'canceled' ? 'selected' : '' }}>Canceled</option>
+                            <option value="ordered" {{ $order->status == 'ordered' ? 'selected' : '' }}>Ordenado</option>
+                            <option value="delivered" {{ $order->status == 'delivered' ? 'selected' : '' }}>Entregado</option>
+                            <option value="canceled" {{ $order->status == 'canceled' ? 'selected' : '' }}>Cancelado</option>
                         </select>
                         </div>
                     </div>
                     <div class="col-mb-3">
-                        <button type="submit" class="btn btn-primary tf-button style-1 w208">Update Status</button>
+                        <button type="submit" class="btn btn-primary tf-button style-1 w208">Actualizar Estado</button>
                     </div>
 
                 </div>

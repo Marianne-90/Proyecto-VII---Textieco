@@ -10,13 +10,9 @@
                 </div>
                 <div class="col-lg-9">
                     <div class="page-content my-account__dashboard">
-                        <p>Hello <strong>{{ Auth::user()->name }}</strong></p>
-                        <p>From your account dashboard you can view your <a class="unerline-link"
-                                href="{{ route('user.orders') }}">recent
-                                orders</a>, manage your <a class="unerline-link" href="account_edit_address.html">shipping
-                                addresses</a>, and <a class="unerline-link" href="account_edit.html">edit your password and
-                                account
-                                details.</a></p>
+                        <p>Hola <strong>{{ Auth::user()->name }}</strong></p>
+                        <p>Desde tu panel de cuenta puedes ver tus <a class="unerline-link"
+                                href="{{ route('user.orders') }}">órdenes recientes</a>, gestionar tus <a class="unerline-link" href="account_edit_address.html">direcciones de envío</a>, y <a class="unerline-link" href="account_edit.html">editar tu contraseña y detalles de la cuenta.</a></p>
                     </div>
                 </div>
             </div>

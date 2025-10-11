@@ -48,17 +48,17 @@
                             <table class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
-                                        <th style="width: 80px">OrderNo</th>
-                                        <th>Name</th>
-                                        <th class="text-center">Phone</th>
+                                        <th style="width: 80px">No. de Orden</th>
+                                        <th>Nombre</th>
+                                        <th class="text-center">Teléfono</th>
                                         <th class="text-center">Subtotal</th>
-                                        <th class="text-center">Tax</th>
+                                        <th class="text-center">Impuesto</th>
                                         <th class="text-center">Total</th>
 
-                                        <th class="text-center">Status</th>
-                                        <th class="text-center">Order Date</th>
-                                        <th class="text-center">Items</th>
-                                        <th class="text-center">Delivered On</th>
+                                        <th class="text-center">Estado</th>
+                                        <th class="text-center">Fecha de Orden</th>
+                                        <th class="text-center">Artículos</th>
+                                        <th class="text-center">Fecha de Entrega</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -74,11 +74,11 @@
 
                                             <td class="text-center">
                                                 @if($order->status == 'delivered')
-                                                    <span class="badge bg-success">Delivered</span>
+                                                    <span class="badge bg-success">Entregado</span>
                                                 @elseif($order->status == 'canceled')
-                                                    <span class="badge bg-danger">Canceled</span>
+                                                    <span class="badge bg-danger">Cancelado</span>
                                                 @else
-                                                    <span class="badge bg-warning">Ordered</span>
+                                                    <span class="badge bg-warning">Ordenado</span>
                                                 @endif
 
                                             </td>

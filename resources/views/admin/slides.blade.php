@@ -64,8 +64,8 @@
                                     </td>
                                     <td>{{ $slide->tagline }}</td>
                                     <td>{{ $slide->title }}</td>
-                                    <td>{{ $slide->subtitle }}</td>
-                                    <td>{{ $slide->link }}</td>
+                                    <td style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ $slide->subtitle }}</td>
+                                    <td style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ $slide->link }}</td>
                                     <td>
                                         <div class="list-icon-function">
                                             <a href="{{ route('admin.slide.edit', ['id' => $slide->id]) }}">
