@@ -117,15 +117,6 @@
                             </tbody>
                         </table>
                         <div class="cart-table-footer">
-<<<<<<< HEAD
-                            <form action="{{ route('cart.coupon.apply') }}" class="position-relative bg-body" method="POST">
-                                @csrf
-                                <input class="form-control" type="text" name="coupon_code" placeholder="Código de Cupón"
-                                    value="@if (Session::has('coupon')){{ Session::get('coupon')['code'] }} Applied @endif">
-                                <input class="btn-link fw-medium position-absolute top-0 end-0 h-100 px-4" type="submit"
-                                    value="APLICAR">
-                            </form>
-=======
                             @if(!Session::has('coupon'))
                                 <form action="{{ route('cart.coupon.apply') }}" class="position-relative bg-body" method="POST">
                                     @csrf
@@ -144,7 +135,6 @@
                                         value="REMOVE COUPON">
                                 </form>
                             @endif
->>>>>>> origin/main
                             <form action="{{ route('cart.clear') }}" method="POST">
                                 @csrf
                                 @method('DELETE')
@@ -178,34 +168,20 @@
                                                 <td class="text-right">{{ Cart::instance('cart')->subtotal() }}</td>
                                             </tr>
                                             <tr>
-<<<<<<< HEAD
-                                                <th>Descuento {{ Session::get('coupon')['code'] }}</th>
-                                                <td>{{ Session::get('discounts')['discount']  }}</td>
-                                            </tr>
-                                             <tr>
-                                                <th>Subtotal antes del descuento</th>
-                                                <td>{{ Session::get('discounts')['subtotal'] }}</td>
-=======
                                                 <th>Discount {{ Session::get('coupon')['code'] }}</th>
                                                 <td class="text-right">{{ Session::get('discounts')['discount']  }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Subtotal After Discount</th>
                                                 <td class="text-right">{{ Session::get('discounts')['subtotal'] }}</td>
->>>>>>> origin/main
                                             </tr>
                                             <tr>
                                                 <th>Envío</th>
                                                 <td>Gratis</td>
                                             </tr>
                                             <tr>
-<<<<<<< HEAD
-                                                <th>IVA</th>
-                                                <td>{{ Session::get('discounts')['tax'] }}</td>
-=======
                                                 <th>VAT</th>
                                                 <td class="text-right">{{ Session::get('discounts')['tax'] }}</td>
->>>>>>> origin/main
                                             </tr>
                                             <tr>
                                                 <th>Total</th>
@@ -221,21 +197,12 @@
                                                 <td class="text-right">{{ Cart::instance('cart')->subtotal() }}</td>
                                             </tr>
                                             <tr>
-<<<<<<< HEAD
-                                                <th>Envío</th>
-                                                <td>Gratis</td>
-                                            </tr>
-                                            <tr>
-                                                <th>IVA</th>
-                                                <td>${{ Cart::instance('cart')->tax() }}</td>
-=======
                                                 <th>Shipping</th>
                                                 <td class="text-right">Free</td>
                                             </tr>
                                             <tr>
                                                 <th>VAT</th>
                                                 <td class="text-right">${{ Cart::instance('cart')->tax() }}</td>
->>>>>>> origin/main
                                             </tr>
                                             <tr>
                                                 <th>Total</th>
@@ -247,11 +214,7 @@
                             </div>
                             <div class="mobile_fixed-btn_wrapper">
                                 <div class="button-wrapper container">
-<<<<<<< HEAD
-                                    <a href="checkout.html" class="btn btn-primary btn-checkout">Proceder al Pago</a>
-=======
                                     <a href="{{ route('cart.checkout') }}" class="btn btn-primary btn-checkout">PROCEED TO CHECKOUT</a>
->>>>>>> origin/main
                                 </div>
                             </div>
                         </div>

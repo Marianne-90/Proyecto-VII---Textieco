@@ -346,56 +346,6 @@
                                                 <i class="icon-bell"></i>
                                             </span>
                                         </button>
-<<<<<<< HEAD
-                                        <ul class="dropdown-menu dropdown-menu-end has-content"
-                                            aria-labelledby="dropdownMenuButton2">
-                                            <li>
-                                                <h6>Notifications</h6>
-                                            </li>
-                                            <li>
-                                                <div class="message-item item-1">
-                                                    <div class="image">
-                                                        <i class="icon-noti-1"></i>
-                                                    </div>
-                                                    <div>
-                                                        <div class="body-title-2">Descuento Disponible</div>
-                                                        <div class="text-tiny">Morbi sapien massa, ultricies at rhoncus
-                                                            at, ullamcorper nec diam</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="message-item item-2">
-                                                    <div class="image">
-                                                        <i class="icon-noti-2"></i>
-                                                    </div>
-                                                    <div>
-                                                        <div class="body-title-2">Account has been verified</div>
-                                                        <div class="text-tiny">Mauris libero ex, iaculis vitae rhoncus
-                                                            et</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="message-item item-3">
-                                                    <div class="image">
-                                                        <i class="icon-noti-3"></i>
-                                                    </div>
-                                                    <div>
-                                                        <div class="body-title-2">Orden shipped successfully</div>
-                                                        <div class="text-tiny">Integer aliquam eros nec sollicitudin
-                                                            sollicitudin</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="message-item item-4">
-                                                    <div class="image">
-                                                        <i class="icon-noti-4"></i>
-                                                    </div>
-                                                    <div>
-                                                        <div class="body-title-2">Orden pending: <span>ID 305830</span>
-=======
                                         @if($unreadCount > 0)
                                             <ul class="dropdown-menu dropdown-menu-end has-content"
                                                 aria-labelledby="dropdownMenuButton2">
@@ -443,19 +393,11 @@
                                                     <div class="message-item item-1">
                                                         <div>
                                                             <div class="body-title-2">Empty :)</div>
->>>>>>> origin/main
                                                         </div>
                                                     </div>
-<<<<<<< HEAD
-                                                </div>
-                                            </li>
-                                            <li><a href="#" class="tf-button w-full">Ver todo</a></li>
-                                        </ul>
-=======
                                                 </li>
                                             </ul>
                                         @endif
->>>>>>> origin/main
                                     </div>
                                 </div>
 
@@ -471,11 +413,7 @@
                                                     <img src="{{ asset('assets/images/favicon.ico') }}" alt="">
                                                 </span>
                                                 <span class="flex flex-column">
-<<<<<<< HEAD
-                                                    <span class="body-title mb-2">Usuario Nombre</span>
-=======
                                                     <span class="body-title mb-2">{{Auth::user()->name}}</span>
->>>>>>> origin/main
                                                     <span class="text-tiny">Admin</span>
                                                 </span>
                                             </span>
