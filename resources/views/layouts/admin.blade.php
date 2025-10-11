@@ -1,3 +1,10 @@
+@php
+    // Si usas un guard distinto (p. ej. 'admin'), cambia a: $admin = auth('admin')->user();
+    $admin = auth()->user();
+    $notifications = $admin->notifications()->latest()->paginate(15);
+    $unreadCount = $admin->unreadNotifications()->count();
+@endphp
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -123,8 +130,13 @@
                                     </a>
                                     <ul class="sub-menu">
                                         <li class="sub-menu-item">
+<<<<<<< HEAD
                                             <a href="orders.html" class="">
                                                 <div class="text">Ordenes</div>
+=======
+                                            <a href="{{ route('admin.orders') }}" class="">
+                                                <div class="text">Orders</div>
+>>>>>>> origin/main
                                             </a>
                                         </li>
                                         <li class="sub-menu-item">
@@ -135,7 +147,7 @@
                                     </ul>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="slider.html" class="">
+                                    <a href="{{ route('admin.slides') }}" class="">
                                         <div class="icon"><i class="icon-image"></i></div>
                                         <div class="text">Galería</div>
                                     </a>
@@ -324,13 +336,17 @@
 
                                 <div class="popup-wrap message type-header">
                                     <div class="dropdown">
+
                                         <button class="btn btn-secondary dropdown-toggle" type="button"
                                             id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                                             <span class="header-item">
-                                                <span class="text-tiny">1</span>
+                                                @if($unreadCount > 0)
+                                                    <span class="text-tiny">{{ $unreadCount }}</span>
+                                                @endif
                                                 <i class="icon-bell"></i>
                                             </span>
                                         </button>
+<<<<<<< HEAD
                                         <ul class="dropdown-menu dropdown-menu-end has-content"
                                             aria-labelledby="dropdownMenuButton2">
                                             <li>
@@ -379,13 +395,67 @@
                                                     </div>
                                                     <div>
                                                         <div class="body-title-2">Orden pending: <span>ID 305830</span>
+=======
+                                        @if($unreadCount > 0)
+                                            <ul class="dropdown-menu dropdown-menu-end has-content"
+                                                aria-labelledby="dropdownMenuButton2">
+                                                <li>
+                                                    <h6>Notifications</h6>
+                                                </li>
+
+                                                @foreach ($notifications as $n)
+                                                    @php $data = $n->data ?? []; @endphp
+
+                                                    <li>
+                                                        <div class="message-item item-2">
+                                                            <div class="image">
+                                                                @if ($data['title']== "New Order")
+                                                                <i class="icon-noti-3"></i>
+                                                                @else
+                                                                <i class="icon-noti-2"></i>
+                                                                @endif
+
+                                                            </div>
+                                                            <div>
+                                                                <div class="body-title-2">
+                                                                    {{ $data['title'] ?? class_basename($n->type) }}</div>
+                                                                <div class="text-tiny">{{ $data['message'] ?? '' }}, {{ $n->created_at->diffForHumans() }}</div>
+                                                            </div>
                                                         </div>
-                                                        <div class="text-tiny">Ultricies at rhoncus at ullamcorper</div>
+                                                    </li>
+
+
+                                                @endforeach
+
+                                                <form method="POST" action="{{ route('admin.notifications.destroyAll') }}">
+                                                    @csrf @method('DELETE')
+                                                    <button class="tf-button w-full">Delete</button>
+                                                </form>
+
+                                            </ul>
+                                        @else
+                                            <ul class="dropdown-menu dropdown-menu-end has-content"
+                                                aria-labelledby="dropdownMenuButton2">
+                                                <li>
+                                                    <h6>Notifications</h6>
+                                                </li>
+                                                <li>
+                                                    <div class="message-item item-1">
+                                                        <div>
+                                                            <div class="body-title-2">Empty :)</div>
+>>>>>>> origin/main
+                                                        </div>
                                                     </div>
+<<<<<<< HEAD
                                                 </div>
                                             </li>
                                             <li><a href="#" class="tf-button w-full">Ver todo</a></li>
                                         </ul>
+=======
+                                                </li>
+                                            </ul>
+                                        @endif
+>>>>>>> origin/main
                                     </div>
                                 </div>
 
@@ -398,10 +468,14 @@
                                             id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
                                             <span class="header-user wg-user">
                                                 <span class="image">
-                                                    <img src="images/avatar/user-1.png" alt="">
+                                                    <img src="{{ asset('assets/images/favicon.ico') }}" alt="">
                                                 </span>
                                                 <span class="flex flex-column">
+<<<<<<< HEAD
                                                     <span class="body-title mb-2">Usuario Nombre</span>
+=======
+                                                    <span class="body-title mb-2">{{Auth::user()->name}}</span>
+>>>>>>> origin/main
                                                     <span class="text-tiny">Admin</span>
                                                 </span>
                                             </span>

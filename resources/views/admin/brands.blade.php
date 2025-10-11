@@ -112,9 +112,6 @@
                     confirmButtonColor: '#dc3545'
                 }).then(function (result) {
                     if (result) {
-                        // console.log('➡️ Ruta a la que se enviará el formulario:', form.attr('action'));
-                        // console.log('➡️ Método HTML:', form.attr('method'));
-
                         form.submit();
                     }
                 });
