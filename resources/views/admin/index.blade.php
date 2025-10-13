@@ -29,7 +29,7 @@
                                         <i class="icon-dollar-sign"></i>
                                     </div>
                                     <div>
-                                        <div class="body-text mb-2">Total Amount</div>
+                                        <div class="body-text mb-2">Cantidad Total</div>
                                         <h4>481.34</h4>
                                     </div>
                                 </div>
@@ -44,7 +44,7 @@
                                         <i class="icon-shopping-bag"></i>
                                     </div>
                                     <div>
-                                        <div class="body-text mb-2">Pending Orders</div>
+                                        <div class="body-text mb-2">Órdenes Pendientes</div>
                                         <h4>3</h4>
                                     </div>
                                 </div>
@@ -59,7 +59,7 @@
                                         <i class="icon-dollar-sign"></i>
                                     </div>
                                     <div>
-                                        <div class="body-text mb-2">Pending Orders Amount</div>
+                                        <div class="body-text mb-2">Monto de Órdenes Pendientes</div>
                                         <h4>481.34</h4>
                                     </div>
                                 </div>
@@ -77,7 +77,7 @@
                                         <i class="icon-shopping-bag"></i>
                                     </div>
                                     <div>
-                                        <div class="body-text mb-2">Delivered Orders</div>
+                                        <div class="body-text mb-2">Órdenes Entregadas</div>
                                         <h4>0</h4>
                                     </div>
                                 </div>
@@ -92,7 +92,7 @@
                                         <i class="icon-dollar-sign"></i>
                                     </div>
                                     <div>
-                                        <div class="body-text mb-2">Delivered Orders Amount</div>
+                                        <div class="body-text mb-2">Monto de Órdenes Entregadas</div>
                                         <h4>0.00</h4>
                                     </div>
                                 </div>
@@ -107,7 +107,7 @@
                                         <i class="icon-shopping-bag"></i>
                                     </div>
                                     <div>
-                                        <div class="body-text mb-2">Canceled Orders</div>
+                                        <div class="body-text mb-2">Órdenes Canceladas</div>
                                         <h4>0</h4>
                                     </div>
                                 </div>
@@ -122,7 +122,7 @@
                                         <i class="icon-dollar-sign"></i>
                                     </div>
                                     <div>
-                                        <div class="body-text mb-2">Canceled Orders Amount</div>
+                                        <div class="body-text mb-2">Monto de Órdenes Canceladas</div>
                                         <h4>0.00</h4>
                                     </div>
                                 </div>
@@ -143,10 +143,10 @@
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li>
-                                    <a href="javascript:void(0);">This Week</a>
+                                    <a href="javascript:void(0);">Esta Semana</a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0);">Last Week</a>
+                                    <a href="javascript:void(0);">Última Semana</a>
                                 </li>
                             </ul>
                         </div>
@@ -156,7 +156,7 @@
                             <div class="mb-2">
                                 <div class="block-legend">
                                     <div class="dot t1"></div>
-                                    <div class="text-tiny">Revenue</div>
+                                    <div class="text-tiny">Ingresos</div>
                                 </div>
                             </div>
                             <div class="flex items-center gap10">
@@ -191,7 +191,7 @@
 
                 <div class="wg-box">
                     <div class="flex items-center justify-between">
-                        <h5>Recent orders</h5>
+                        <h5>Órdenes Recientes</h5>
                         <div class="dropdown default">
                             <a class="btn btn-secondary dropdown-toggle" href="#">
                                 <span class="view-all">Ver todo</span>
@@ -205,15 +205,15 @@
                                     <tr>
                                         <th style="width: 80px">OrdenNo</th>
                                         <th>Nombre</th>
-                                        <th class="text-center">Phone</th>
+                                        <th class="text-center">Teléfono</th>
                                         <th class="text-center">Subtotal</th>
-                                        <th class="text-center">Tax</th>
+                                        <th class="text-center">Impuesto</th>
                                         <th class="text-center">Total</th>
 
-                                        <th class="text-center">Status</th>
-                                        <th class="text-center">Orden Date</th>
-                                        <th class="text-center">Total Items</th>
-                                        <th class="text-center">Delivered On</th>
+                                        <th class="text-center">Estado</th>
+                                        <th class="text-center">Fecha de Orden</th>
+                                        <th class="text-center">Total de Artículos</th>
+                                        <th class="text-center">Entregado En</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -226,7 +226,7 @@
                                         <td class="text-center">$36.12</td>
                                         <td class="text-center">$208.12</td>
 
-                                        <td class="text-center">Ordened</td>
+                                        <td class="text-center">Ordenado</td>
                                         <td class="text-center">2024-07-11 00:54:14</td>
                                         <td class="text-center">2</td>
                                         <td></td>

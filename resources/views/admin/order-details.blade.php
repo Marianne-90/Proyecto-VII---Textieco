@@ -28,7 +28,7 @@
                     <div class="wg-filter flex-grow">
                         <h5>Ordered Details</h5>
                     </div>
-                    <a class="tf-button style-1 w208" href="{{ route('admin.orders') }}">Back</a>
+                    <a class="tf-button style-1 w208" href="{{ route('admin.orders') }}">Volver</a>
                 </div>
                 <div class="table-responsive">
                     @if(Session::has('status'))
