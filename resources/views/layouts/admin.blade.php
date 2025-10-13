@@ -382,12 +382,12 @@
                                             <ul class="dropdown-menu dropdown-menu-end has-content"
                                                 aria-labelledby="dropdownMenuButton2">
                                                 <li>
-                                                    <h6>Notifications</h6>
+                                                    <h6>Notificaciones</h6>
                                                 </li>
                                                 <li>
                                                     <div class="message-item item-1">
                                                         <div>
-                                                            <div class="body-title-2">Empty :)</div>
+                                                            <div class="body-title-2">Vacío :)</div>
                                                         </div>
                                                     </div>
                                                 </li>
