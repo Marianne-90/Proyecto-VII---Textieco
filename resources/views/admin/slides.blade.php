@@ -15,7 +15,7 @@
                         <i class="icon-chevron-right"></i>
                     </li>
                     <li>
-                        <div class="text-tiny">Slider</div>
+                        <div class="text-tiny">Galería</div>
                     </li>
                 </ul>
             </div>
