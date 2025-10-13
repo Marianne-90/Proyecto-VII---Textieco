@@ -41,7 +41,7 @@
                             <tr>
                                 <th>Order No</th>
                                 <td>{{ $order->id }}</td>
-                                <th>Mobile</th>
+                                <th>Teléfono</th>
                                 <td>{{ $order->phone }}</td>
                                 <th>Código Postal</th>
                                 <td>{{ $order->zip }}</td>
