@@ -25,7 +25,7 @@
                     <div class="wg-filter flex-grow">
                         <form class="form-search">
                             <fieldset class="name">
-                                <input type="text" placeholder="Search here..." class="" name="name" tabindex="2" value=""
+                                <input type="text" placeholder="Buscar..." class="" name="name" tabindex="2" value=""
                                     aria-required="true" required="">
                             </fieldset>
                             <div class="button-submit">
@@ -33,8 +33,7 @@
                             </div>
                         </form>
                     </div>
-                    <a class="tf-button style-1 w208" href="{{ route('admin.slide.add') }}"><i class="icon-plus"></i>Add
-                        new</a>
+                    <a class="tf-button style-1 w208" href="{{ route('admin.slide.add') }}"><i class="icon-plus"></i>Añadir</a>
                 </div>
                 <div class="wg-table table-all-user">
                     @if(Session::has('status'))
@@ -44,12 +43,12 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Image</th>
+                                <th>Imagen</th>
                                 <th>Tagline</th>
-                                <th>Title</th>
-                                <th>Subtitle</th>
-                                <th>Link</th>
-                                <th>Action</th>
+                                <th>Título</th>
+                                <th>Subtítulo</th>
+                                <th>Enlace</th>
+                                <th>Acción</th>
                             </tr>
                         </thead>
                         <tbody>
