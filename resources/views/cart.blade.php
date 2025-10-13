@@ -129,10 +129,10 @@
                                     @csrf
                                     @method('DELETE')
 
-                                    <input class="form-control" type="text" name="coupon_code" placeholder="Coupon Code"
-                                        value="@if (Session::has('coupon')){{ Session::get('coupon')['code'] }} Applied @endif">
+                                    <input class="form-control" type="text" name="coupon_code" placeholder="Código de Cupón"
+                                        value="@if (Session::has('coupon')){{ Session::get('coupon')['code'] }} @endif">
                                     <input class="btn-link fw-medium position-absolute top-0 end-0 h-100 px-4" type="submit"
-                                        value="REMOVE COUPON">
+                                        value="REMOVER CUPÓN">
                                 </form>
                             @endif
                             <form action="{{ route('cart.clear') }}" method="POST">
