@@ -38,17 +38,17 @@
                         <table class="table table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th style="width:70px">OrderNo</th>
-                                    <th class="text-center">Name</th>
-                                    <th class="text-center">Phone</th>
+                                    <th style="width:70px">No de orden</th>
+                                    <th class="text-center">Nombre</th>
+                                    <th class="text-center">Teléfono</th>
                                     <th class="text-center">Subtotal</th>
-                                    <th class="text-center">Tax</th>
+                                    <th class="text-center">Impuesto</th>
                                     <th class="text-center">Total</th>
 
-                                    <th class="text-center">Status</th>
-                                    <th class="text-center">Order Date</th>
-                                    <th class="text-center">Total Items</th>
-                                    <th class="text-center">Delivered On</th>
+                                    <th class="text-center">Estado</th>
+                                    <th class="text-center">Fecha de pedido</th>
+                                    <th class="text-center">Total de artículos</th>
+                                    <th class="text-center">Fecha de entrega</th>
                                     <th></th>
                                 </tr>
                             </thead>
