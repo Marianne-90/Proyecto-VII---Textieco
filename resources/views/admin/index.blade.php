@@ -15,7 +15,7 @@
                                     </div>
                                     <div>
                                         <div class="body-text mb-2">Total de Órdenes</div>
-                                        <h4>{{ $dashboardDatas[0]->Total }}</h4>
+                                        <h4>{{ $dashboardDatas[0]->total }}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -30,7 +30,7 @@
                                     </div>
                                     <div>
                                         <div class="body-text mb-2">Cantidad Total</div>
-                                        <h4>{{ $dashboardDatas[0]->TotalAmount }}</h4>
+                                        <h4>{{ $dashboardDatas[0]->totalamount }}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                                     </div>
                                     <div>
                                         <div class="body-text mb-2">Órdenes Pendientes</div>
-                                        <<h4>{{ $dashboardDatas[0]->TotalOrdered }}</h4>
+                                        <h4>{{ $dashboardDatas[0]->totalordered }}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
                                     </div>
                                     <div>
                                         <div class="body-text mb-2">Cantidad Pendiente</div>
-                                        <h4>{{ $dashboardDatas[0]->TotalOrderAmount }}</h4>
+                                        <h4>{{ $dashboardDatas[0]->totalorderamount }}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                                     </div>
                                     <div>
                                         <div class="body-text mb-2">Órdenes Entregadas</div>
-                                        <h4>{{ $dashboardDatas[0]->TotalDelivered }}</h4>
+                                        <h4>{{ $dashboardDatas[0]->totaldelivered }}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -93,7 +93,7 @@
                                     </div>
                                     <div>
                                         <div class="body-text mb-2">Monto de Órdenes Entregadas</div>
-                                        <<h4>{{ $dashboardDatas[0]->TotalDeliveredAmount }}</h4>
+                                        <h4>{{ $dashboardDatas[0]->totaldeliveredamount }}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -108,7 +108,7 @@
                                     </div>
                                     <div>
                                         <div class="body-text mb-2">Órdenes Canceladas</div>
-                                        <h4>{{ $dashboardDatas[0]->TotalCanceled }}</h4>
+                                        <h4>{{ $dashboardDatas[0]->totalcanceled }}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -122,8 +122,8 @@
                                         <i class="icon-dollar-sign"></i>
                                     </div>
                                     <div>
-                                        <div class="body-text mb-2">Monto de Órdenes Canceladas/div>
-                                        <h4>{{ $dashboardDatas[0]->TotalCanceledAmount }}</h4>
+                                        <div class="body-text mb-2">Monto de Órdenes Canceladas</div>
+                                        <h4>{{ $dashboardDatas[0]->totalcanceledamount }}</h4>
                                     </div>
                                 </div>
                             </div>

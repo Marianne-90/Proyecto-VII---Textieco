@@ -3,7 +3,7 @@
     <main class="pt-90">
         <div class="mb-4 pb-4"></div>
         <section class="my-account container">
-            <h2 class="page-title">My Account</h2>
+            <h2 class="page-title">Mi Cuenta</h2>
             <div class="row">
                 <div class="col-lg-3">
                     @include('user.account-nav')

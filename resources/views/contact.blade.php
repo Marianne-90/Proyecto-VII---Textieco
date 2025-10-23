@@ -10,7 +10,7 @@
         <div class="mb-4 pb-4"></div>
         <section class="contact-us container">
             <div class="mw-930">
-                <h2 class="page-title">CONTACT US</h2>
+                <h2 class="page-title">CONTÁCTANOS</h2>
             </div>
         </section>
 
@@ -27,29 +27,29 @@
                     @endif
                     <form name="contact-us-form" class="needs-validation" novalidate="" action="{{ route('home.contact.store') }}" method="POST">
                         @csrf
-                        <h3 class="mb-5">Get In Touch</h3>
+                        <h3 class="mb-5">Ponte en Contacto</h3>
                         <div class="form-floating my-4">
-                            <input type="text" class="form-control" name="name" placeholder="Name *"  value="{{ old('name') }}">
-                            <label for="contact_us_name">Name *</label>
+                            <input type="text" class="form-control" name="name" placeholder="Nombre *"  value="{{ old('name') }}">
+                            <label for="contact_us_name">Nombre *</label>
                             @error('name') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
                         <div class="form-floating my-4">
-                            <input type="text" class="form-control" name="phone" placeholder="Phone *"  value="{{ old('phone') }}">
-                            <label for="contact_us_name">Phone *</label>
+                            <input type="text" class="form-control" name="phone" placeholder="Teléfono *"  value="{{ old('phone') }}">
+                            <label for="contact_us_name">Teléfono *</label>
                             @error('phone') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
                         <div class="form-floating my-4">
-                            <input type="email" class="form-control" name="email" placeholder="Email address *"  value="{{ old('email') }}">
-                            <label for="contact_us_name">Email address *</label>
+                            <input type="email" class="form-control" name="email" placeholder="Correo Electrónico *"  value="{{ old('email') }}">
+                            <label for="contact_us_name">Correo Electrónico *</label>
                             @error('email') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
                         <div class="my-4">
-                            <textarea class="form-control form-control_gray" name="comment" placeholder="Your Message"
+                            <textarea class="form-control form-control_gray" name="comment" placeholder="Tu Mensaje"
                                 cols="30" rows="8">{{ old('comment') }}</textarea>
                             @error('comment') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
                         <div class="my-4">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
                         </div>
                     </form>
                 </div>

@@ -170,7 +170,7 @@
                             <img loading="lazy" class="h-auto" src="{{asset('uploads/brands')}}/{{ $brand->image }}"
                                 width="690" height="665" alt="" />
                             <div class="category-banner__item-mark">
-                                Starting at ${{ $brand->products->min('sale_price') }}
+                                Desde ${{ $brand->products->min('sale_price') }}
                             </div>
                             <div class="category-banner__item-content">
                                 <h3 class="mb-0">{{ $brand->name }}</h3>

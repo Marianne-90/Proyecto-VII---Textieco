@@ -62,7 +62,7 @@ class HomeController extends Controller
         $contact->save();
 
 
-        return redirect()->back()->with('success', 'Your message has been sent successfully.');
+        return redirect()->back()->with('success', 'Tu Correo de ha enviado exitosamente');
     }
 
     public function about()

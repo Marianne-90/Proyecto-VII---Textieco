@@ -25,42 +25,50 @@ class AdminController extends Controller
     public function index()
     {
         $orders = Order::orderBy('id', 'DESC')->get()->take(3);
+
+        // ¡Consulta SQL corregida para PostgreSQL!
         $dashboardDatas = DB::select("
             SELECT
                 SUM(total) AS TotalAmount,
-                SUM(IF(status='ordered',   total, 0)) AS TotalOrderAmount,
-                SUM(IF(status='delivered', total, 0)) AS TotalDeliveredAmount,
-                SUM(IF(status='canceled',  total, 0)) AS TotalCanceledAmount,
+                SUM(CASE WHEN status='ordered'   THEN total ELSE 0 END) AS TotalOrderAmount,
+                SUM(CASE WHEN status='delivered' THEN total ELSE 0 END) AS TotalDeliveredAmount,
+                SUM(CASE WHEN status='canceled'  THEN total ELSE 0 END) AS TotalCanceledAmount,
                 COUNT(*) AS Total,
-                SUM(IF(status='ordered',   1, 0)) AS TotalOrdered,
-                SUM(IF(status='delivered', 1, 0)) AS TotalDelivered,
-                SUM(IF(status='canceled',  1, 0)) AS TotalCanceled
+                SUM(CASE WHEN status='ordered'   THEN 1 ELSE 0 END) AS TotalOrdered,
+                SUM(CASE WHEN status='delivered' THEN 1 ELSE 0 END) AS TotalDelivered,
+                SUM(CASE WHEN status='canceled'  THEN 1 ELSE 0 END) AS TotalCanceled
             FROM orders
         ");
         $monthlyDatas = DB::select("
-            SELECT
-                M.id AS MonthNo,
-                M.name AS MonthName,
-                IFNULL(D.TotalAmount, 0)            AS TotalAmount,
-                IFNULL(D.TotalOrderAmount, 0)       AS TotalOrderAmount,
-                IFNULL(D.TotalDeliveredAmount, 0)   AS TotalDeliveredAmount,
-                IFNULL(D.TotalCanceledAmount, 0)    AS TotalCanceledAmount
-            FROM month_names M
-            LEFT JOIN (
-                SELECT
-                    MONTH(created_at)                        AS MonthNo,
-                    DATE_FORMAT(created_at, '%b')            AS MonthName,
-                    SUM(total)                               AS TotalAmount,
-                    SUM(IF(status='ordered',   total, 0))    AS TotalOrderAmount,
-                    SUM(IF(status='delivered', total, 0))    AS TotalDeliveredAmount,
-                    SUM(IF(status='canceled',  total, 0))    AS TotalCanceledAmount
-                FROM orders
-                WHERE YEAR(created_at) = YEAR(CURDATE())
-                GROUP BY MONTH(created_at), DATE_FORMAT(created_at, '%b')
-                ORDER BY MONTH(created_at)
-            ) D ON D.MonthNo = M.id
-            ORDER BY M.id
-        ");
+    SELECT
+        M.id AS MonthNo,
+        M.name AS MonthName,
+        COALESCE(D.TotalAmount, 0)            AS TotalAmount,
+        COALESCE(D.TotalOrderAmount, 0)       AS TotalOrderAmount,
+        COALESCE(D.TotalDeliveredAmount, 0)   AS TotalDeliveredAmount,
+        COALESCE(D.TotalCanceledAmount, 0)    AS TotalCanceledAmount
+    FROM month_names M
+    LEFT JOIN (
+        SELECT
+            -- 1. MONTH() reemplazado por EXTRACT(MONTH FROM ...)
+            EXTRACT(MONTH FROM created_at) AS MonthNo,
+            -- 2. DATE_FORMAT('%b') reemplazado por TO_CHAR(..., 'Mon')
+            TO_CHAR(created_at, 'Mon')     AS MonthName,
+            SUM(total) AS TotalAmount,
+
+            -- 3. IF() reemplazado por CASE
+            SUM(CASE WHEN status='ordered'   THEN total ELSE 0 END) AS TotalOrderAmount,
+            SUM(CASE WHEN status='delivered' THEN total ELSE 0 END) AS TotalDeliveredAmount,
+            SUM(CASE WHEN status='canceled'  THEN total ELSE 0 END) AS TotalCanceledAmount
+
+        FROM orders
+        -- 4. YEAR(created_at) = YEAR(CURDATE()) reemplazado por EXTRACT(YEAR FROM ...) = EXTRACT(YEAR FROM CURRENT_DATE)
+        WHERE EXTRACT(YEAR FROM created_at) = EXTRACT(YEAR FROM CURRENT_DATE)
+        GROUP BY EXTRACT(MONTH FROM created_at), TO_CHAR(created_at, 'Mon')
+        ORDER BY EXTRACT(MONTH FROM created_at)
+    ) D ON D.MonthNo = M.id
+    ORDER BY M.id
+");
 
         $AmountM = implode(',', collect($monthlyDatas)->pluck('TotalAmount')->toArray());
         $OrderAmountM = implode(',', collect($monthlyDatas)->pluck('TotalOrderAmount')->toArray());
