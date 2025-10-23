@@ -110,7 +110,7 @@
     <main class="pt-90" style="padding-top: 0px;">
         <div class="mb-4 pb-4"></div>
         <section class="my-account container">
-            <h2 class="page-title">Order Details</h2>
+            <h2 class="page-title">Detalles del Pedido</h2>
             <div class="row">
 
                 <div class="col-lg-2">
