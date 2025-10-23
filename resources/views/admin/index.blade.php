@@ -14,8 +14,13 @@
                                         <i class="icon-shopping-bag"></i>
                                     </div>
                                     <div>
+<<<<<<< HEAD
                                         <div class="body-text mb-2">Total de Órdenes</div>
                                         <h4>3</h4>
+=======
+                                        <div class="body-text mb-2">Total Orders</div>
+                                        <h4>{{ $dashboardDatas[0]->Total }}</h4>
+>>>>>>> origin/main
                                     </div>
                                 </div>
                             </div>
@@ -29,8 +34,13 @@
                                         <i class="icon-dollar-sign"></i>
                                     </div>
                                     <div>
+<<<<<<< HEAD
                                         <div class="body-text mb-2">Cantidad Total</div>
                                         <h4>481.34</h4>
+=======
+                                        <div class="body-text mb-2">Total Amount</div>
+                                        <h4>{{ $dashboardDatas[0]->TotalAmount }}</h4>
+>>>>>>> origin/main
                                     </div>
                                 </div>
                             </div>
@@ -44,8 +54,13 @@
                                         <i class="icon-shopping-bag"></i>
                                     </div>
                                     <div>
+<<<<<<< HEAD
                                         <div class="body-text mb-2">Órdenes Pendientes</div>
                                         <h4>3</h4>
+=======
+                                        <div class="body-text mb-2">Pending Orders</div>
+                                        <<h4>{{ $dashboardDatas[0]->TotalOrdered }}</h4>
+>>>>>>> origin/main
                                     </div>
                                 </div>
                             </div>
@@ -59,8 +74,13 @@
                                         <i class="icon-dollar-sign"></i>
                                     </div>
                                     <div>
+<<<<<<< HEAD
                                         <div class="body-text mb-2">Monto de Órdenes Pendientes</div>
                                         <h4>481.34</h4>
+=======
+                                        <div class="body-text mb-2">Pending Orders Amount</div>
+                                        <h4>{{ $dashboardDatas[0]->TotalOrderAmount }}</h4>
+>>>>>>> origin/main
                                     </div>
                                 </div>
                             </div>
@@ -77,8 +97,13 @@
                                         <i class="icon-shopping-bag"></i>
                                     </div>
                                     <div>
+<<<<<<< HEAD
                                         <div class="body-text mb-2">Órdenes Entregadas</div>
                                         <h4>0</h4>
+=======
+                                        <div class="body-text mb-2">Delivered Orders</div>
+                                        <h4>{{ $dashboardDatas[0]->TotalDelivered }}</h4>
+>>>>>>> origin/main
                                     </div>
                                 </div>
                             </div>
@@ -92,8 +117,13 @@
                                         <i class="icon-dollar-sign"></i>
                                     </div>
                                     <div>
+<<<<<<< HEAD
                                         <div class="body-text mb-2">Monto de Órdenes Entregadas</div>
                                         <h4>0.00</h4>
+=======
+                                        <div class="body-text mb-2">Delivered Orders Amount</div>
+                                        <<h4>{{ $dashboardDatas[0]->TotalDeliveredAmount }}</h4>
+>>>>>>> origin/main
                                     </div>
                                 </div>
                             </div>
@@ -107,8 +137,13 @@
                                         <i class="icon-shopping-bag"></i>
                                     </div>
                                     <div>
+<<<<<<< HEAD
                                         <div class="body-text mb-2">Órdenes Canceladas</div>
                                         <h4>0</h4>
+=======
+                                        <div class="body-text mb-2">Canceled Orders</div>
+                                        <h4>{{ $dashboardDatas[0]->TotalCanceled }}</h4>
+>>>>>>> origin/main
                                     </div>
                                 </div>
                             </div>
@@ -122,8 +157,13 @@
                                         <i class="icon-dollar-sign"></i>
                                     </div>
                                     <div>
+<<<<<<< HEAD
                                         <div class="body-text mb-2">Monto de Órdenes Canceladas</div>
                                         <h4>0.00</h4>
+=======
+                                        <div class="body-text mb-2">Canceled Orders Amount</div>
+                                        <h4>{{ $dashboardDatas[0]->TotalCanceledAmount }}</h4>
+>>>>>>> origin/main
                                     </div>
                                 </div>
                             </div>
@@ -135,6 +175,7 @@
 
                 <div class="wg-box">
                     <div class="flex items-center justify-between">
+<<<<<<< HEAD
                         <h5>Earnings revenue</h5>
                         <div class="dropdown default">
                             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
@@ -150,41 +191,67 @@
                                 </li>
                             </ul>
                         </div>
+=======
+                        <h5>Montly revenue</h5>
+>>>>>>> origin/main
                     </div>
                     <div class="flex flex-wrap gap40">
                         <div>
                             <div class="mb-2">
                                 <div class="block-legend">
                                     <div class="dot t1"></div>
+<<<<<<< HEAD
                                     <div class="text-tiny">Ingresos</div>
+=======
+                                    <div class="text-tiny">Total</div>
+>>>>>>> origin/main
                                 </div>
                             </div>
                             <div class="flex items-center gap10">
-                                <h4>$37,802</h4>
-                                <div class="box-icon-trending up">
-                                    <i class="icon-trending-up"></i>
-                                    <div class="body-title number">0.56%</div>
-                                </div>
+                                <h4>${{ $TotalAmount }}</h4>
+
                             </div>
                         </div>
                         <div>
                             <div class="mb-2">
                                 <div class="block-legend">
                                     <div class="dot t2"></div>
+<<<<<<< HEAD
                                     <div class="text-tiny">Orden</div>
+=======
+                                    <div class="text-tiny">Pending</div>
+>>>>>>> origin/main
                                 </div>
                             </div>
                             <div class="flex items-center gap10">
-                                <h4>$28,305</h4>
-                                <div class="box-icon-trending up">
-                                    <i class="icon-trending-up"></i>
-                                    <div class="body-title number">0.56%</div>
+                                <h4>${{ $TotalOrderAmount }}</h4>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="mb-2">
+                                <div class="block-legend">
+                                    <div class="dot t2"></div>
+                                    <div class="text-tiny">Delivered</div>
                                 </div>
+                            </div>
+                            <div class="flex items-center gap10">
+                                <h4>${{ $TotalDeliveredAmount }}</h4>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="mb-2">
+                                <div class="block-legend">
+                                    <div class="dot t2"></div>
+                                    <div class="text-tiny">Canceled</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap10">
+                                <h4>${{ $TotalCanceledAmount }}</h4>
                             </div>
                         </div>
                     </div>
                     <div id="line-chart-8"></div>
-                </div>
+                    </div>
 
             </div>
             <div class="tf-section mb-30">
@@ -193,8 +260,13 @@
                     <div class="flex items-center justify-between">
                         <h5>Órdenes Recientes</h5>
                         <div class="dropdown default">
+<<<<<<< HEAD
                             <a class="btn btn-secondary dropdown-toggle" href="#">
                                 <span class="view-all">Ver todo</span>
+=======
+                            <a class="btn btn-secondary dropdown-toggle" href="{{ route('admin.orders') }}">
+                                <span class="view-all">View all</span>
+>>>>>>> origin/main
                             </a>
                         </div>
                     </div>
@@ -203,9 +275,15 @@
                             <table class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
+<<<<<<< HEAD
                                         <th style="width: 80px">OrdenNo</th>
                                         <th>Nombre</th>
                                         <th class="text-center">Teléfono</th>
+=======
+                                        <th style="width:70px">OrderNo</th>
+                                        <th class="text-center">Name</th>
+                                        <th class="text-center">Phone</th>
+>>>>>>> origin/main
                                         <th class="text-center">Subtotal</th>
                                         <th class="text-center">Impuesto</th>
                                         <th class="text-center">Total</th>
@@ -218,6 +296,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+<<<<<<< HEAD
                                     <tr>
                                         <td class="text-center">1</td>
                                         <td class="text-center">Javier Morales</td>
@@ -235,11 +314,42 @@
                                                 <div class="list-icon-function view-icon">
                                                     <div class="item eye">
                                                         <i class="icon-eye"></i>
+=======
+                                    @foreach ($orders as $order)
+                                        <tr>
+                                            <td class="text-center">{{ $order->id }}</td>
+                                            <td class="text-center">{{ $order->name }}</td>
+                                            <td class="text-center">{{ $order->phone }}</td>
+                                            <td class="text-center">${{ $order->subtotal }}</td>
+                                            <td class="text-center">${{ $order->tax }}</td>
+                                            <td class="text-center">${{ $order->total }}</td>
+
+                                            <td class="text-center">
+                                                @if($order->status == 'delivered')
+                                                    <span class="badge bg-success">Delivered</span>
+                                                @elseif($order->status == 'canceled')
+                                                    <span class="badge bg-danger">Canceled</span>
+                                                @else
+                                                    <span class="badge bg-warning">Ordered</span>
+                                                @endif
+                                            </td>
+                                            <td class="text-center">{{ $order->created_at }}</td>
+                                            <td class="text-center">{{ $order->orderItems->count() }}</td>
+                                            <td class="text-center">{{ $order->delivered_date }}</td>
+
+                                            <td class="text-center">
+                                                <a href="{{ route('admin.order.details', ['order_id' => $order->id]) }}">
+                                                    <div class="list-icon-function view-icon">
+                                                        <div class="item eye">
+                                                            <i class="icon-eye"></i>
+                                                        </div>
+>>>>>>> origin/main
                                                     </div>
-                                                </div>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+
                                 </tbody>
                             </table>
                         </div>
@@ -251,3 +361,105 @@
 
     </div>
 @endsection
+
+
+@push('scripts')
+    <script>
+        (function ($) {
+
+            var tfLineChart = (function () {
+
+                var chartBar = function () {
+
+                    var options = {
+                        series: [{
+                            name: 'Total',
+                            data: [{{ $AmountM }}]
+                        }, {
+                            name: 'Pending',
+                            data: [{{ $OrderAmountM }}]
+                        },
+                        {
+                            name: 'Delivered',
+                            data: [{{ $DeliveredAmountM }}]
+                        }, {
+                            name: 'Canceled',
+                            data: [{{ $CanceledAmountM }}]
+                        }],
+                        chart: {
+                            type: 'bar',
+                            height: 325,
+                            toolbar: {
+                                show: false,
+                            },
+                        },
+                        plotOptions: {
+                            bar: {
+                                horizontal: false,
+                                columnWidth: '10px',
+                                endingShape: 'rounded'
+                            },
+                        },
+                        dataLabels: {
+                            enabled: false
+                        },
+                        legend: {
+                            show: false,
+                        },
+                        colors: ['#2377FC', '#FFA500', '#078407', '#FF0000'],
+                        stroke: {
+                            show: false,
+                        },
+                        xaxis: {
+                            labels: {
+                                style: {
+                                    colors: '#212529',
+                                },
+                            },
+                            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                        },
+                        yaxis: {
+                            show: false,
+                        },
+                        fill: {
+                            opacity: 1
+                        },
+                        tooltip: {
+                            y: {
+                                formatter: function (val) {
+                                    return "$ " + val + ""
+                                }
+                            }
+                        }
+                    };
+
+                    chart = new ApexCharts(
+                        document.querySelector("#line-chart-8"),
+                        options
+                    );
+                    if ($("#line-chart-8").length > 0) {
+                        chart.render();
+                    }
+                };
+
+                /* Function ============ */
+                return {
+                    init: function () { },
+
+                    load: function () {
+                        chartBar();
+                    },
+                    resize: function () { },
+                };
+            })();
+
+            jQuery(document).ready(function () { });
+
+            jQuery(window).on("load", function () {
+                tfLineChart.load();
+            });
+
+            jQuery(window).on("resize", function () { });
+        })(jQuery);
+    </script>
+@endpush

@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+<<<<<<< HEAD
         $this->call([
             UserSeeder::class,
             BrandSeeder::class,
@@ -18,5 +19,14 @@ class DatabaseSeeder extends Seeder
             ProductSeeder::class,
             SlidesTableSeeder::class,
         ]);
+=======
+        // User::factory(10)->create();
+
+        // User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
+        $this->call(MonthSeeder::class);
+>>>>>>> origin/main
     }
 }
