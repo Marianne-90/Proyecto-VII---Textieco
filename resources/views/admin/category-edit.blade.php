@@ -25,7 +25,7 @@
                             <i class="icon-chevron-right"></i>
                         </li>
                         <li>
-                            <div class="text-tiny">Edit Categoría</div>
+                            <div class="text-tiny">Editar Categoría</div>
                         </li>
                     </ul>
                 </div>
@@ -38,7 +38,7 @@
                         <input type="hidden" name="id" value="{{ $category->id }}"/>
                         <fieldset class="name">
                             <div class="body-title">Categoría Nombre <span class="tf-color-1">*</span></div>
-                            <input class="flex-grow" type="text" placeholder="Category name" name="name" tabindex="0"
+                            <input class="flex-grow" type="text" placeholder="Categoría Nombre" name="name" tabindex="0"
                                 value="{{ $category->name }}" aria-required="true" required="">
                         </fieldset>
                         @error('name')<span class="alert alert-danger text-center">{{ $message }}</span>@enderror

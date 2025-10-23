@@ -208,7 +208,7 @@ class AdminController extends Controller
         $category->image = $file_name;
         $category->save();
 
-        return redirect()->route('admin.categories')->with('status', 'Category has been added succesfully');
+        return redirect()->route('admin.categories')->with('status', 'Se ha añadido la categoría correctamente');
     }
 
     public function GenerateCategoryThumbailsImage($image, $imageName)
@@ -256,7 +256,7 @@ class AdminController extends Controller
         }
 
         $category->save();
-        return redirect()->route('admin.categories')->with('status', 'Category has been udated succesfully');
+        return redirect()->route('admin.categories')->with('status', 'Se ha actualizado la categoría correctamente');
     }
 
     public function category_delete($id)
@@ -268,7 +268,7 @@ class AdminController extends Controller
         }
 
         $category->delete();
-        return redirect()->route('admin.categories')->with('status', 'Category has been deleted succesfully');
+        return redirect()->route('admin.categories')->with('status', 'Se ha eliminado la categoría correctamente');
 
 
     }

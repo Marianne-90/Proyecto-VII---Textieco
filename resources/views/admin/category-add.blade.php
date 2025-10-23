@@ -6,7 +6,7 @@
         <div class="main-content-inner">
             <div class="main-content-wrap">
                 <div class="flex items-center flex-wrap justify-between gap20 mb-27">
-                    <h3>Categoría infomation</h3>
+                    <h3>Categoría Nueva</h3>
                     <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
                         <li>
                             <a href="{{ route('admin.index')}}">
@@ -36,7 +36,7 @@
                         @csrf
                         <fieldset class="name">
                             <div class="body-title">Categoría Nombre <span class="tf-color-1">*</span></div>
-                            <input class="flex-grow" type="text" placeholder="Category name" name="name" tabindex="0"
+                            <input class="flex-grow" type="text" placeholder="Categoría Nombre" name="name" tabindex="0"
                                 value="{{ old('name') }}" aria-required="true" required="">
                         </fieldset>
                         @error('name')<span class="alert alert-danger text-center">{{ $message }}</span>@enderror
