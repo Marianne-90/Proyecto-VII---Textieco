@@ -352,17 +352,10 @@
                             <a href="{{ route('cart.index') }}" class="navigation__link">Carro</a>
                         </li>
                         <li class="navigation__item">
-<<<<<<< HEAD
-                            <a href="about.html" class="navigation__link">nosotros</a>
+                            <a href="{{ route('home.about') }}" class="navigation__link">Nosotros</a>
                         </li>
                         <li class="navigation__item">
-                            <a href="contact.html" class="navigation__link">contacto</a>
-=======
-                            <a href="{{ route('home.about') }}" class="navigation__link">About</a>
-                        </li>
-                        <li class="navigation__item">
-                            <a href="{{ route('home.contact') }}" class="navigation__link">Contact</a>
->>>>>>> origin/main
+                            <a href="{{ route('home.contact') }}" class="navigation__link">Contacto</a>
                         </li>
                     </ul>
                 </div>
@@ -448,17 +441,10 @@
                             <a href="{{ route('cart.index') }}" class="navigation__link">Carro</a>
                         </li>
                         <li class="navigation__item">
-<<<<<<< HEAD
-                            <a href="about.html" class="navigation__link">nosotros</a>
+                            <a href="{{ route('home.about') }}" class="navigation__link">Nosotros</a>
                         </li>
                         <li class="navigation__item">
-                            <a href="contact.html" class="navigation__link">contacto</a>
-=======
-                            <a href="{{ route('home.about') }}" class="navigation__link">About</a>
-                        </li>
-                        <li class="navigation__item">
-                            <a href="{{ route('home.contact') }}" class="navigation__link">Contact</a>
->>>>>>> origin/main
+                            <a href="{{ route('home.contact') }}" class="navigation__link">Contacto</a>
                         </li>
                     </ul>
                 </nav>
@@ -491,27 +477,7 @@
                                 </div>
 
                                 <div class="search-popup__results">
-<<<<<<< HEAD
-                                    <div class="sub-menu search-suggestion">
-                                        <h6 class="sub-menu__title fs-base">Quicklinks</h6>
-                                        <ul class="sub-menu__list list-unstyled">
-                                            <li class="sub-menu__item"><a href="shop2.html"
-                                                    class="menu-link menu-link_us-s">Recién Llegados</a>
-                                            </li>
-                                            <li class="sub-menu__item"><a href="#"
-                                                    class="menu-link menu-link_us-s">Vestidos</a></li>
-                                            <li class="sub-menu__item"><a href="shop3.html"
-                                                    class="menu-link menu-link_us-s">Accessories</a>
-                                            </li>
-                                            <li class="sub-menu__item"><a href="#"
-                                                    class="menu-link menu-link_us-s">Footwear</a></li>
-                                            <li class="sub-menu__item"><a href="#"
-                                                    class="menu-link menu-link_us-s">Sweatshirt</a></li>
-                                        </ul>
-                                    </div>
-=======
                                     <ul id="box-contain-search">
->>>>>>> origin/main
 
                                     </ul>
                                 </div>
@@ -633,12 +599,8 @@
                 <div class="footer-column footer-menu mb-4 mb-lg-0">
                     <h6 class="sub-menu__title text-uppercase">Compañía</h6>
                     <ul class="sub-menu__list list-unstyled">
-<<<<<<< HEAD
-                        <li class="sub-menu__item"><a href="about-2.html" class="menu-link menu-link_us-s">Sobre Nosotros</a>
-=======
                         <li class="sub-menu__item"><a href="{{ route('home.about') }}"
-                                class="menu-link menu-link_us-s">About Us</a>
->>>>>>> origin/main
+                                class="menu-link menu-link_us-s">Sobre Nosotros</a>
                         </li>
                         <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Carreras</a></li>
                         <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Afiliados</a></li>
