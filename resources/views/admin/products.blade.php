@@ -25,15 +25,7 @@
                 <div class="wg-box">
                     <div class="flex items-center justify-between gap10 flex-wrap">
                         <div class="wg-filter flex-grow">
-                            <form class="form-search">
-                                <fieldset class="name">
-                                    <input type="text" placeholder="Buscar..." class="" name="name" tabindex="2"
-                                        value="" aria-required="true" required="">
-                                </fieldset>
-                                <div class="button-submit">
-                                    <button class="" type="submit"><i class="icon-search"></i></button>
-                                </div>
-                            </form>
+
                         </div>
                         <a class="tf-button style-1 w208" href="{{ route('admin.product.add') }}"><i
                                 class="icon-plus"></i>Añadir Nuevo</a>
@@ -48,15 +40,15 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Nombre</th>
-                                    <th>Price</th>
-                                    <th>SalePrice</th>
+                                    <th>Precio</th>
+                                    <th>Precio de Venta</th>
                                     <th>SKU</th>
                                     <th>Categoría</th>
                                     <th>Marca</th>
                                     <th>Premium</th>
                                     <th>Stock</th>
                                     <th>Cantidad</th>
-                                    <th>Action</th>
+                                    <th>Acción</th>
                                 </tr>
                             </thead>
                             <tbody>

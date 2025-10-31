@@ -22,9 +22,9 @@ class ProductSeeder extends Seeder
         }
 
         // Lista de nombres de imágenes locales (a.png hasta u.png)
-        $images = range('a', 'u'); // letras de a a u
+        $images = range('a', 'u');
         $images = array_map(fn($ch) => $ch . '.png', $images);
-        shuffle($images); // las mezclamos para que sean aleatorias
+        shuffle($images);
 
         $tiposTela = [
             'Algodón','Lino','Seda','Lana','Poliéster','Nylon','Rayón','Denim','Franela','Terciopelo',
@@ -32,6 +32,86 @@ class ProductSeeder extends Seeder
         ];
 
         $adjetivos = ['Premium','Deluxe','Suave','Ligera','Eco','Plus','Pro','Clásica','Compact','Ultra'];
+
+        // ===== Bloques para descripciones aleatorias =====
+        $origenes = ['Perú','España','Italia','India','Japón','México','Turquía','Marruecos','Colombia','Portugal','Vietnam','Tailandia','China','Francia','Brasil'];
+        $usos = ['blusas','vestidos','camisas','trajes','tapicería','cojines','cortinas','manualidades','uniformes','ropa infantil','lencería','chaquetas','pijamas','faldas','mantelería'];
+        $cualidades = ['increíblemente suave','ligera','transpirable','muy resistente','elástica','con caída fluida','térmica','antipilling','hipoalergénica','de secado rápido','con tacto sedoso','mate','con brillo sutil'];
+        $acabados = ['acabado satinado','textura peinada','tejido cerrado','tejido abierto','microfibra','tejido twill','efecto arrugado','acabado stone-wash','tejido acanalado','acabado mercerizado'];
+        $cuidados = [
+            'lavar a máquina en frío', 'lavar a mano', 'no usar lejía',
+            'planchar a baja temperatura', 'no secar en secadora', 'secar a la sombra'
+        ];
+        $promos = [
+            'Edición limitada.',
+            'Producción responsable.',
+            'Compra mínima de 0,5 m.',
+            'Stock sujeto a disponibilidad.',
+            'Hecha sin crueldad animal.'
+        ];
+
+        // Composiciones probables según tipo
+        $composiciones = [
+            'Algodón'    => ['100% algodón','98% algodón · 2% spandex','60% algodón · 40% poliéster'],
+            'Lino'       => ['100% lino','55% lino · 45% algodón'],
+            'Seda'       => ['100% seda','70% seda · 30% algodón'],
+            'Lana'       => ['100% lana','80% lana · 20% nylon'],
+            'Poliéster'  => ['100% poliéster','95% poliéster · 5% spandex'],
+            'Nylon'      => ['100% nylon','92% nylon · 8% spandex'],
+            'Rayón'      => ['100% rayón','70% rayón · 30% poliéster'],
+            'Denim'      => ['98% algodón · 2% elastano','100% algodón'],
+            'Franela'    => ['100% algodón','65% poliéster · 35% algodón'],
+            'Terciopelo' => ['100% poliéster','80% algodón · 20% poliéster'],
+            // Por defecto
+            '*'          => ['Combinación de fibras seleccionadas']
+        ];
+
+        // Helper: crea short y long description para una tela base
+        $makeDescription = function (string $base) use ($faker, $origenes, $usos, $cualidades, $acabados, $cuidados, $promos, $composiciones) {
+            $origen   = $faker->randomElement($origenes);
+            $c1       = $faker->randomElement($cualidades);
+            // evitar repetir la misma cualidad
+            $c2       = $faker->randomElement(array_values(array_diff($cualidades, [$c1])));
+            $acabado  = $faker->randomElement($acabados);
+
+            // 2-3 usos distintos
+            $usosSel  = $faker->randomElements($usos, $faker->numberBetween(2, 3));
+            $usoTxt   = implode(', ', array_slice($usosSel, 0, -1)) . (count($usosSel) > 1 ? ' y ' . end($usosSel) : $usosSel[0]);
+
+            // 2 cuidados distintos
+            $cuidSel  = $faker->randomElements($cuidados, 2);
+            $cuidado1 = $cuidSel[0];
+            $cuidado2 = $cuidSel[1];
+
+            // gramaje/ancho realistas
+            $gramaje  = $faker->numberBetween(80, 380);  // g/m²
+            $ancho    = $faker->numberBetween(135, 160); // cm
+
+            // composición por tipo
+            $compList = $composiciones[$base] ?? $composiciones['*'];
+            $comp     = $faker->randomElement($compList);
+
+            // short description tipo tagline
+            $short = ucfirst($c1) . " · {$base} · Origen: {$origen}";
+
+            // párrafos concatenados
+            $sentences = [
+                "Esta tela de {$base} es {$c1} y {$c2}.",
+                "Originaria de {$origen}, presenta {$acabado} y un look premium.",
+                "Ideal para {$usoTxt}.",
+                "Composición: {$comp}. Gramaje aprox. {$gramaje} g/m² y ancho {$ancho} cm.",
+                "Cuidado: {$cuidado1}; {$cuidado2}.",
+            ];
+
+            // 60% de las veces agrega una frase promocional
+            if ($faker->boolean(60)) {
+                $sentences[] = $faker->randomElement($promos);
+            }
+
+            $long = implode(' ', $sentences);
+
+            return [$short, $long];
+        };
 
         $rows = [];
         $now = now();
@@ -65,11 +145,14 @@ class ProductSeeder extends Seeder
             // Asignar imagen única
             $imageMain = $images[$i];
 
+            // Generar descripciones aleatorias coherentes
+            [$short, $long] = $makeDescription($base);
+
             $rows[] = [
                 'name'              => $name,
                 'slug'              => $slug,
-                'short_description' => $faker->sentence(10),
-                'description'       => $faker->paragraphs(2, true),
+                'short_description' => $short,
+                'description'       => $long,
                 'regular_price'     => $regular,
                 'sale_price'        => $sale,
                 'SKU'               => $sku,

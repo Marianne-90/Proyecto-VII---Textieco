@@ -323,7 +323,7 @@
                 <form action="#" method="GET" class="search-field position-relative mt-4 mb-3">
                     <div class="position-relative">
                         <input class="search-field__input w-100 border rounded-1" type="text" name="search-keyword"
-                            placeholder="Search products" />
+                            placeholder="Buscar Productos" />
                         <button class="btn-icon search-popup__submit pb-0 me-2" type="submit">
                             <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -463,10 +463,10 @@
 
                         <div class="search-popup js-hidden-content">
                             <form action="#" method="GET" class="search-field container">
-                                <p class="text-uppercase text-secondary fw-medium mb-4">What are you looking for?</p>
+                                <p class="text-uppercase text-secondary fw-medium mb-4">Qué estás buscando?</p>
                                 <div class="position-relative">
                                     <input class="search-field__input search-popup__input w-100 fw-medium" type="text"
-                                        name="search-keyword" placeholder="Search products" id="search-input" />
+                                        name="search-keyword" placeholder="Buscar productos" id="search-input" />
                                     <button class="btn-icon search-popup__submit" type="submit">
                                         <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -706,7 +706,6 @@
         $(function () {
             let timer;
             $('#search-input').on('keyup', function () {
-
                 clearTimeout(timer);
                 let searchQuery = $(this).val();
 
@@ -717,6 +716,7 @@
                             url: '{{ route("home.search") }}',
                             data: { query: searchQuery },
                             success: function (data) {
+
                                 $('#box-contain-search').empty();
                                 $.each(data, function (index, product) {
                                     let link = "{{ url('shop') }}/" + product.slug;

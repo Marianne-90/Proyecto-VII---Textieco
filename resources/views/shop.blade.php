@@ -221,14 +221,13 @@
                                     <div class="slideshow-text container p-3 p-xl-5">
                                         <h2
                                             class="text-uppercase section-title fw-normal mb-3 animate animate_fade animate_btt animate_delay-2">
-                                            Lorem Impsum <br /><strong>LOREM</strong></h2>
-                                        <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Antore veritatis et
-                                            quasi architecto beatae vitae dicta sunt explicabo</h6>
+                                            Conoce la nueva <br /><strong>Lana</strong></h2>
+                                        <p class="mb-0 animate animate_fade animate_btt animate_delay-5">De ovejas de pastoreo libre</p>
                                     </div>
                                 </div>
                                 <div class="slide-split_media position-relative">
                                     <div class="slideshow-bg" style="background-color: #f5e6e0;">
-                                        <img loading="lazy" src="assets/images/shop/shop_banner3.jpg" width="630"
+                                        <img loading="lazy" src="assets/images/shop/shop_banner4.png" width="630"
                                             height="450" alt="Women's accessories"
                                             class="slideshow-bg__img object-fit-cover" />
                                     </div>
@@ -243,14 +242,13 @@
                                     <div class="slideshow-text container p-3 p-xl-5">
                                         <h2
                                             class="text-uppercase section-title fw-normal mb-3 animate animate_fade animate_btt animate_delay-2">
-                                            Lorem Impsum<br /><strong>LOREM</strong></h2>
-                                        <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Antore veritatis et
-                                            quasi architecto beatae vitae dicta sunt explicabo</h6>
+                                            Curso intensivo<br /><strong>Faldas</strong></h2>
+                                        <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Aprende a crear tus propias faldas</p>
                                     </div>
                                 </div>
                                 <div class="slide-split_media position-relative">
                                     <div class="slideshow-bg" style="background-color: #f5e6e0;">
-                                        <img loading="lazy" src="assets/images/shop/shop_banner3.jpg" width="630"
+                                        <img loading="lazy" src="assets/images/shop/shop_banner5.png" width="630"
                                             height="450" alt="Women's accessories"
                                             class="slideshow-bg__img object-fit-cover" />
                                     </div>

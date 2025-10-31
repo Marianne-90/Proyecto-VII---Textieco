@@ -70,19 +70,24 @@ class HomeController extends Controller
         return view('about');
     }
 
-    public function search(Request $request)
-    {
-        $request->validate([
-            'query' => 'required|string|max:255',
-        ]);
+public function search(Request $request)
+{
+    $request->validate([
+        'query' => 'required|string|max:255',
+    ]);
 
-        $query = $request->input('query');
+    $q = $request->input('query');
+    $pattern = "%{$q}%";
 
-        $products = Product::where('name', 'like', "%{$query}%")
-            ->orWhere('description', 'like', "%{$query}%")
-            ->get()->take(8);
+    $products = Product::query()
+        ->where(function ($qb) use ($pattern) {
+            $qb->where('name', 'ILIKE', $pattern)
+               ->orWhere('description', 'ILIKE', $pattern);
+        })
+        ->limit(8)
+        ->get();
 
-        return response()->json($products);
-    }
+    return response()->json($products);
+}
 
 }

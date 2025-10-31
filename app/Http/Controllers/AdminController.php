@@ -718,10 +718,22 @@ class AdminController extends Controller
 
     public function search(Request $request)
     {
-        $query = $request->input('query');
-        $products = Product::where('name', 'LIKE', "%{$query}%")
-            ->orWhere('description', 'LIKE', "%{$query}%")->get()->take(8);
-        return response()->json($products);
+    $request->validate([
+        'query' => 'required|string|max:255',
+    ]);
+
+    $q = $request->input('query');
+    $pattern = "%{$q}%";
+
+    $products = Product::query()
+        ->where(function ($qb) use ($pattern) {
+            $qb->where('name', 'ILIKE', $pattern)
+               ->orWhere('description', 'ILIKE', $pattern);
+        })
+        ->limit(8)
+        ->get();
+
+    return response()->json($products);
     }
 
 }
