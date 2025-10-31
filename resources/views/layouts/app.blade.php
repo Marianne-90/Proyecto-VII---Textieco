@@ -462,12 +462,12 @@
                         </div>
 
                         <div class="search-popup js-hidden-content">
-                            <form action="#" method="GET" class="search-field container">
+                            <form action="" onsubmit="return false" class="search-field container" novalidate>
                                 <p class="text-uppercase text-secondary fw-medium mb-4">Qué estás buscando?</p>
                                 <div class="position-relative">
                                     <input class="search-field__input search-popup__input w-100 fw-medium" type="text"
                                         name="search-keyword" placeholder="Buscar productos" id="search-input" />
-                                    <button class="btn-icon search-popup__submit" type="submit">
+                                    <button class="btn-icon search-popup__submit" type="button">
                                         <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <use href="#icon_search" />
