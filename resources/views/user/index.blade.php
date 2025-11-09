@@ -11,8 +11,7 @@
                 <div class="col-lg-9">
                     <div class="page-content my-account__dashboard">
                         <p>Hola <strong>{{ Auth::user()->name }}</strong></p>
-                        <p>Desde tu panel de cuenta puedes ver tus <a class="unerline-link"
-                                href="{{ route('user.orders') }}">órdenes recientes</a>, gestionar tus <a class="unerline-link" href="account_edit_address.html">direcciones de envío</a>, y <a class="unerline-link" href="account_edit.html">editar tu contraseña y detalles de la cuenta.</a></p>
+                        <p>Desde tu panel de cuenta puedes ver tus órdenes recientestu lista de deseos o cerrar sesión</p>
                     </div>
                 </div>
             </div>

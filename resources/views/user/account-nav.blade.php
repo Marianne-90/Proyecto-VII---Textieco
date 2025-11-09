@@ -1,7 +1,6 @@
 <ul class="account-nav">
     <li><a href={{ route('user.index') }} class="menu-link menu-link_us-s">Panel</a></li>
     <li><a href="{{ route('user.orders') }}" class="menu-link menu-link_us-s">Órdenes</a></li>
-    <li><a href="account-details.html" class="menu-link menu-link_us-s">Detalles de la Cuenta</a></li>
     <li><a href="{{ route('wishlist.index') }}" class="menu-link menu-link_us-s">Lista de Deseos</a></li>
 
     <li>

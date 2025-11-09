@@ -83,8 +83,8 @@
                 @else
                     <div class="row">
                         <div class="col-md-12">
-                            <p>Your wishlist is empty. :c</p>
-                            <a href="{{ route('shop.index') }}" class="btn btn-info">Continue Shopping</a>
+                            <p>Tu lista está vacía. :c</p>
+                            <a href="{{ route('shop.index') }}" class="btn btn-info">Continuar Comprando</a>
                         </div>
                     </div>
                 @endif
